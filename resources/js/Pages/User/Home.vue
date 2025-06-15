@@ -164,7 +164,7 @@
             </section>
 
             <section id="student-learning">
-                <img src="../User/images/cambridge-logo.webp" alt="" style="width: 60px;">
+                <img src="../User/images/cambridge-logo.png" alt="" style="width: 60px;">
             </section>
         </div>
     </Layout>

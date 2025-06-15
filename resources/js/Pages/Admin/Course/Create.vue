@@ -38,9 +38,8 @@
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
-const props = defineProps({
-    aboutImage: Object,
-});
+import { useToast } from 'vue-toastification';
+const toast = useToast();
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
     const file = event.target.files[0];
@@ -49,11 +48,7 @@ const onFileChange = (event) => {
     }
 };
 
-onMounted(() => {
-    if (props.aboutImage && props.aboutImage.name) {
-        formImageUrl.value = props.aboutImage.name;
-    }
-});
+
 
 const form = useForm({
     title: '',
@@ -70,6 +65,8 @@ const submit = () => {
     form.post(route('admin.courses.store'), {
         onSuccess: () => {
             formImageUrl.value = null;
+            toast.success('Course created successfully!');
+            form.reset();
         },
         onError: (errors) => {
             console.error(errors);

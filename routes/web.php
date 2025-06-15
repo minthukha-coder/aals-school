@@ -2,14 +2,15 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CourseController;
-use App\Http\Controllers\Api\PartnershipController;
-use App\Http\Controllers\Api\CambridgeCourseController;
-use App\Http\Controllers\Api\AdditionalCourseController;
-use App\Http\Controllers\Api\FoundationCourseController;
+use App\Http\Controllers\Admin\PartnershipController;
+use App\Http\Controllers\Admin\CambridgeCourseController;
+use App\Http\Controllers\Admin\CambridgeExamCourseController;
+use App\Http\Controllers\Admin\AdditionalCourseController;
+use App\Http\Controllers\Admin\FoundationCourseController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
     Route::group(['prefix' => 'about', 'controller' => AboutController::class, 'as' => 'about.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
     });
 
     Route::group(['prefix' => 'courses', 'controller' => CourseController::class, 'as' => 'courses.'], function () {
@@ -78,4 +80,13 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
     });	
+
+    Route::group(['prefix' => 'cambridge-exam-courses', 'controller' => CambridgeExamCourseController::class, 'as' => 'cambridge-exam-courses.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
 });

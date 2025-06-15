@@ -1,70 +1,43 @@
 <template>
-    <div
-        :class="['sidebar', { collapsed: isCollapsed }]"
-        class="text-white d-flex flex-column justify-between"
-    >
+    <div :class="['sidebar', { collapsed: isCollapsed }]" class="text-white d-flex flex-column justify-between">
         <!-- Navigation -->
         <ul class="nav flex-column">
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Home"
-                :href="route('admin.home.index')"
-                :active="currentRoute === 'admin.home.index'"
-            />
+            <SideLink icon="fa-solid fa-chart-pie" text="Home" :href="route('admin.home.index')"
+                :active="currentRoute === 'admin.home.index'" />
 
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="About"
-                :href="route('admin.about.index')"
-                :active="currentRoute === 'admin.about.index'"
-            />
+            <SideLink icon="fa-solid fa-chart-pie" text="About" :href="route('admin.about.index')"
+                :active="currentRoute === 'admin.about.index'" />
 
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Courses"
-                :href="route('admin.courses.index')"
-                :active="currentRoute === 'admin.courses.index'"
-            />
+            <SideLink icon="fa-solid fa-chart-pie" text="Courses" :href="route('admin.courses.index')"
+                :active="currentRoute === 'admin.courses.index'" />
 
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Additional Courses"
+            <SideLink icon="fa-solid fa-chart-pie" text="Additional Courses"
                 :href="route('admin.additional-courses.index')"
-                :active="currentRoute === 'admin.additional-courses.index'"
-            />
+                :active="currentRoute === 'admin.additional-courses.index'" />
 
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Partnerships"
-                :href="route('admin.partnerships.index')"
-                :active="currentRoute === 'admin.partnerships.index'"
-            />
+            <SideLink icon="fa-solid fa-chart-pie" text="Partnerships" :href="route('admin.partnerships.index')"
+                :active="currentRoute === 'admin.partnerships.index'" />
 
-            <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Foundation Courses"
+            <SideLink icon="fa-solid fa-chart-pie" text="Foundation Courses"
                 :href="route('admin.foundation-courses.index')"
-                :active="currentRoute === 'admin.foundation-courses.index'"
-            />
+                :active="currentRoute === 'admin.foundation-courses.index'" />
 
-                   <SideLink
-                icon="fa-solid fa-chart-pie"
-                text="Cambridge Academic English Courses"
+            <SideLink icon="fa-solid fa-chart-pie" text="Cambridge Academic English Courses"
                 :href="route('admin.cambridge-courses.index')"
-                :active="currentRoute === 'admin.foundation-courses.index'"
-            />
+                :active="currentRoute === 'admin.cambridge-courses.index'" />
+
+            <SideLink icon="fa-solid fa-chart-pie" text="Cambridge Exam Courses"
+                :href="route('admin.cambridge-exam-courses.index')"
+                :active="currentRoute === 'admin.cambridge-exam-courses.index'" />
         </ul>
 
         <!-- Toggle Collapse -->
         <div class="text-center p-3">
             <button class="btn btn-sm btn-light" @click="toggleCollapse">
-                <i
-                    :class="
-                        isCollapsed
-                            ? 'fa fa-chevron-right'
-                            : 'fa fa-chevron-left'
-                    "
-                ></i>
+                <i :class="isCollapsed
+                        ? 'fa fa-chevron-right'
+                        : 'fa fa-chevron-left'
+                    "></i>
             </button>
         </div>
     </div>

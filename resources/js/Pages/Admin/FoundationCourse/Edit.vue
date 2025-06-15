@@ -4,9 +4,9 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
 
-                <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                <v-textarea rows="1" label="Title" variant="outlined"></v-textarea>
 
-                <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
+                <v-textarea label="Description" variant="outlined"></v-textarea>
 
                 <div class="preview flex justify-center relative"  v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
@@ -35,12 +35,8 @@
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
-import {useToast} from 'vue-toastification';
-
-
-const toast = useToast();
 const props = defineProps({
-    about : Object,
+    aboutImage: Object,
 });
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
@@ -51,27 +47,24 @@ const onFileChange = (event) => {
 };
 
 onMounted(() => {
-    if (props.about && props.about?.image) {
-        formImageUrl.value = props.about?.image;
+    if (props.aboutImage && props.aboutImage.name) {
+        formImageUrl.value = props.aboutImage.name;
     }
 });
 
 const form = useForm({
-    title : props.about?.title || '',
-    description: props.about?.description || '',
-    image: props.about?.image ? props.about?.image : null,
+    image: props.homeImage ? props.homeImage.name : null,
 });
 
 const clearImage = () => {
     formImageUrl.value = null;
-    form.image = null;
+    form.name = null;
 };
 
 const submit = () => {
     form.post(route('admin.about.update'), {
         onSuccess: () => {
             formImageUrl.value = null;
-            toast.success('About section updated successfully!');
         },
         onError: (errors) => {
             console.error(errors);

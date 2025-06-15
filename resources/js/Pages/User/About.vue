@@ -5,7 +5,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                     <div class="px-5">
-                        <img src="../Pages/User/images/home.jpg" alt="" class="" />
+                        <img src="../User/images/home.jpg" alt="" class="" />
                     </div>
                     <div>
                         <h2 class="font-bold text-xl">International Exam Services</h2>

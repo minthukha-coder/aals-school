@@ -1,14 +1,22 @@
 <template>
     <Layout>
-        <h4 class="text-center">Edit About Image</h4>
-        <div class="row">
+        <h4 class="text-center">Foundation Create Course</h4>
+        <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
+                <v-row>
+                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                </v-row>
 
-                <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                <v-row>
+                    <v-textarea v-model="form.age" rows="1" label="Age" variant="outlined"></v-textarea>
+                </v-row>
 
-                <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
+                <v-row>
+                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
+                </v-row>
 
-                <div class="preview flex justify-center relative"  v-if="formImageUrl">
+
+                <v-row class="preview flex justify-center relative" v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
 
                     <div class="absolute top-0 right-0">
@@ -16,7 +24,7 @@
                                 icon="fa-solid fa-circle-xmark" /></button>
                     </div>
 
-                </div>
+                </v-row>
 
 
                 <div class="mb-3 p-3">
@@ -34,14 +42,9 @@
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
-import { onMounted, ref } from 'vue';
-import {useToast} from 'vue-toastification';
-
-
+import {  ref } from 'vue';
+import { useToast } from 'vue-toastification';  
 const toast = useToast();
-const props = defineProps({
-    about : Object,
-});
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
     const file = event.target.files[0];
@@ -50,16 +53,13 @@ const onFileChange = (event) => {
     }
 };
 
-onMounted(() => {
-    if (props.about && props.about?.image) {
-        formImageUrl.value = props.about?.image;
-    }
-});
+
 
 const form = useForm({
-    title : props.about?.title || '',
-    description: props.about?.description || '',
-    image: props.about?.image ? props.about?.image : null,
+    title: '',
+    age: '',
+    duration: '',	
+    image: ''
 });
 
 const clearImage = () => {
@@ -68,10 +68,10 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    form.post(route('admin.about.update'), {
+    form.post(route('admin.foundation-courses.store'), {
         onSuccess: () => {
             formImageUrl.value = null;
-            toast.success('About section updated successfully!');
+            toast.success('Foundation Course created successfully!');	
         },
         onError: (errors) => {
             console.error(errors);

@@ -4,10 +4,10 @@
          <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4 flex flex-col justify-center mx-auto">
                 <div>
-                    <img :src="AboutImage?.name" alt="">
+                    <img :src="props.about?.image" alt="">
                 </div>
 
-                <div v-if="AboutImage" class="text-center">
+                <div v-if="about" class="text-center">
                     <Link :href="route('admin.home.edit')"><button
                         class="btn btn-primary btn-sm w-25 my-2 float-end">Edit</button></Link>
                 </div>
@@ -23,6 +23,10 @@
 <script setup>
 import Layout from '../Layouts/Layout.vue';
 import { Link } from '@inertiajs/inertia-vue3'
+
+const props = defineProps({
+    about: Object,
+});
 </script>
 
 <style lang="scss" scoped></style>
