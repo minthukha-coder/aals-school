@@ -2,10 +2,10 @@
     <Layout>
         <h4 class="text-center">Create Course</h4>
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
-                <div>
+            <v-row class="">
+                <v-col cols="12">
                     <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                </div>
+                </v-col>
 
                 <div>
                     <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
@@ -29,7 +29,7 @@
                 </div>
 
                 <button @click="submit" class="btn btn-success my-2">Submit</button>
-            </div>
+            </v-row>
         </div>
     </Layout>
 </template>
@@ -39,6 +39,7 @@ import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
 import { useToast } from 'vue-toastification';
+import { post } from '../../Composables/httpMethod.js'
 const toast = useToast();
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
@@ -62,16 +63,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    form.post(route('admin.courses.store'), {
-        onSuccess: () => {
-            formImageUrl.value = null;
-            toast.success('Course created successfully!');
-            form.reset();
-        },
-        onError: (errors) => {
-            console.error(errors);
-        },
-    });
+    post(form, route('admin.courses.store'));
 }
 </script>
 

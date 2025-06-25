@@ -1,31 +1,38 @@
 <template>
     <Layout>
         <h4 class="text-center">Edit About Image</h4>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
 
-                <v-textarea rows="1" label="Title" variant="outlined"></v-textarea>
+        <div class="container d-flex justify-center items-center">
+            <div class="col-md-6">
+                <v-row>
+                    <v-col cols="12">
+                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                    </v-col>
 
-                <v-textarea label="Description" variant="outlined"></v-textarea>
+                    <v-col cols="12">
+                        <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
+                    </v-col>
 
-                <div class="preview flex justify-center relative"  v-if="formImageUrl">
-                    <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
+                    <v-col cols="12">
+                        <v-file-input chips prepend-icon="mdi-camera" @change="onFileChange"
+                            @input="form.image = $event.target.files[0]" variant="outlined" label="File" show-size
+                            clearable @click:clear="clearImage"></v-file-input>
+                        <div class="preview flex justify-center position-relative">
+                            <v-img class="rounded-lg mb-4" :width="1" :height="300" cover v-if="formImageUrl"
+                                :src="formImageUrl" />
+                            <v-img class="rounded-lg mb-4" :width="1" :height="300" cover v-else-if="form.image"
+                                :src="form.image" />
+                            <div v-if="form.image" style="position:absolute;top:10px;right:10px">
+                                <button @click="clearImage">
+                                    <font-awesome-icon icon="fa-solid fa-circle-xmark" class="text-white fs-2" />
+                                </button>
+                            </div>
+                        </div>
+                    </v-col>
 
-                    <div class="absolute top-0 right-0">
-                        <button @click="clearImage" class="fs-2"><font-awesome-icon
-                                icon="fa-solid fa-circle-xmark" /></button>
-                    </div>
+                </v-row>
+                <button @click="submit" class="btn btn-success my-2 float-end">Update</button>
 
-                </div>
-
-
-                <div class="mb-3 p-3">
-                    <v-file-input @change="onFileChange($event)" @input="form.image = $event.target.files[0]"
-                        label="Image Upload" chips prepend-icon="mdi-camera" variant="outlined" clearable
-                        @click:clear="clearImage"></v-file-input>
-                </div>
-
-                <button @click="submit" class="btn btn-success my-2">Submit</button>
             </div>
         </div>
     </Layout>
@@ -36,7 +43,7 @@ import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
 const props = defineProps({
-    aboutImage: Object,
+    course: Object,
 });
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
@@ -53,7 +60,9 @@ onMounted(() => {
 });
 
 const form = useForm({
-    image: props.homeImage ? props.homeImage.name : null,
+    title: props.course?.title || '',
+    description: props.course?.description || '',
+    image: props.course?.image
 });
 
 const clearImage = () => {

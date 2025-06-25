@@ -3,11 +3,11 @@
         <div id="contact-us">
             <h3 class="text-center fw-bold">About Us</h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
                     <div class="px-5">
                         <img src="../User/images/home.jpg" alt="" class="" />
                     </div>
-                    <div>
+                    <div class="text-center md:!text-start mt-3 md:mt-0 p-2">
                         <h2 class="font-bold text-xl">International Exam Services</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi

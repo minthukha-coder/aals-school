@@ -10,18 +10,18 @@
         </section>
 
         <section class="p-3">
-            <div class="grid grid-cols-3">
-                <div class="flex gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="flex">
                     <imageCard />
-                    <div class="flex flex-col mt-3">
-                        <span class="font-bold text-base">Beginner 1</span>
-                        <span class="font-bold text-base">Age : 5 to 7</span>
-                        <span class="font-bold text-base">Duration : 3 months</span>
+                    <div class=" mx-3 mt-3">
+                        <p class="font-bold text-base">Beginner 1</p>
+                        <p class="font-bold text-base">Age: 5 to 7</p>
+                        <p class="font-bold text-base">Duration: 3 months</p>
                     </div>
                 </div>
-
-          
             </div>
+
+
         </section>
     </Layout>
 </template>

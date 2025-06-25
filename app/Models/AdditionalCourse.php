@@ -9,6 +9,7 @@ class AdditionalCourse extends Model
     //
     protected $fillable = [
         'title',
+        'duration',
         'image',
     ];
 }

@@ -11,9 +11,9 @@
 
         <section>
             <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mt-5 place-items-center">
-                <div class="flex gap-2">
+                <div class="flex flex-col md:flex-row lg:flex-row gap-2">
                     <imageCard />
-                    <div class="flex flex-col mt-3">
+                    <div class="flex flex-col mt-3 mx-2">
                         <span class="font-bold">Cambridge 1</span>
                         <span class="font-bold">Courses : Academic Foundation Course</span>
                         <span class="font-bold">Duration : 10+2 months</span>
@@ -22,12 +22,11 @@
 
 
                 <section class="position-relative w-100">
-                <div>
                     <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
-                </div>
+             
                 <div class="absolute left-30 top-20 text-white p-2">
-                    <h3 class="font-bold" style="font-size:40px;">IGCSE</h3>
-                    <span class="text-2xl font-bold">Duration :  10 Months</span>
+                    <h3 class="font-bold" style="font-size:60px;">IGCSE</h3>
+                    <span class="text-3xl font-bold">Duration :  10 Months</span>
                 </div>
             </section>
        

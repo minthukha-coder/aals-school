@@ -97,7 +97,7 @@
             <div>
                 <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
-            <div class="absolute left-0 top-50 text-white p-2">
+            <div class="absolute left-0 top-30 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
             </div>
         </section>

@@ -40,9 +40,9 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');
-        Route::get('/edit', 'edit')->name('edit');
+        Route::get('/{id}/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
-        Route::delete('/', 'destroy')->name('destroy');
+        Route::delete('{id}/', 'destroy')->name('destroy');
     });
 
     Route::group(['prefix' => 'additional-courses', 'controller' => AdditionalCourseController::class, 'as' => 'additional-courses.'], function () {

@@ -38,6 +38,7 @@ class AdditionalCourseController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
+            'duration' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
@@ -67,6 +68,7 @@ class AdditionalCourseController extends Controller
 
         $data = $request->validate([
             'title' => 'required|string|max:255',
+            'duration' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 

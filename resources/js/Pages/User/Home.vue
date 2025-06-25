@@ -28,12 +28,9 @@
                         <img src="../User/images/home.jpg" alt="" class="rounded-tr-[100px] rounded-bl-[100px]" />
                     </div>
                     <div class="p-2">
-                        <h2 class="font-bold text-xl">Heading 2</h2>
+                        <h2 class="font-bold text-xl">{{ about.title }}</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-                            atque optio iste culpa molestiae dolores, qui assumenda? Eligendi
-                            non odit consequatur quos voluptates provident error veritatis
-                            corporis quaerat. Quam, at! <a :href="route('about')">Read More....</a>
+                            {{ about.description }}<a :href="route('about')">Read More....</a>
                         </p>
                     </div>
                 </div>
@@ -41,51 +38,18 @@
 
             <section class="mt-5 max-w-7xl mx-auto" id="courses">
                 <h3 class="text-center font-bold text-2xl">Courses</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                <div v-for="course in courses" :key="course.id" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                     <div class="px-5">
-                        <img src="../User/images/home.jpg" alt="" class="" />
+                        <img :src="course.image" alt="" class="" />
                     </div>
                     <div class="p-2">
-                        <h2 class="font-bold text-xl">Foundation Course</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-                            atque optio iste culpa molestiae dolores, qui assumenda? Eligendi
-                            non odit consequatur quos voluptates provident error veritatis
-                            corporis quaerat. Quam, at!
+                        <h2 class="font-bold text-xl">{{ course.title }}</h2>
+                        <p class="mt-3">
+                     {{ course.description }}
                         </p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                    <div class="p-2">
-                        <h2 class="font-bold text-xl">Cambridge Academic Courses</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-                            atque optio iste culpa molestiae dolores, qui assumenda? Eligendi
-                            non odit consequatur quos voluptates provident error veritatis
-                            corporis quaerat. Quam, at!
-                        </p>
-                    </div>
-
-                    <div class="px-5">
-                        <img src="../User/images/home.jpg" alt="" class="" />
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                    <div class="px-5">
-                        <img src="../User/images/home.jpg" alt="" class="" />
-                    </div>
-                    <div class="p-2">
-                        <h2 class="font-bold text-xl">International Exam Services</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-                            atque optio iste culpa molestiae dolores, qui assumenda? Eligendi
-                            non odit consequatur quos voluptates provident error veritatis
-                            corporis quaerat. Quam, at!
-                        </p>
-                    </div>
-                </div>
             </section>
 
             <section class="bg-green-200 my-4" id="additional-courses">
@@ -177,6 +141,11 @@ import imageCard from "../User/Components/imageCard.vue";
 
 const props = defineProps({
     homeImage: Object,
+    about: Object,
+    courses : Array,
+    additionalCourses: Array,
+    partnershipImages: Array,
+
 });
 </script>
 

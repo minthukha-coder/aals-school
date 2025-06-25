@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div id="contact-us" class="container">
+        <div id="contact-us" class="container-fluid" style="background-color: gainsboro;">
             <h3 class="text-center fw-bold">Contact Us</h3>
             <h4 class="fw-bold">General Enquires</h4>
 
@@ -10,8 +10,10 @@
                         <img src="../User/images/telephone.png" alt="" style="width:40px;">
                         <h3>Telephone</h3>
                     </div>
-                    <p>09778695126</p>
-                    <p>09778695126</p>
+                    <div class="flex flex-col items-center">
+                        <span>09778695126</span>
+                        <span>09778695126</span>
+                    </div>
 
                     <div class="flex items-center gap-2 mt-3">
                         <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
@@ -44,7 +46,9 @@
 
             <div id="address" class="flex justify-center mt-5">
                 <p class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-location-dot" /> <span class="font-bold">Address : No. (205), Shop House (28), Han-thar-waddy Street, Times City Yangon, Kamaryut, Yangon</span></p>
+                    <font-awesome-icon icon="fa-solid fa-location-dot" /> <span class="font-bold text-xl">Address : No.
+                        (205), Shop House (28), Han-thar-waddy Street, Times City Yangon, Kamaryut, Yangon</span>
+                </p>
             </div>
 
 
