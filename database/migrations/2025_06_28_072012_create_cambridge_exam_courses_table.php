@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('partnerships', function (Blueprint $table) {
+        Schema::create('cambridge_exam_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
+            $table->string('name');
+            $table->string('duration')->nullable();
+            $table->string('months')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('partnerships');
+        Schema::dropIfExists('cambridge_exam_courses');
     }
 };

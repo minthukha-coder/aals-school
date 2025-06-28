@@ -1,18 +1,18 @@
 <template>
     <Layout>
-        <h4 class="text-center">Cambridge Course Create</h4>
+        <h4 class="text-center">Cambridge Exam Course Create</h4>
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                </v-row>
-
-                <v-row>
-                    <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"></v-textarea>
+                    <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
                 </v-row>
 
                 <v-row>
                     <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.months" rows="1" label="Months" variant="outlined"></v-textarea>
                 </v-row>
 
 
@@ -42,9 +42,8 @@
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
-import {  ref } from 'vue';
-import { useToast } from 'vue-toastification';
-import { post } from '../../Composables/httpMethod';
+import { ref } from 'vue';
+import { post } from '../../Composables/httpMethod.js';
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
     const file = event.target.files[0];
@@ -53,12 +52,11 @@ const onFileChange = (event) => {
     }
 };
 
-
 const form = useForm({
-    title: '',
-    course: '',
+    name: '',
     duration: '',
-    image: ''
+    months: '',
+    image: '',
 });
 
 const clearImage = () => {
@@ -67,7 +65,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    post(form,route('admin.cambridge-courses.store'));
+    post(form, route('admin.cambridge-exam-courses.store'));
 }
 </script>
 

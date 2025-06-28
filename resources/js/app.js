@@ -33,15 +33,14 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faFacebook,faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 
-import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash)
+library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus)
 
 const vuetify = createVuetify({
   components,
   directives,
 
-  
 })
 
 createInertiaApp({
@@ -56,9 +55,10 @@ createInertiaApp({
             .use(plugin)
             .use(ToastPlugin)
             .use(ZiggyVue, Ziggy)
+            .use(Link)
             .use(vuetify)
             .use(Toast)
             .config.globalProperties.$route = route
-          app.mount(el);   
+          app.mount(el);
     },
 });

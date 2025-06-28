@@ -43,7 +43,8 @@
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import {  ref } from 'vue';
-import { useToast } from 'vue-toastification';  
+import { useToast } from 'vue-toastification';
+import { post } from '../../Composables/httpMethod';
 const toast = useToast();
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
@@ -58,7 +59,7 @@ const onFileChange = (event) => {
 const form = useForm({
     title: '',
     age: '',
-    duration: '',	
+    duration: '',
     image: ''
 });
 
@@ -68,15 +69,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    form.post(route('admin.foundation-courses.store'), {
-        onSuccess: () => {
-            formImageUrl.value = null;
-            toast.success('Foundation Course created successfully!');	
-        },
-        onError: (errors) => {
-            console.error(errors);
-        },
-    });
+    post(form, route("admin.foundation-courses.store"));
 }
 </script>
 

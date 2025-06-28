@@ -9,11 +9,11 @@
 
                 <div v-if="homeImage" class="text-center">
                     <Link :href="route('admin.home.edit')"><button
-                        class="btn btn-primary btn-sm w-25 my-2 float-end">Edit</button></Link>
+                        class="btn btn-success btn-sm w-10 my-2 float-end"><font-awesome-icon icon="fa-solid fa-pen-to-square" /></button></Link>
                 </div>
 
                 <div v-else class="text-center mt-4">
-                    <Link :href="route('admin.home.edit')"><button class="btn btn-success"> <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" /> Upload</button></Link>
+                    <Link :href="route('admin.home.edit')"><button class="btn btn-success"><font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" /> Upload</button></Link>
                 </div>
             </div>
         </div>
@@ -22,7 +22,6 @@
 
 <script setup>
 import Layout from '../Layouts/Layout.vue';
-import { Link } from '@inertiajs/inertia-vue3'
 
 const props = defineProps({
     homeImage: Object,

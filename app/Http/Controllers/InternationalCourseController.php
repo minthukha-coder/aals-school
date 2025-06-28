@@ -1,42 +1,40 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
+use App\Models\InternationalCourse;
 use Illuminate\Http\Request;
-use App\Models\CambridgeCourse;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class CambridgeCourseController extends Controller
+class InternationalCourseController extends Controller
 {
     //
+    public function __construct(protected InternationalCourse $model)
+    {
 
-    public function __construct(protected CambridgeCourse $model) {}
-
-    //index
+    }
+        //index
     public function index()
     {
-        $courses = $this->model->get();
+        $courses = $this->model->all();
         foreach ($courses as $course) {
             $course->image = asset('storage/images/' . $course->image);
         }
-        return inertia('Admin/CambridgeCourse/Index', [
-            'courses' => $courses,
-        ]);
+        return inertia('Admin/InternationalCourse/Index', compact('courses'));
     }
+
     //create
     public function create()
     {
-        return inertia('Admin/CambridgeCourse/Create');
+        return inertia('Admin/InternationalCourse/Create');
     }
+
     //store
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'course' => 'required|string|max:255',
-            'duration' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'name' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif|max:2048',
         ]);
 
         if ($request->file('image')) {
@@ -44,26 +42,25 @@ class CambridgeCourseController extends Controller
             $request->file('image')->storeAs('public/images', $imageName);
             $data['image'] = $imageName;
         }
+
         $this->model->create($data);
 
-        return redirect()->route('admin.cambridge-courses.index')->with('success', 'Cambridge Course created successfully.');
+        return redirect()->route('admin.international-courses.index')->with('success', 'Course created successfully.');
     }
 
-
+    //edit
     public function edit(Request $request)
     {
         $course = $this->model->findOrFail($request->id);
         $course->image = $course->image ? asset('storage/images/' . $course->image) : null;
-        return inertia('Admin/CambridgeCourse/Edit', compact('course'));
+        return inertia('Admin/InternationalCourse/Edit', compact('course'));
     }
     //update
     public function update(Request $request)
     {
         $course = $this->model->findOrFail($request->id);
         $data = $request->validate([
-            'title' => 'required|string',
-            'course' => 'required|string',
-            'duration' => 'required|string',
+            'name' => 'required|string|max:255',
         ]);
 
         if ($request->file('image')) {
@@ -74,7 +71,7 @@ class CambridgeCourseController extends Controller
         }
         $course->update($data);
 
-        return redirect()->route('admin.cambridge-courses.index')->with('success', 'Course updated successfully.');
+        return redirect()->route('admin.international-courses.index')->with('success', 'Course updated successfully.');
     }
 
     //delete
@@ -85,6 +82,6 @@ class CambridgeCourseController extends Controller
             Storage::delete('public/images/' . $course->image);
         }
         $course->delete();
-        return redirect()->route('admin.cambridge-courses.index')->with('success', 'Course deleted successfully.');
+        return redirect()->route('admin.international-courses.index')->with('success', 'Course deleted successfully.');
     }
 }

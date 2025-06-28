@@ -1,17 +1,14 @@
 <template>
     <Layout>
-        <h4 class="text-center">Edit Course Page</h4>
+        <h4 class="text-center">Edit International Course</h4>
 
         <div class="container d-flex justify-center items-center">
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                        <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
                     </v-col>
 
-                    <v-col cols="12">
-                        <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
-                    </v-col>
 
                     <v-col cols="12">
                         <v-file-input chips prepend-icon="mdi-camera" @change="onFileChange"
@@ -55,8 +52,7 @@ const onFileChange = (event) => {
 };
 
 const form = useForm({
-    title: props.course?.title || '',
-    description: props.course?.description || '',
+    name: props.course?.name || '',
     image: props.course?.image
 });
 
@@ -66,7 +62,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    update(form,route('admin.courses.update', {id : props.course.id}));
+    update(form,route('admin.international-courses.update', {id : props.course.id}));
 }
 </script>
 

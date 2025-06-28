@@ -11,26 +11,26 @@
 
         <section>
             <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mt-5 place-items-center">
-                <div class="flex flex-col md:flex-row lg:flex-row gap-2">
-                    <imageCard />
+                <div v-for="course in cambridgeCourses" :key="course.id" class="flex flex-col md:flex-row lg:flex-row gap-2">
+                    <imageCard :image="course.image"/>
                     <div class="flex flex-col mt-3 mx-2">
-                        <span class="font-bold">Cambridge 1</span>
-                        <span class="font-bold">Courses : Academic Foundation Course</span>
-                        <span class="font-bold">Duration : 10+2 months</span>
+                        <span class="font-bold">{{ course.title }}</span>
+                        <span class="font-bold">Courses : {{ course.course }}</span>
+                        <span class="font-bold">Duration : {{ course.duration }}</span>
                     </div>
                 </div>
 
 
                 <section class="position-relative w-100">
                     <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
-             
+
                 <div class="absolute left-30 top-20 text-white p-2">
                     <h3 class="font-bold" style="font-size:60px;">IGCSE</h3>
                     <span class="text-3xl font-bold">Duration :  10 Months</span>
                 </div>
             </section>
-       
-             
+
+
             </div>
         </section>
 
@@ -40,6 +40,10 @@
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
+
+const props = defineProps({
+    cambridgeCourses: Array,
+});
 </script>
 
 <style lang="scss" scoped>

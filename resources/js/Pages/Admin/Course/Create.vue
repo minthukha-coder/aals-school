@@ -1,17 +1,17 @@
 <template>
     <Layout>
         <h4 class="text-center">Create Course</h4>
-        <div class="row">
-            <v-row class="">
-                <v-col cols="12">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
+                <v-row>
                     <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                </v-col>
+                </v-row>
 
-                <div>
-                    <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
-                </div>
+                <v-row>
+                    <v-textarea v-model="form.description" rows="1" label="Description" variant="outlined"></v-textarea>
+                </v-row>
 
-                <div class="preview flex justify-center relative" v-if="formImageUrl">
+                <v-row class="preview flex justify-center relative" v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
 
                     <div class="absolute top-0 right-0">
@@ -19,8 +19,7 @@
                                 icon="fa-solid fa-circle-xmark" /></button>
                     </div>
 
-                </div>
-
+                </v-row>
 
                 <div class="mb-3 p-3">
                     <v-file-input @change="onFileChange($event)" @input="form.image = $event.target.files[0]"
@@ -29,8 +28,9 @@
                 </div>
 
                 <button @click="submit" class="btn btn-success my-2">Submit</button>
-            </v-row>
+            </div>
         </div>
+
     </Layout>
 </template>
 

@@ -5,8 +5,16 @@
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
                     <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                    <ErrorMessage
+                        :text="form.errors.duration"
+                        class="text-danger"/>
                 </v-row>
-
+                     <v-row>
+                    <v-textarea v-model.number="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
+                    <ErrorMessage
+                        :text="form.errors.duration"
+                        class="text-danger"/>
+                </v-row>
 
                 <v-row class="preview flex justify-center relative" v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
@@ -17,7 +25,6 @@
                     </div>
 
                 </v-row>
-
 
                 <div class="mb-3 p-3">
                     <v-file-input @change="onFileChange($event)" @input="form.image = $event.target.files[0]"
@@ -35,6 +42,7 @@
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
+import { post } from '../../Composables/httpMethod.js';
 const props = defineProps({
     aboutImage: Object,
 });
@@ -46,14 +54,10 @@ const onFileChange = (event) => {
     }
 };
 
-onMounted(() => {
-    if (props.aboutImage && props.aboutImage.name) {
-        formImageUrl.value = props.aboutImage.name;
-    }
-});
 
 const form = useForm({
     title: '',
+    duration: '',
     image: ''
 });
 
@@ -63,14 +67,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    form.post(route('admin.additional-courses.store'), {
-        onSuccess: () => {
-            formImageUrl.value = null;
-        },
-        onError: (errors) => {
-            console.error(errors);
-        },
-    });
+    post(form,route('admin.additional-courses.store'));
 }
 </script>
 

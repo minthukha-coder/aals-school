@@ -1,10 +1,9 @@
 <template>
     <div>
         <Layout>
-            <h5 class="text-center">Foundation Course Page</h5>
+            <h5 class="text-center">International Courses Page</h5>
             <div class="row">
-                <Link :href="route('admin.foundation-courses.create')"><button class="btn btn-primary">Create</button>
-                </Link>
+                <Link :href="route('admin.international-courses.create')"><button class="btn btn-success float-end"><font-awesome-icon icon="fa-solid fa-circle-plus" /> Create</button></Link>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
                     <div v-for="course in courses" :key="course.id" class="card mb-4 shadow rounded overflow-hidden">
@@ -12,13 +11,11 @@
                             style="height: 200px; object-fit: cover;" />
 
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">{{ course.title }}</h5>
-                            <p class="card-text text-muted">{{ course.age }}</p>
-                            <p class="card-text text-muted">{{ course.duration }}</p>
+                            <h5 class="card-title fw-bold">{{ course.name }}</h5>
                         </div>
 
                         <div class="card-footer bg-white d-flex justify-content-end gap-3 border-top">
-                            <Link :href="route('admin.foundation-courses.edit', { id: course.id })" class="text-decoration-none">
+                            <Link :href="route('admin.international-courses.edit', {id : course.id})" class="text-decoration-none">
                             <button type="button"
                                 class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
                                 <font-awesome-icon icon="fa-solid fa-pen-to-square" />
@@ -44,16 +41,15 @@
 </template>
 
 <script setup>
-import { del } from '../../Composables/httpMethod';
 import Layout from '../Layouts/Layout.vue';
-
+import { useForm } from '@inertiajs/vue3';
+import { del } from '../../Composables/httpMethod';
 const props = defineProps({
     courses: Array,
 });
-
 const deleteCourse = (id) => {
-    del(route('admin.foundation-courses.destroy', { id: id }));
-}
+    del(route('admin.international-courses.destroy', {id : id}));
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -10,18 +10,14 @@ use Illuminate\Support\Facades\Storage;
 class CourseController extends Controller
 {
     //
-    public function __construct(protected Course $model){
-
-    }
+    public function __construct(protected Course $model) {}
 
     //index
     public function index()
     {
         $courses = $this->model->all();
-        foreach($courses as $course) {
-            if ($course->image) {
-                $course->image = asset('storage/images/' . $course->image);
-            }
+        foreach ($courses as $course) {
+            $course->image = asset('storage/images/' . $course->image);
         }
         return inertia('Admin/Course/Index', compact('courses'));
     }
@@ -38,7 +34,7 @@ class CourseController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif|max:2048',
         ]);
 
         if ($request->file('image')) {
@@ -53,43 +49,36 @@ class CourseController extends Controller
     }
 
     //edit
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $course = $this->model->findOrFail($id);
-        if ($course->image) {
-            $course->image = asset('storage/images/' . $course->image);
-        }
+        $course = $this->model->findOrFail($request->id);
+        $course->image = $course->image ? asset('storage/images/' . $course->image) : null;
         return inertia('Admin/Course/Edit', compact('course'));
     }
     //update
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $course = $this->model->findOrFail($id);
-
+        $course = $this->model->findOrFail($request->id);
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable',
         ]);
 
         if ($request->file('image')) {
-            if ($course->image) {
-                Storage::delete('public/images/' . $course->image);
-            }
+            Storage::delete('public/images/' . $course->image);
             $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('public/images', $imageName);
             $data['image'] = $imageName;
         }
-
         $course->update($data);
 
         return redirect()->route('admin.courses.index')->with('success', 'Course updated successfully.');
-    }   
+    }
 
     //delete
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $course = $this->model->findOrFail($id);
+        $course = $this->model->findOrFail($request->id);
         if ($course->image) {
             Storage::delete('public/images/' . $course->image);
         }

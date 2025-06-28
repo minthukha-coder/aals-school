@@ -21,10 +21,9 @@ class AdditionalCourseController extends Controller
     {
         $courses = $this->model->all();
         foreach ($courses as $course) {
-            if ($course->image) {
                 $course->image = asset('storage/images/' . $course->image);
             }
-        }
+
         return inertia('Admin/AdditionalCourse/Index', compact('courses'));
     }
 
@@ -39,7 +38,7 @@ class AdditionalCourseController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         if ($request->file('image')) {
@@ -53,26 +52,26 @@ class AdditionalCourseController extends Controller
         return redirect()->route('admin.additional-courses.index')->with('success', 'Additional course created successfully.');
     }
     //edit
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $course = $this->model->findOrFail($id);
+        $course = $this->model->findOrFail($request->id);
         if ($course->image) {
             $course->image = asset('storage/images/' . $course->image);
         }
         return inertia('Admin/AdditionalCourse/Edit', compact('course'));
     }
     //update
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $course = $this->model->findOrFail($id);
+        $course = $this->model->findOrFail($request->id);
 
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
-        if ($request->file('image')) {
+         if ($request->file('image')) {
+            Storage::delete('public/images/' . $course->image);
             $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('public/images', $imageName);
             $data['image'] = $imageName;
@@ -83,15 +82,13 @@ class AdditionalCourseController extends Controller
         return redirect()->route('admin.additional-courses.index')->with('success', 'Additional course updated successfully.');
     }
     //destroy
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $course = $this->model->findOrFail($id);
+        $course = $this->model->findOrFail($request->id);
         if ($course->image) {
-            // Delete the image file from storage
             Storage::delete('public/images/' . $course->image);
         }
         $course->delete();
-
         return redirect()->route('admin.additional-courses.index')->with('success', 'Additional course deleted successfully.');
     }
 }

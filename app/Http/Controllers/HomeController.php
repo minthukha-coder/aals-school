@@ -23,12 +23,13 @@ class HomeController extends Controller
         $courses = Course::all();
         $about = About::first();
         $additionalCourses = AdditionalCourse::all();
-        $partnershipImages = Partnership::all();
-        if($partnershipImages){
-            foreach($partnershipImages as $partnershipImage) {
-                $partnershipImage->image = asset('storage/images/' . $partnershipImage->image);
-            }
+        $partnership = Partnership::first();
+
+        if ($partnership) {
+            $partnership->image1 = asset('storage/images/' . $partnership->image1);
+            $partnership->image2 = asset('storage/images/' . $partnership->image2);
         }
+
         if ($additionalCourses) {
             foreach ($additionalCourses as $additionalCourse) {
                 $additionalCourse->image = asset('storage/images/' . $additionalCourse->image);
@@ -46,12 +47,12 @@ class HomeController extends Controller
                 $course->image = asset('storage/images/' . $course->image);
             }
         }
-        return Inertia::render('User/Home', compact('homeImage', 'about', 'courses', 'additionalCourses', 'partnershipImages'));
+        return Inertia::render('User/Home', compact('homeImage', 'about', 'courses', 'additionalCourses', 'partnership'));
     }
 
     public function foundationCourse()
     {
-        $foundationCourses = FoundationCourse::all();
+        $foundationCourses = FoundationCourse::get();
         if ($foundationCourses) {
             foreach ($foundationCourses as $foundationCourse) {
                 $foundationCourse->image = asset('storage/images/' . $foundationCourse->image);
@@ -62,7 +63,7 @@ class HomeController extends Controller
 
     public function cambridgeCourse()
     {
-        $cambridgeCourses = CambridgeCourse::all();
+        $cambridgeCourses = CambridgeCourse::get();
         if ($cambridgeCourses) {
             foreach ($cambridgeCourses as $cambridgeCourse) {
                 $cambridgeCourse->image = asset('storage/images/' . $cambridgeCourse->image);

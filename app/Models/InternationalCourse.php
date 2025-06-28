@@ -4,13 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CambridgeCourse extends Model
+class InternationalCourse extends Model
 {
     //
     protected $fillable = [
-        'title',
-        'course',
-        'duration',
-        'image'
+        'name',
+        'image',
     ];
 }

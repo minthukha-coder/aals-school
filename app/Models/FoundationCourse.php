@@ -11,5 +11,6 @@ class FoundationCourse extends Model
         'title',
         'age',
         'duration',
+        'image'
     ];
 }

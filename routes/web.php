@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InternationalCourseController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -40,9 +41,9 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');
-        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
-        Route::delete('{id}/', 'destroy')->name('destroy');
+        Route::delete('/', 'destroy')->name('destroy');
     });
 
     Route::group(['prefix' => 'additional-courses', 'controller' => AdditionalCourseController::class, 'as' => 'additional-courses.'], function () {
@@ -70,7 +71,7 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
-    }); 
+    });
 
     Route::group(['prefix' => 'cambridge-courses', 'controller' => CambridgeCourseController::class, 'as' => 'cambridge-courses.'], function () {
         Route::get('/', 'index')->name('index');
@@ -79,9 +80,18 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
-    });	
+    });
 
     Route::group(['prefix' => 'cambridge-exam-courses', 'controller' => CambridgeExamCourseController::class, 'as' => 'cambridge-exam-courses.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'international-courses', 'controller' => InternationalCourseController::class, 'as' => 'international-courses.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');

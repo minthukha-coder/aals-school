@@ -1,68 +1,54 @@
 <template>
-    <div :class="['sidebar', { collapsed: isCollapsed }]" class="text-white d-flex flex-column justify-between">
-        <!-- Navigation -->
-        <ul class="nav flex-column">
-            <SideLink icon="fa-solid fa-chart-pie" text="Home" :href="route('admin.home.index')"
-                :active="currentRoute === 'admin.home.index'" />
+    <div class="col-lg-1.5 col-md-1.5 d-lg-flex d-md-flex d-sm-flex justify-between">
+        <div>
+            <ul class="p-2">
+                <SideLink :href="route('admin.home.index')" icon="fa-solid fa-chart-pie" :isOpen="showHome"
+                    text="Home" />
+                <SideLink :href="route('admin.about.index')" icon="fa-solid fa-chart-pie" :isOpen="showAbout"
+                    text="About" />
+                <SideLink :href="route('admin.courses.index')" icon="fa-solid fa-chart-pie" :isOpen="showCourse"
+                    text="Courses" />
+                <SideLink :href="route('admin.additional-courses.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showAdditionalCourse" text="Additional Courses" />
+                <SideLink :href="route('admin.partnerships.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showPartnership" text="Partnerships" />
+                <SideLink :href="route('admin.foundation-courses.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showFoundationCourse" text="Foundation Courses" />
+                <SideLink :href="route('admin.cambridge-courses.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showCambridgeCourse" text="Cam-Academic Courses" />
+                <SideLink :href="route('admin.cambridge-exam-courses.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showCambridgeExamCourse" text="Cambridge Exam Courses" />
+                <SideLink :href="route('admin.international-courses.index')" icon="fa-solid fa-chart-pie"
+                    :isOpen="showInternationalCourse" text="International Exam Servcies" />
 
-            <SideLink icon="fa-solid fa-chart-pie" text="About" :href="route('admin.about.index')"
-                :active="currentRoute === 'admin.about.index'" />
+            </ul>
 
-            <SideLink icon="fa-solid fa-chart-pie" text="Courses" :href="route('admin.courses.index')"
-                :active="currentRoute === 'admin.courses.index'" />
-
-            <SideLink icon="fa-solid fa-chart-pie" text="Additional Courses"
-                :href="route('admin.additional-courses.index')"
-                :active="currentRoute === 'admin.additional-courses.index'" />
-
-            <SideLink icon="fa-solid fa-chart-pie" text="Partnerships" :href="route('admin.partnerships.index')"
-                :active="currentRoute === 'admin.partnerships.index'" />
-
-            <SideLink icon="fa-solid fa-chart-pie" text="Foundation Courses"
-                :href="route('admin.foundation-courses.index')"
-                :active="currentRoute === 'admin.foundation-courses.index'" />
-
-            <SideLink icon="fa-solid fa-chart-pie" text="Cambridge Academic English Courses"
-                :href="route('admin.cambridge-courses.index')"
-                :active="currentRoute === 'admin.cambridge-courses.index'" />
-
-            <SideLink icon="fa-solid fa-chart-pie" text="Cambridge Exam Courses"
-                :href="route('admin.cambridge-exam-courses.index')"
-                :active="currentRoute === 'admin.cambridge-exam-courses.index'" />
-        </ul>
-
-        <!-- Toggle Collapse -->
-        <div class="text-center p-3">
-            <button class="btn btn-sm btn-light" @click="toggleCollapse">
-                <i :class="isCollapsed
-                        ? 'fa fa-chevron-right'
-                        : 'fa fa-chevron-left'
-                    "></i>
-            </button>
         </div>
     </div>
+
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
-import { usePage } from "@inertiajs/vue3";
 import { route } from "ziggy-js";
 import SideLink from "./SideLink.vue";
 
-const isCollapsed = ref(false);
-const toggleCollapse = () => {
-    isCollapsed.value = !isCollapsed.value;
-};
-
-const page = usePage();
-const currentRoute = computed(() => page.component);
+const showHome = ref(route().current("admin.home.index"));
+const showAbout = ref(route().current("admin.about.index"));
+const showCourse = ref(route().current("admin.courses.index"));
+const showAdditionalCourse = ref(route().current("admin.additional-courses.index"));
+const showPartnership = ref(route().current("admin.partnerships.index"));
+const showFoundationCourse = ref(route().current("admin.foundation-courses.index"));
+const showCambridgeCourse = ref(route().current("admin.cambridge-courses.index"));
+const showCambridgeExamCourse = ref(route().current("admin.cambridge-exam-courses.index"));
+const showInternationalCourse = ref(route().current("admin.international-courses.index"));
 </script>
 
 <style scoped>
 .sidebar {
     background-color: #111827;
     color: #fff;
-    width: 250px;
+    width: 280px;
     transition: width 0.3s ease;
     height: 100vh;
     padding-top: 1rem;
