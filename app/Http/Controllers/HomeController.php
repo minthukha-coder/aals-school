@@ -50,6 +50,18 @@ class HomeController extends Controller
         return Inertia::render('User/Home', compact('homeImage', 'about', 'courses', 'additionalCourses', 'partnership'));
     }
 
+    //login form
+    public function loginForm()
+    {
+        return Inertia::render('User/Login');
+    }
+
+    //login
+    public function login(Request $request)
+    {
+        
+    }
+
     public function foundationCourse()
     {
         $foundationCourses = FoundationCourse::get();
