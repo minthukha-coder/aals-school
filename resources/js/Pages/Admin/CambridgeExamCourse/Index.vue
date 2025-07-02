@@ -3,8 +3,9 @@
         <Layout>
             <h5 class="text-center">Cambridge Exam Course Page</h5>
             <div class="row">
-                <Link :href="route('admin.cambridge-exam-courses.create')"><button class="btn btn-primary">Create</button>
-                </Link>
+                <Link :href="route('admin.cambridge-exam-courses.create')"><button
+                    class="btn btn-success float-end"><font-awesome-icon icon="fa-solid fa-circle-plus" />
+                    Create</button></Link>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
                     <div v-for="course in courses" :key="course.id" class="card mb-4 shadow rounded overflow-hidden">

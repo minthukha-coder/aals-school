@@ -12,29 +12,14 @@
         <section class="bg-green-200" id="additional-courses">
             <div class="max-w-7xl mx-auto py-4">
                 <h3 class="py-4">Additional Courses</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 place-items-center p-2">
-                    <div class="">
-                        <Card :title="'ICT Coding'" />
-                    </div>
-                    <div class="">
-                        <Card :title="'Programming'" />
-                    </div>
-                    <div class="">
-                        <Card :title="'Adult English'" />
-                    </div>
-                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 place-items-center p-2">
-                    <div class="">
-                        <Card :title="'ICT Coding'" />
+                    <div v-for="course in additionalCourses" :key="course.id" class="">
+                        <Card :course="course" />
                     </div>
-                    <div class="">
-                        <Card :title="'Programming'" />
-                    </div>
-                    <div class="">
-                        <Card :title="'Adult English'" />
-                    </div>
+
                 </div>
+
             </div>
         </section>
     </Layout>
@@ -43,6 +28,10 @@
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import Card from "../User/Components/Card.vue";
+
+const props = defineProps({
+    additionalCourses : Array
+})
 </script>
 
 <style lang="scss" scoped></style>

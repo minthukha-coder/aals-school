@@ -13,81 +13,20 @@
             <div class="max-w-7xl mx-auto mt-5">
                 <h3 class="py-4 text-center">Cambridge Exam Courses</h3>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
-                    <div class="flex items-end">
+                    <div v-for="course in cambridgeExamCourses" :key="course.id" class="flex items-end">
                         <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
                             <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
                         </div>
                         <div class=" w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6 class="font-bold text-xl">Course : Staters</h6>
-                            <p>Duration : 3 Months</p>
-                            <span class="ml-18">March, April, May</span>
+                            <h6 class="font-bold text-xl">Course : {{ course.name }}</h6>
+                            <p>Duration : {{ course.duration }}</p>
+                            <span class="ml-18">{{ course.months }}</span>
                             <button class="btn btn-success float-end my-3">email me <font-awesome-icon
                                     icon="fa-solid fa-envelope" /></button>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
-                    <div class="flex items-end">
-                        <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
-                        </div>
-                        <div class=" w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6 class="font-bold text-base">Course : Staters</h6>
-                            <p>Duration : 3 Months</p>
-                            <span class="ml-18">March, April, May</span>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
-                    <div class="flex items-end">
-                        <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
-                        </div>
-                        <div class=" w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6>Course : Staters</h6>
-                            <p>Duration : 3 Months</p>
-                            <span class="ml-18">March, April, May</span>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
-                    <div class="flex items-end">
-                        <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
-                        </div>
-                        <div class=" w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6>Course : Staters</h6>
-                            <p>Duration : 3 Months</p>
-                            <span class="ml-18">March, April, May</span>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
-                    <div class="flex items-end">
-                        <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
-                        </div>
-                        <div class=" w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6>Course : Staters</h6>
-                            <p>Duration : 3 Months</p>
-                            <span class="ml-18">March, April, May</span>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
@@ -106,8 +45,10 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
-import Card from "../User/Components/Card.vue";
-import imageCard from "../User/Components/imageCard.vue";
+
+const props = defineProps({
+    cambridgeExamCourses : Array
+})
 </script>
 
 <style lang="scss" scoped></style>

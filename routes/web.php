@@ -16,12 +16,12 @@ use App\Http\Controllers\Admin\CambridgeExamCourseController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
-Route::get('/foundation-course', [UserHomeController::class, 'foundationCourse'])->name('foundation-course');
-Route::get('/cambridge-course', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-course');
-Route::get('/additional-course', [UserHomeController::class, 'additionalCourse'])->name('additional-course');
+Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-course');
+Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-course');
+Route::get('/additional-courses', [UserHomeController::class, 'additionalCourse'])->name('additional-course');
 Route::get('/about', [UserHomeController::class, 'about'])->name('about');
 Route::get('/courses', [UserHomeController::class, 'courses'])->name('courses');
-Route::get('/cambridge-exam-course', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-course');
+Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-course');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 
 Route::controller(AuthController::class)->group(function () {

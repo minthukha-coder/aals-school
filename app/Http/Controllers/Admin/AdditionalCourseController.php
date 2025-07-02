@@ -19,7 +19,7 @@ class AdditionalCourseController extends Controller
     //index
     public function index()
     {
-        $courses = $this->model->all();
+        $courses = $this->model->get();
         foreach ($courses as $course) {
                 $course->image = asset('storage/images/' . $course->image);
             }

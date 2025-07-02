@@ -116,14 +116,14 @@
                 <section id="partnership" class="mt-5 max-w-7xl mx-auto ">
                     <h3 class="font-bold text-center mb-4">Partnership</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div class="border border-danger card p-3 w-full">
+                        <div class="border border-black card p-3 w-full">
                             <h4>{{ partnership?.title }}</h4>
                             <p>
                                 {{ partnership?.description }}
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 relative">
-                            <imageCard :image="partnership?.image1" />
+                            <imageCard :image="partnership?.image1" class="absolute top-[-20px]" />
                             <div
                                 class="bg-green-300 w-90 h-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 text-center text-white font-bold z-[-2]">
                             </div>

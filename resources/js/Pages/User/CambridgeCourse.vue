@@ -12,7 +12,7 @@
         <section>
             <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mt-5 place-items-center">
                 <div v-for="course in cambridgeCourses" :key="course.id" class="flex flex-col md:flex-row lg:flex-row gap-2">
-                    <imageCard :image="course.image"/>
+                    <imageCard :image="course.image" class="border w-70 h-48 overflow-hidden rounded-2xl shadow-lg "/>
                     <div class="flex flex-col mt-3 mx-2">
                         <span class="font-bold">{{ course.title }}</span>
                         <span class="font-bold">Courses : {{ course.course }}</span>

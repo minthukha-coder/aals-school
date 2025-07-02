@@ -1,15 +1,15 @@
 <template>
     <div class="card w-full p-4 shadow-lg" style="border-radius:20px;">
-        <img :src="props.image" alt="">
-        <h4 class="text-center my-3 font-bold">{{ title }}</h4>
+        <img :src="course?.image" alt="">
+        <h4 class="text-start my-3 font-bold">{{ course.title }}</h4>
+        <h5>Duration : {{ course.duration }} months</h5>
     </div>
 
 </template>
 
 <script setup>
 const props = defineProps({
-    title : String,
-    image : String,
+    course : Object
 })
 
 </script>

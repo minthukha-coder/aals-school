@@ -64,11 +64,11 @@
 
                                 <div class="flex justify-around gap-3">
                                     <div class="flex flex-col justify-center items-center">
-                                        <a :href="route('foundation-course')"
+                                        <a :href="route('cambridge-exam-course')"
                                             class="block no-underline text-dark hover:text-green-600">KET</a>
-                                        <a :href="route('cambridge-course')"
+                                        <a :href="route('cambridge-exam-course')"
                                             class="block no-underline text-dark hover:text-green-600">PET</a>
-                                        <a :href="route('additional-course')"
+                                        <a :href="route('cambridge-exam-course')"
                                             class="block no-underline text-dark hover:text-green-600">FEC</a>
                                     </div>
                                     <div class="w-px bg-black"></div>

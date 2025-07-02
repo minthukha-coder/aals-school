@@ -3,7 +3,7 @@
         <Layout>
             <h5 class="text-center">Partnership Page</h5>
             <div class="row">
-                <Link :href="route('admin.partnerships.create')"><button class="btn btn-primary">Upload</button></Link>
+                <Link :href="route('admin.partnerships.create')"><button class="btn btn-success float-end"><font-awesome-icon icon="fa-solid fa-circle-plus" /> Upload</button></Link>
 
                 <div v-if="partnership" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div

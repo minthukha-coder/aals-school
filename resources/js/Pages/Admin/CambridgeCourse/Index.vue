@@ -2,9 +2,11 @@
     <div>
         <Layout>
             <h5 class="text-center">Cambridge Course Page</h5>
-           <div class="row">
-                <Link :href="route('admin.cambridge-courses.create')"><button class="btn btn-primary">Create</button>
-                </Link>
+            <div class="row">
+                <Link :href="route('admin.cambridge-courses.create')"><button
+                    class="btn btn-success float-end"><font-awesome-icon icon="fa-solid fa-circle-plus" />
+                    Create</button></Link>
+
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
                     <div v-for="course in courses" :key="course.id" class="card mb-4 shadow rounded overflow-hidden">
@@ -18,7 +20,8 @@
                         </div>
 
                         <div class="card-footer bg-white d-flex justify-content-end gap-3 border-top">
-                            <Link :href="route('admin.cambridge-courses.edit', { id: course.id })" class="text-decoration-none">
+                            <Link :href="route('admin.cambridge-courses.edit', { id: course.id })"
+                                class="text-decoration-none">
                             <button type="button"
                                 class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
                                 <font-awesome-icon icon="fa-solid fa-pen-to-square" />
