@@ -22,6 +22,8 @@ Route::get('/additional-courses', [UserHomeController::class, 'additionalCourse'
 Route::get('/about', [UserHomeController::class, 'about'])->name('about');
 Route::get('/courses', [UserHomeController::class, 'courses'])->name('courses');
 Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-course');
+Route::get('/international-courses', [UserHomeController::class, 'internationalCourse'])->name('international-course');
+Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 
 Route::controller(AuthController::class)->group(function () {

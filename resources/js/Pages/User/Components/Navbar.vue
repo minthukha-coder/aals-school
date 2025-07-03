@@ -88,17 +88,17 @@
 
                             <div class="p-2">
                                 <h6 class="font-bold mb-3">International Exam Services</h6>
-                                <a href="#" class="block no-underline text-dark hover:text-green-600">IELTS</a>
-                                <a href="#" class="block no-underline text-dark hover:text-green-600">GED</a>
-                                <a href="#" class="block no-underline text-dark hover:text-green-600">Duolingo</a>
-                                <a href="#" class="block no-underline text-dark hover:text-green-600">IGCSE O level
+                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">IELTS</a>
+                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">GED</a>
+                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">Duolingo</a>
+                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">IGCSE O level
                                     ESL, EFL</a>
                             </div>
                         </div>
                     </li>
 
                     <li>
-                        <a href="#" class="text-white flex items-center h-full">Gallery</a>
+                        <a :href="route('gallery')" class="text-white flex items-center h-full">Gallery</a>
                     </li>
                     <li>
                         <a :href="route('contact')" class="text-white flex items-center h-full">Contact Us</a>

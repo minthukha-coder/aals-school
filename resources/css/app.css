@@ -1,3 +1,4 @@
+
 /* @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap'); */
 @import 'tailwindcss';
 
@@ -20,4 +21,10 @@
 
 body{
     font-family: var(--font-family);
+    font-size:1rem;
+}
+
+img{
+    max-width:100%;
+    height:auto;
 }

@@ -9,6 +9,7 @@ use App\Models\CambridgeExamCourse;
 use App\Models\Course;
 use App\Models\FoundationCourse;
 use App\Models\HomeImage;
+use App\Models\InternationalCourse;
 use App\Models\Partnership;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
@@ -57,10 +58,7 @@ class HomeController extends Controller
     }
 
     //login
-    public function login(Request $request)
-    {
-        
-    }
+    public function login(Request $request) {}
 
     public function foundationCourse()
     {
@@ -106,10 +104,27 @@ class HomeController extends Controller
         return Inertia::render('User/CambridgeExamCourse', compact('cambridgeExamCourses'));
     }
 
+    public function internationalCourse()
+    {
+        $internationalCourses = InternationalCourse::all();
+        if ($internationalCourses) {
+            foreach ($internationalCourses as $internationalCourse) {
+                $internationalCourse->image = asset('storage/images/' . $internationalCourse->image);
+            }
+        }
+        return Inertia::render('User/InternationalCourse', compact('internationalCourses'));
+    }
+
     //about
     public function about()
     {
         return Inertia::render('User/About');
+    }
+
+    // gallery
+    public function gallery(){
+        return Inertia::render('User/Gallery');
+    
     }
 
     //contact

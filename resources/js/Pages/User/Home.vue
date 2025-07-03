@@ -1,7 +1,7 @@
     <template>
         <Layout>
             <div class="main-page">
-                <section class="hidden md:block home-page position-relative vh-90">
+                <section class="hidden md:block home-page position-relative">
                     <div>
                         <img :src="homeImage?.name" alt="" class="w-full object-cover" style="height: 500px" />
                     </div>
@@ -11,7 +11,7 @@
                     </div>
                 </section>
 
-                <section class="block md:hidden home-page position-relative vh-40">
+                <section class="block md:hidden home-page position-relative ">
                     <div>
                         <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
                     </div>
@@ -75,7 +75,7 @@
                         <h3 class="py-4 p-2">Additional Courses</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500 p-3">
                             <div v-for="course in additionalCourses" :key="course.id" class="">
-                                <Card :title="course.title" :image="course.image" />
+                                <Card :course="course" />
                             </div>
                         </div>
                     </div>
@@ -113,24 +113,39 @@
                 </section>
 
 
-                <section id="partnership" class="mt-5 max-w-7xl mx-auto ">
-                    <h3 class="font-bold text-center mb-4">Partnership</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <section id="partnership" class="mt-5 max-w-7xl mx-auto">
+                    <h3 class="font-bold text-center pb-15">Partnership</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <!-- Left Text Card -->
                         <div class="border border-black card p-3 w-full">
                             <h4>{{ partnership?.title }}</h4>
-                            <p>
-                                {{ partnership?.description }}
-                            </p>
+                            <p>{{ partnership?.description }}</p>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 relative">
-                            <imageCard :image="partnership?.image1" class="absolute top-[-20px]" />
-                            <div
-                                class="bg-green-300 w-90 h-40 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 text-center text-white font-bold z-[-2]">
+
+                        <div class="relative grid grid-cols-1 gap-4 md:block">
+
+                            <imageCard :image="partnership?.image1" class="
+          w-full md:w-1/2
+          md:absolute md:top-[-50px] md:left-0
+        " />
+
+                            <div class="
+          bg-green-300 w-full md:w-1/2 h-40
+          p-3 text-center text-white font-bold
+          md:absolute md:top-1/2 md:left-1/2
+          md:transform md:-translate-x-1/2 md:-translate-y-1/2
+          md:z-[-2]
+        ">
                             </div>
-                            <imageCard :image="partnership?.image2" class="absolute top-1/2 right-0" />
+
+                            <imageCard :image="partnership?.image2" class="
+          w-full md:w-1/2
+          md:absolute md:top-1/2 md:right-0
+        " />
                         </div>
                     </div>
                 </section>
+
 
                 <section id="student-learning" class="flex justify-center items-center mt-5">
                     <img src="../User/images/cambridge-logo.png" alt="" style="width: 400px;">
