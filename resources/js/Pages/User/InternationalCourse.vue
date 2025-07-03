@@ -16,7 +16,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
                     <div v-for="course in internationalCourses" :key="course.id" class="flex items-end my-2">
                         <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover" />
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover" style="height:100%;"/>
                         </div>
                         <div class="w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
                             <h6 class="font-bold text-xl">Course : {{ course.name }}</h6>

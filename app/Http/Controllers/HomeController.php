@@ -118,7 +118,11 @@ class HomeController extends Controller
     //about
     public function about()
     {
-        return Inertia::render('User/About');
+        $about = About::first();
+        if ($about) {
+            $about->image = asset('storage/images/' . $about->image);
+        }
+        return Inertia::render('User/About', compact('about'));
     }
 
     // gallery

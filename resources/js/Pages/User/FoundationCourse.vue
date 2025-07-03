@@ -4,8 +4,8 @@
             <div>
                 <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
-            <div class="absolute left-0 top-40 md:left-20 md:top-60 text-white p-2">
-                <h4 class="font-bold mx-20" style="font-size:50px;">Foundation Courses</h4>
+            <div class="absolute left-0 top-40 md:left-60 md:top-60 lg:left-40 lg:top-60 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:40px;">Foundation Courses</h4>
             </div>
         </section>
 

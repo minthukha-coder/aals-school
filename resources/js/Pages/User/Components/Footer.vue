@@ -39,7 +39,7 @@
 
         <!-- Site Links -->
         <div class="text-white">
-          <h3 class="text-lg font-bold text-white text-center md:!text-start">On this Site</h3>
+          <h3 class="text-lg font-bold text-white text-center">On this Site</h3>
           <ul class="flex flex-col mt-5 text-white text-center md:!text-start">
             <li><a href="#" class="text-white text-lg">Home</a></li>
             <li><a href="#" class="text-white text-lg">Courses</a></li>

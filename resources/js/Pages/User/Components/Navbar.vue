@@ -10,7 +10,7 @@
 
             <div id="search">
                 <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-white"
-                    placeholder="Search..." style="background-color:#80ed99;" />
+                    placeholder="Search..." style="border:1px solid #80ed99;"/>
             </div>
 
         </div>

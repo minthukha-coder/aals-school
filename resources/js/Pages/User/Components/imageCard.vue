@@ -1,6 +1,6 @@
 <template>
     <div class="border w-70 h-48 overflow-hidden rounded-2xl shadow-lg ">
-        <img :src="image" alt="" class="w-full h-full object-cover" />
+        <img :src="image" alt="" class="w-full h-full object-cover" style="height:100%;"/>
     </div>
 </template>
 
