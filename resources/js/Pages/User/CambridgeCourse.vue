@@ -21,7 +21,7 @@
                 </div>
 
 
-                <section class="position-relative w-100">
+                <section class="position-relative w-100 h-100">
                     <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
 
                 <div class="absolute left-30 top-20 text-white p-2">
@@ -30,10 +30,7 @@
                 </div>
             </section>
 
-
-            </div>
-        </section>
-
+           ါင
     </Layout>
 </template>
 
