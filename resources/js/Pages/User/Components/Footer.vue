@@ -7,14 +7,14 @@
 
     <!-- Footer Content -->
     <div class="pt-28 pb-3 bg-green-500">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto divide-x-2 divide-white-500 pt-3">
+      <div class="flex justify-evenly pt-3">
 
 
         <!-- Logos -->
         <div class="flex flex-col justify-center mt-5">
 
           <div>
-            <img src="../images/logo-footer.png" alt="" style="width:100px;">
+            <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
           </div>
           <div class="flex mx-6 mt-3">
             <img src="../images/cambridge-logo.png" alt="" style="width:60px;">
@@ -30,8 +30,8 @@
 
         <!-- Site Links -->
         <div class="text-white">
-          <h3 class="text-lg font-bold text-white text-center">On this Site</h3>
-          <ul class="flex flex-col mt-5 text-white text-center md:!text-start">
+          <h3 class="text-lg font-bold text-white text-start">On this Site</h3>
+          <ul class="flex flex-col mt-4 text-white text-center md:!text-start p-0">
             <li><a href="#" class="text-white text-lg">Available Courses</a></li>
             <li><a href="#" class="text-white text-lg">foundation Courses</a></li>
             <li><a href="#" class="text-white text-lg">Cambridge Academic</a></li>
@@ -41,6 +41,16 @@
             <li><a href="#" class="text-white text-lg">GED</a></li>
             <li><a href="#" class="text-white text-lg">IELTS</a></li>
             <li><a href="#" class="text-white text-lg">ICT Coding</a></li>
+          </ul>
+        </div>
+
+        <div class="mt-5">
+             <ul class="flex flex-col text-white text-center md:!text-start" style="margin-top:8px;">
+            <li><a href="#" class="text-white text-lg">Home</a></li>
+            <li><a href="#" class="text-white text-lg">Exam Services</a></li>
+            <li><a href="#" class="text-white text-lg">Gallery</a></li>
+            <li><a href="#" class="text-white text-lg">Contact Us</a></li>
+            <li><a href="#" class="text-white text-lg">About Us</a></li>
           </ul>
         </div>
 
@@ -61,21 +71,18 @@
           </div>
           <div class="flex justify-center items-center gap-2 mt-10" id="phone">
             <div>
-              <font-awesome-icon icon="fa-solid fa-phone" />
+              <font-awesome-icon icon="fa-solid fa-phone" class="fs-5" />
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col" style="opacity: 0.8;">
               <span>09778695126</span>
               <span>09778695126</span>
             </div>
           </div>
           <div class="flex justify-center items-center gap-2 mt-10" id="email">
-            <font-awesome-icon icon="fa-solid fa-envelope" />
-            <span>aals123@gmail.com</span>
+            <font-awesome-icon icon="fa-solid fa-envelope" class="fs-4"/>
+            <span style="opacity: 0.8;">aals123@gmail.com</span>
           </div>
         </div>
-
-
-
 
 
 
@@ -95,5 +102,6 @@
 ul li a {
   text-decoration: none;
   color: white;
+  opacity: 0.8;
 }
 </style>
