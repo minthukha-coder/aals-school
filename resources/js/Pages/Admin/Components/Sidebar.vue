@@ -19,7 +19,13 @@
                 <SideLink :href="route('admin.cambridge-exam-courses.index')" icon="fa-solid fa-chart-pie"
                     :isOpen="showCambridgeExamCourse" text="Cambridge Exam Courses" />
                 <SideLink :href="route('admin.international-courses.index')" icon="fa-solid fa-chart-pie"
-                    :isOpen="showInternationalCourse" text="International Exam Servcies" />
+                    :isOpen="showInternationalCourse" text="International Exam Services" />
+
+                <SideLink :href="route('admin.location.index')" icon="fa-solid fa-chart-pie" :isOpen="showLocation"
+                    text="Location" />
+
+                <SideLink :href="route('admin.positions.index')" icon="fa-solid fa-chart-pie" :isOpen="showPosition"
+                    text="Position" />
 
             </ul>
 
@@ -42,6 +48,8 @@ const showFoundationCourse = ref(route().current("admin.foundation-courses.index
 const showCambridgeCourse = ref(route().current("admin.cambridge-courses.index"));
 const showCambridgeExamCourse = ref(route().current("admin.cambridge-exam-courses.index"));
 const showInternationalCourse = ref(route().current("admin.international-courses.index"));
+const showLocation = ref(route().current("admin.location.index"));
+const showPosition = ref(route().current("admin.position.index"));
 </script>
 
 <style scoped>

@@ -13,7 +13,7 @@
 
                 <section class="block md:hidden home-page position-relative ">
                     <div>
-                        <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                        <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height:100%;" />
                     </div>
                     <div class="absolute left-0 top-0 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>

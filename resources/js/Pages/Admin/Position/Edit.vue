@@ -1,0 +1,78 @@
+<template>
+    <Layout>
+        <h4 class="text-center">Update Position</h4>
+        <div class="row mt-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
+                <v-row>
+                    <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.salary" rows="1" label="Salary" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.date" rows="1" label="Date" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.place" rows="1" label="Place" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.responsibilities" rows="1" label="Responsibilities"
+                        variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.requirements" rows="1" label="Requirements"
+                        variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.highlight" rows="1" label="HighLight" variant="outlined"></v-textarea>
+                </v-row>
+
+                <v-row>
+                    <v-textarea v-model="form.benefits" rows="1" label="Benefits" variant="outlined"></v-textarea>
+                </v-row>
+
+
+                <button @click="updatePosition" class="btn btn-success my-2">Update</button>
+            </div>
+        </div>
+    </Layout>
+</template>
+
+<script setup>
+import Layout from '@/Pages/Admin/Layouts/Layout.vue'
+import { useForm } from '@inertiajs/vue3';
+
+import { update } from '../../Composables/httpMethod';
+
+const props = defineProps({
+    position: Object,
+})
+const form = useForm({
+    name: props.position?.name || '',
+    salary: props.position?.salary || '',
+    date: props.position?.date || '',
+    place: props.position?.place || '',
+    responsibilities: props.position?.responsibilities || '',
+    requirements: props.position?.requirements,
+    highlight: props.position?.highlight || '',
+    benefits: props.position?.benefits || '',
+});
+
+
+const updatePosition = () => {
+    update(form, route("admin.positions.update"));
+}
+</script>
+
+<style scoped>
+.preview {
+    width: 100%;
+    height: 300px;
+}
+</style>

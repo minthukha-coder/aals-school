@@ -7,7 +7,44 @@
 
     <!-- Footer Content -->
     <div class="pt-28 pb-3 bg-green-500">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto divide-x-2 divide-white-500 pt-3">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mx-auto divide-x-2 divide-white-500 pt-3">
+
+
+        <!-- Logos -->
+        <div class="flex flex-col justify-center mt-5">
+
+          <div>
+            <img src="../images/logo-footer.png" alt="" style="width:100px;">
+          </div>
+          <div class="flex mx-6 mt-3">
+            <img src="../images/cambridge-logo.png" alt="" style="width:60px;">
+            <div class="relative">
+              <h3 class="text-white font-bold">UNIVERSITY OF</h3>
+              <h3 class="absolute text-xs font-bold text-white top-8">CAMBRIDGE</h3>
+            </div>
+          </div>
+          <div class="">
+            <img src="../images/british-logo.png" alt="" style="width:210px;">
+          </div>
+        </div>
+
+        <!-- Site Links -->
+        <div class="text-white">
+          <h3 class="text-lg font-bold text-white text-center">On this Site</h3>
+          <ul class="flex flex-col mt-5 text-white text-center md:!text-start">
+            <li><a href="#" class="text-white text-lg">Available Courses</a></li>
+            <li><a href="#" class="text-white text-lg">foundation Courses</a></li>
+            <li><a href="#" class="text-white text-lg">Cambridge Academic</a></li>
+            <li><a href="#" class="text-white text-lg">Adult English</a></li>
+            <li><a href="#" class="text-white text-lg">International Student Program</a></li>
+            <li><a href="#" class="text-white text-lg">IGCSE</a></li>
+            <li><a href="#" class="text-white text-lg">GED</a></li>
+            <li><a href="#" class="text-white text-lg">IELTS</a></li>
+            <li><a href="#" class="text-white text-lg">ICT Coding</a></li>
+          </ul>
+        </div>
+
+
         <!-- Contact Us Section -->
         <div class="flex flex-col text-white">
           <h3 class="text-lg font-bold text-white text-center">Contact Us</h3>
@@ -37,32 +74,11 @@
           </div>
         </div>
 
-        <!-- Site Links -->
-        <div class="text-white">
-          <h3 class="text-lg font-bold text-white text-center">On this Site</h3>
-          <ul class="flex flex-col mt-5 text-white text-center md:!text-start">
-            <li><a href="#" class="text-white text-lg">Home</a></li>
-            <li><a href="#" class="text-white text-lg">Courses</a></li>
-            <li><a href="#" class="text-white text-lg">Exam Services</a></li>
-            <li><a href="#" class="text-white text-lg">Gallery</a></li>
-            <li><a href="#" class="text-white text-lg">Contact Us</a></li>
-            <li><a href="#" class="text-white text-lg">About Us</a></li>
-          </ul>
-        </div>
 
-        <!-- Logos -->
-        <div class="flex flex-col justify-center items-center mt-5 ">
-          <div class="flex">
-            <img src="../images/cambridge-logo.png" alt="" style="width:60px;">
-            <div class="ml-2 relative">
-              <h3 class="text-white font-bold">CAMBRIDGE</h3>
-              <span class="absolute text-xs font-bold text-white top-8 left-1">UNIVERSITY PRESS & ASSESSMENT</span>
-            </div>
-          </div>
-          <div class="pr-5 mt-3">
-            <img src="../images/british-logo.png" alt="" style="width:210px;">
-          </div>
-        </div>
+
+
+
+
       </div>
 
       <h5 class="text-center text-white mt-5">AALS Aung Academy Language School</h5>

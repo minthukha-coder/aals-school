@@ -3,10 +3,12 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\PartnershipController;
 use App\Http\Controllers\InternationalCourseController;
 use App\Http\Controllers\Admin\CambridgeCourseController;
@@ -101,6 +103,24 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
     });
 
     Route::group(['prefix' => 'international-courses', 'controller' => InternationalCourseController::class, 'as' => 'international-courses.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'location', 'controller' => LocationController::class, 'as' => 'location.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'positions', 'controller' => PositionController::class, 'as' => 'positions.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');

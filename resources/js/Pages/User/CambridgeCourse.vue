@@ -9,28 +9,18 @@
             </div>
         </section>
 
-        <section>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mt-5 place-items-center">
-                <div v-for="course in cambridgeCourses" :key="course.id" class="flex flex-col md:flex-row lg:flex-row gap-2">
-                    <imageCard :image="course.image" class="border w-70 h-48 overflow-hidden rounded-2xl shadow-lg "/>
-                    <div class="flex flex-col mt-3 mx-2">
-                        <span class="font-bold">{{ course.title }}</span>
-                        <span class="font-bold">Courses : {{ course.course }}</span>
-                        <span class="font-bold">Duration : {{ course.duration }}</span>
+        <section class="container py-10">
+               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                <div class="flex border rounded-lg overflow-hidden" v-for="course in cambridgeCourses" :key="course.id">
+                    <div class="border w-70 h-40 overflow-hidden shadow-lg ">
+                        <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
+                    </div>
+                    <div class=" mx-3 mt-3">
+                        <p class="font-bold text-base">{{ course.title }}</p>
+                        <p class="font-bold text-base">Age : {{ course.age }}</p>
+                        <p class="font-bold text-base">Duration : {{ course.duration }}</p>
                     </div>
                 </div>
-
-
-                <section class="position-relative w-100">
-                    <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
-
-                <div class="absolute left-30 top-20 text-white p-2">
-                    <h3 class="font-bold" style="font-size:60px;">IGCSE</h3>
-                    <span class="text-3xl font-bold">Duration :  10 Months</span>
-                </div>
-            </section>
-
-
             </div>
         </section>
 

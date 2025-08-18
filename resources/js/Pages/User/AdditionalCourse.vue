@@ -9,7 +9,7 @@
             </div>
         </section>
 
-        <section class="bg-green-200" id="additional-courses">
+        <section class="" id="additional-courses">
             <div class="max-w-7xl mx-auto py-4">
                 <h3 class="py-4 px-1">Additional Courses</h3>
 

@@ -23,6 +23,11 @@
                     <li>
                         <a :href="route('home')" class="text-white flex items-center h-full">Home</a>
                     </li>
+
+                       <li>
+                        <a :href="route('home')" class="text-white flex items-center h-full">Carrier</a>
+                    </li>
+
                     <li class="relative group" id="courses">
                         <a href="#" class="text-white flex items-center h-full">Courses</a>
 
