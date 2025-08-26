@@ -26,15 +26,9 @@ class AuthController extends Controller
         ]);
 
         $data = $this->userService->login($request);
-        if (isset($data['message'])) {
-            session(['failed' => $data['message']]);
-            return redirect()->back();
-        }
-
-        session(['success' => 'Login success']);
-        if ($data['user']['role'] === 'admin') {
+        if ($data) {
             session(['success' => 'Login success']);
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.dashboard');
         }
         return redirect()->route('home');
     }
