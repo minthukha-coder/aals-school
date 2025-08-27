@@ -5,8 +5,9 @@
             { 'bg-green-500': props.isOpen },
             { 'text-white': props.isOpen },
         ]">
-            <font-awesome-icon class="" :icon="props.icon" />
-            <span class="pl-2 me-5" :class="props.isOpen ? 'text-white' : 'text-green-500'">
+            <font-awesome-icon
+            :class="props.isOpen ? 'text-white' : 'text-green-500'":icon="props.icon"/>
+            <span class="pl-2 me-5 text-xs" :class="props.isOpen ? 'text-white' : 'text-green-500'">
                 {{ props.text }}
             </span> <font-awesome-icon class="ml-auto" v-if="hasArrow" :class="{ '_rotate-0': isOpen }"
                 icon="fa-solid fa-caret-right" />

@@ -66,7 +66,7 @@ const form = useForm({
 
 
 const updatePosition = () => {
-    update(form, route("admin.positions.update"));
+    update(form, route("admin.positions.update", { id: props.position.id }));
 }
 </script>
 
