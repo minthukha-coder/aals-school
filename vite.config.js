@@ -12,11 +12,11 @@ export default defineConfig({
         tailwindcss(),
     ],
        server: {
-        host: '192.168.100.60',
+        host: '127.0.0.1',
         port: 5173,
         cors: true,  
         hmr: {
-            host: '192.168.100.60',
+            host: '127.0.0.1',
         },
     },
 });

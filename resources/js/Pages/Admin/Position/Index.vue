@@ -4,10 +4,10 @@
             <h5 class="text-center">Position Page</h5>
             <div class="">
                 <Link :href="route('admin.positions.create')"><button
-                    class="btn btn-success float-end"><font-awesome-icon icon="fa-solid fa-circle-plus" />
+                    class="btn btn-success float-end mb-2"><font-awesome-icon icon="fa-solid fa-circle-plus" />
                     Create</button></Link>
 
-                <table class="table table-bordered mt-3">
+                <v-table class="table table-bordered mt-3 whitespace-nowrap overflow-x-auto ">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -54,7 +54,7 @@
                         </tr>
                     </tbody>
 
-                </table>
+                </v-table>
             </div>
         </Layout>
     </div>

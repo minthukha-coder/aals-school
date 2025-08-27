@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CambridgeCourseController;
 use App\Http\Controllers\Admin\AdditionalCourseController;
 use App\Http\Controllers\Admin\FoundationCourseController;
 use App\Http\Controllers\Admin\CambridgeExamCourseController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
@@ -29,10 +30,20 @@ Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'loginForm')->name('login');
+    Route::get('/login', 'loginPage')->name('login');
     Route::post('/login', 'login')->name('login.post');
     Route::post('/logout', 'logout')->name('logout');
 });
+
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/profile', 'profile')->name('profile');
+    Route::post('/profile/update', 'updateProfile')->name('profile.update');
+});
+
+// Route::middleware('auth')->controller(ProfileController::class)->group(function () {
+//     Route::get('/profile', 'profile')->name('profile');               // Show profile page
+//     Route::post('/profile/update', 'updateProfile')->name('profile.update'); // Handle profile updates
+// });
 
 Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' => 'admin.'], function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');

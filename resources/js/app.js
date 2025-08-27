@@ -19,6 +19,8 @@ import '@mdi/font/css/materialdesignicons.css'
 import "../css/app.css";
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 //toast
  import Toast from "vue-toastification";
@@ -33,9 +35,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faFacebook,faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 
-import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus)
+library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser)
 
 const vuetify = createVuetify({
   components,
