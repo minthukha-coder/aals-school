@@ -51,6 +51,11 @@ class HomeController extends Controller
         return Inertia::render('User/Home', compact('homeImage', 'about', 'courses', 'additionalCourses', 'partnership'));
     }
 
+    //learning pathway
+    public function learningPathway(){
+        return Inertia::render('User/LearningPathway');
+    }
+
     //login form
     public function loginForm()
     {
@@ -128,7 +133,7 @@ class HomeController extends Controller
     // gallery
     public function gallery(){
         return Inertia::render('User/Gallery');
-    
+
     }
 
     //contact

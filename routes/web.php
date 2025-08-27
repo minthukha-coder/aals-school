@@ -19,13 +19,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
-Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-course');
-Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-course');
-Route::get('/additional-courses', [UserHomeController::class, 'additionalCourse'])->name('additional-course');
+Route::get('/learning-pathway', [UserHomeController::class, 'learningPathway'])->name('learning-pathway');
+Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-courses');
+Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-courses');
+Route::get('/additional-courses', [UserHomeController::class, 'additionalCourse'])->name('additional-courses');
 Route::get('/about', [UserHomeController::class, 'about'])->name('about');
 Route::get('/courses', [UserHomeController::class, 'courses'])->name('courses');
-Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-course');
-Route::get('/international-courses', [UserHomeController::class, 'internationalCourse'])->name('international-course');
+Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-courses');
+Route::get('/international-courses', [UserHomeController::class, 'internationalCourse'])->name('international-courses');
 Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 
@@ -34,6 +35,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login')->name('login.post');
     Route::post('/logout', 'logout')->name('logout');
 });
+
 
 Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile', 'profile')->name('profile');
@@ -46,6 +48,9 @@ Route::controller(ProfileController::class)->group(function () {
 // });
 
 Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' => 'admin.'], function () {
+
+
+Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' => 'admin.', 'middleware' => ['auth.admin']], function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::group(['prefix' => 'home', 'controller' => HomeController::class, 'as' => 'home.'], function () {
         Route::get('/', 'index')->name('index');

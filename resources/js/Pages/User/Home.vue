@@ -90,14 +90,13 @@
                         </h3>
                         <div
                             class="flex items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 py-2 px-10 h-15 rounded-lg text-white font-bold ">
-                            <button class="">Click
-                                Here</button>
+                            <Link :href="route('learning-pathway')"><button class="text-white">Click
+                                Here</button></Link>
                         </div>
                     </div>
                 </section>
 
-
-                <section id="partnership" class="mt-5 max-w-7xl mx-auto">
+                <section id="partnership" class="mt-5 max-w-7xl mx-auto" style="margin-bottom:100px;">
                     <h3 class="font-bold text-center pb-15">Partnership</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
                         <!-- Left Text Card -->
@@ -128,11 +127,6 @@
         " />
                         </div>
                     </div>
-                </section>
-
-
-                <section id="student-learning" class="flex justify-center items-center mt-5">
-                    <img src="../User/images/cambridge-logo.png" alt="" style="width: 400px;">
                 </section>
             </div>
         </Layout>

@@ -21,45 +21,45 @@
             <div class="hidden md:flex items-center mx-10">
                 <ul class="flex items-center gap-5 font-bold h-full">
                     <li>
-                        <a :href="route('home')" class="text-white flex items-center h-full">Home</a>
+                        <Link :href="route('home')" class="text-white text-decoration-none flex items-center h-full">Home</Link>
                     </li>
 
                        <li>
-                        <a :href="route('home')" class="text-white flex items-center h-full">Carrier</a>
+                        <Link :href="route('home')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
                     </li>
 
                     <li class="relative group" id="courses">
-                        <a href="#" class="text-white flex items-center h-full">Courses</a>
+                        <Link href="#" class="text-white text-decoration-none flex items-center h-full">Courses</Link>
 
                         <!-- Dropdown menu -->
                         <div class="absolute top-full left-0 hidden group-hover:flex bg-white text-black p-4 shadow-lg z-10"
                             style="width: 500px">
                             <div class="">
-                                <a :href="route('foundation-course')"
+                                <Link :href="route('foundation-courses')"
                                     class="d-block text-decoration-none text-dark">Foundation
-                                    Courses</a>
-                                <a :href="route('cambridge-course')"
+                                    Courses</Link>
+                                <Link :href="route('cambridge-courses')"
                                     class="d-block text-decoration-none text-dark">Cambridge
-                                    Academic English Courses</a>
-                                <a :href="route('additional-course')"
+                                    Academic English Courses</Link>
+                                <Link :href="route('additional-courses')"
                                     class="d-block text-decoration-none text-dark">Adult
-                                    English</a>
-                                <a :href="route('additional-course')"
-                                    class="d-block text-decoration-none text-dark">International Student Program</a>
+                                    English</Link>
+                                <Link :href="route('additional-courses')"
+                                    class="d-block text-decoration-none text-dark">International Student Program</Link>
                             </div>
                             <div class="h-40 bg-black mx-3" style="width: 2px"></div>
                             <div class="">
-                                <a :href="route('cambridge-course')" class="d-block text-decoration-none text-dark">IGCSE English</a>
-                                <a :href="route('additional-course')" class="d-block text-decoration-none text-dark">GED</a>
-                                <a :href="route('additional-course')" class="d-block text-decoration-none text-dark">IELTS</a>
-                                <a :href="route('additional-course')" class="d-block text-decoration-none text-dark">ICT Coding</a>
-                                <a :href="route('additional-course')" class="d-block text-decoration-none text-dark">Programming</a>
+                                <Link :href="route('cambridge-courses')" class="d-block text-decoration-none text-dark">IGCSE English</Link>
+                                <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">GED</Link>
+                                <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">IELTS</Link>
+                                <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">ICT Coding</Link>
+                                <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">Programming</Link>
                             </div>
                         </div>
                     </li>
 
                     <li class="relative group" id="exam-services">
-                        <a href="#" class="text-white flex items-center h-full">Exam Services</a>
+                        <Link href="#" class="text-white text-decoration-none flex items-center h-full">Exam Services</Link>
 
                         <!-- Dropdown menu -->
                         <div class="absolute top-full left-0 hidden group-hover:flex bg-white text-black p-6 shadow-lg z-10 rounded-lg space-x-6"
@@ -69,21 +69,21 @@
 
                                 <div class="flex justify-around gap-3">
                                     <div class="flex flex-col justify-center items-center">
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">KET</a>
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">PET</a>
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">FEC</a>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">KET</Link>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">PET</Link>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">FEC</Link>
                                     </div>
                                     <div class="w-px bg-black"></div>
                                     <div class="">
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">Stater</a>
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">Movers</a>
-                                        <a :href="route('cambridge-exam-course')"
-                                            class="block no-underline text-dark hover:text-green-600">Flyers</a>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">Stater</Link>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">Movers</Link>
+                                        <Link :href="route('cambridge-exam-courses')"
+                                            class="block text-decoration-none text-dark hover:text-green-600">Flyers</Link>
                                     </div>
                                 </div>
 
@@ -93,23 +93,23 @@
 
                             <div class="p-2">
                                 <h6 class="font-bold mb-3">International Exam Services</h6>
-                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">IELTS</a>
-                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">GED</a>
-                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">Duolingo</a>
-                                <a :href="route('international-course')" class="block no-underline text-dark hover:text-green-600">IGCSE O level
-                                    ESL, EFL</a>
+                                <Link :href="route('international-courses')" class="block text-decoration-none text-dark hover:text-green-600">IELTS</Link>
+                                <Link :href="route('international-courses')" class="block text-decoration-none text-dark hover:text-green-600">GED</Link>
+                                <Link :href="route('international-courses')" class="block text-decoration-none text-dark hover:text-green-600">Duolingo</Link>
+                                <Link :href="route('international-courses')" class="block text-decoration-none text-dark hover:text-green-600">IGCSE O level
+                                    ESL, EFL</Link>
                             </div>
                         </div>
                     </li>
 
                     <li>
-                        <a :href="route('gallery')" class="text-white flex items-center h-full">Gallery</a>
+                        <Link :href="route('gallery')" class="text-white text-decoration-none flex items-center h-full">Gallery</Link>
                     </li>
                     <li>
-                        <a :href="route('contact')" class="text-white flex items-center h-full">Contact Us</a>
+                        <Link :href="route('contact')" class="text-white text-decoration-none flex items-center h-full">Contact Us</Link>
                     </li>
-                    <li>
-                        <a :href="route('about')" class="text-white flex items-center h-full">About Us</a>
+                    <li class="">
+                        <Link :href="route('about')" class="text-white text-decoration-none flex items-center h-full">About Us</Link>
                     </li>
                 </ul>
             </div>
@@ -123,39 +123,39 @@
         </div>
 
         <div v-show="isMobileMenuOpen" class="md:hidden bg-white text-black px-4 pb-4 space-y-2">
-            <a :href="route('home')" class="block py-2">Home</a>
+            <Link :href="route('home')" class="block py-2 text-bloack">Home</Link>
             <div>
                 <p class="font-bold">Courses</p>
                 <div class="pl-4 space-y-1">
-                    <a :href="route('foundation-course')" class="block">Foundation Courses</a>
-                    <a :href="route('cambridge-course')" class="block">Cambridge Academic English Courses</a>
-                    <a :href="route('additional-course')" class="block">Adult English</a>
-                    <a href="#" class="block">International Student Program</a>
-                    <a href="#" class="block">IGCSE English</a>
-                    <a href="#" class="block">GED</a>
-                    <a href="#" class="block">IELTS</a>
-                    <a href="#" class="block">ICT Coding</a>
-                    <a href="#" class="block">Programming</a>
+                    <Link :href="route('foundation-courses')" class="block text-black text-decoration-none">Foundation Courses</Link>
+                    <Link :href="route('cambridge-courses')" class="block text-black text-decoration-none">Cambridge Academic English Courses</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">Adult English</Link>
+                    <Link href="#" class="block text-black text-decoration-none">International Student Program</Link>
+                    <Link href="#" class="block text-black text-decoration-none">IGCSE English</Link>
+                    <Link href="#" class="block text-black text-decoration-none">GED</Link>
+                    <Link href="#" class="block text-black text-decoration-none">IELTS</Link>
+                    <Link href="#" class="block text-black text-decoration-none">ICT Coding</Link>
+                    <Link href="#" class="block text-black text-decoration-none">Programming</Link>
                 </div>
             </div>
             <div>
                 <p class="font-bold">Exam Services</p>
                 <div class="pl-4 space-y-1">
-                    <a href="#" class="block">KET</a>
-                    <a href="#" class="block">PET</a>
-                    <a href="#" class="block">FEC</a>
-                    <a href="#" class="block">Starters</a>
-                    <a href="#" class="block">Movers</a>
-                    <a href="#" class="block">Flyers</a>
-                    <a href="#" class="block">IELTS</a>
-                    <a href="#" class="block">GED</a>
-                    <a href="#" class="block">Duolingo</a>
-                    <a href="#" class="block">IGCSE O level ESL, EFL</a>
+                    <Link href="#" class="block text-black text-decoration-none">KET</Link>
+                    <Link href="#" class="block text-black text-decoration-none">PET</Link>
+                    <Link href="#" class="block text-black text-decoration-none">FEC</Link>
+                    <Link href="#" class="block text-black text-decoration-none">Starters</Link>
+                    <Link href="#" class="block text-black text-decoration-none">Movers</Link>
+                    <Link href="#" class="block text-black text-decoration-none">Flyers</Link>
+                    <Link href="#" class="block text-black text-decoration-none">IELTS</Link>
+                    <Link href="#" class="block text-black text-decoration-none">GED</Link>
+                    <Link href="#" class="block text-black text-decoration-none">Duolingo</Link>
+                    <Link href="#" class="block text-black text-decoration-none">IGCSE O level ESL, EFL</Link>
                 </div>
             </div>
-            <a href="#" class="block py-2">Gallery</a>
-            <a :href="route('contact')" class="block py-2">Contact Us</a>
-            <a :href="route('about')" class="block py-2">About Us</a>
+            <Link :href="route('gallery')" class="block text-decoration-nonepy-2">Gallery</Link>
+            <Link :href="route('contact')" class="block text-decoration-none py-2">Contact Us</Link>
+            <Link :href="route('about')" class="block text-decoration-none py-2">About Us</Link>
         </div>
     </nav>
 </template>
@@ -166,8 +166,5 @@ const isMobileMenuOpen = ref(false);
 </script>
 
 <style scoped>
-ul li a{
-    text-decoration: none;
-    color: white;
-}
+
 </style>
