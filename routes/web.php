@@ -10,16 +10,16 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\PartnershipController;
-use App\Http\Controllers\InternationalCourseController;
+use App\Http\Controllers\Admin\InternationalCourseController;
 use App\Http\Controllers\Admin\CambridgeCourseController;
 use App\Http\Controllers\Admin\AdditionalCourseController;
 use App\Http\Controllers\Admin\FoundationCourseController;
 use App\Http\Controllers\Admin\CambridgeExamCourseController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
-Route::get('/learning-pathway', [UserHomeController::class, 'learningPathway'])->name('learning-pathway');
+Route::get('/career', [UserHomeController::class, 'career'])->name('career');
 Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-courses');
 Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-courses');
 Route::get('/additional-courses', [UserHomeController::class, 'additionalCourse'])->name('additional-courses');
@@ -35,20 +35,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login')->name('login.post');
     Route::post('/logout', 'logout')->name('logout');
 });
-
-
-Route::controller(ProfileController::class)->group(function () {
-    Route::get('/profile', 'profile')->name('profile');
-    Route::post('/profile/update', 'updateProfile')->name('profile.update');
-});
-
-// Route::middleware('auth')->controller(ProfileController::class)->group(function () {
-//     Route::get('/profile', 'profile')->name('profile');               // Show profile page
-//     Route::post('/profile/update', 'updateProfile')->name('profile.update'); // Handle profile updates
-// });
-
-Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' => 'admin.'], function () {
-
 
 Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' => 'admin.', 'middleware' => ['auth.admin']], function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
@@ -143,5 +129,10 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::controller(ProfileController::class)->group(function () {
+        Route::get('/profile', 'profile')->name('profile');
+        Route::post('/profile/update', 'updateProfile')->name('profile.update');
     });
 });

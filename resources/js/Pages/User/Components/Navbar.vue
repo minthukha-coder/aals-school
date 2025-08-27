@@ -25,7 +25,7 @@
                     </li>
 
                        <li>
-                        <Link :href="route('home')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
+                        <Link :href="route('career')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
                     </li>
 
                     <li class="relative group" id="courses">

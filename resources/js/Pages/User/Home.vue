@@ -90,7 +90,7 @@
                         </h3>
                         <div
                             class="flex items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 py-2 px-10 h-15 rounded-lg text-white font-bold ">
-                            <Link :href="route('learning-pathway')"><button class="text-white">Click
+                            <Link><button class="text-white">Click
                                 Here</button></Link>
                         </div>
                     </div>

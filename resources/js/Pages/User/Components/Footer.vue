@@ -1,11 +1,7 @@
 <template>
   <div class="relative">
-    <!-- SVG Wave -->
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="absolute top-0 w-full">
-  <path fill="#25a244" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,117.3C480,107,600,53,720,42.7C840,32,960,64,1080,69.3C1200,75,1320,53,1380,42.7L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-</svg> -->
 
-    <!-- Footer Content -->
+
     <div class="pt-28 pb-3 bg-green-500">
   <div class="flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 

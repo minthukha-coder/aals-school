@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
 use App\Services\UserService;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -13,24 +15,12 @@ class ProfileController extends Controller
 
     }
 
-    // Show profile page
-//    public function profile()
-// {
-//     if (!auth()->check()) {
-//         return redirect()->route('login');
-//     }
-
-//     return Inertia::render('User/Profile', [
-//         'user' => auth()->user(),
-//     ]);
-// }
-
     // Love You 
 
     public function profile()
     {
-        return Inertia::render('User/Profile', [
-            'user' => auth()->user()
+        return Inertia::render('Admin/Profile', [
+            'user' => Auth::user()
         ]);
     }
 
@@ -39,11 +29,11 @@ class ProfileController extends Controller
     public function updateProfile(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:users,email,' . auth()->id(),
+            'email' => 'required|email|unique:users,email',
             'password' => 'nullable|string|min:6|confirmed', // requires password_confirmation field
         ]);
 
-        $user = auth()->user();
+        $user = Auth::user();
         $user->email = $request->email;
 
         if ($request->password) {
@@ -52,6 +42,6 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('home')->with('success', 'Profile updated successfully!');
+        return redirect()->route('dashboard')->with('success', 'Profile updated successfully!');
     }
 }

@@ -22,11 +22,11 @@ class UserService
         }
 
         Auth::login($user);
-        $token = $user->createToken('AALS_Token')->plainTextToken;
+        // $token = $user->createToken('AALS_Token')->plainTextToken;
 
         $data = [
             'user' => $user,
-            'token' => $token
+            // 'token' => $token
         ];
 
         return $data;

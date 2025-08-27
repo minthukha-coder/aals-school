@@ -11,6 +11,7 @@ use App\Models\FoundationCourse;
 use App\Models\HomeImage;
 use App\Models\InternationalCourse;
 use App\Models\Partnership;
+use App\Models\Position;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 
@@ -74,6 +75,12 @@ class HomeController extends Controller
             }
         }
         return Inertia::render('User/FoundationCourse', compact('foundationCourses'));
+    }
+
+    //positions
+    public function career(){
+        $positions = Position::get();
+        return Inertia::render('User/Career', compact('positions'));
     }
 
     public function cambridgeCourse()

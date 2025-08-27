@@ -19,8 +19,8 @@ import '@mdi/font/css/materialdesignicons.css'
 import "../css/app.css";
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 //toast
  import Toast from "vue-toastification";

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\InternationalCourse;
 use Illuminate\Http\Request;
+use App\Models\InternationalCourse;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class InternationalCourseController extends Controller
