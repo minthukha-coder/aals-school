@@ -4,7 +4,7 @@
          <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4 flex flex-col justify-center mx-auto">
                 <div style="width:400px; height: 300px;">
-                    <img :src="props.about?.image" alt=""class="rounded-lg mb-4 w-100 h-100 object-fit-cover" />
+                    <img :src="props.about?.image" alt="" class="rounded-lg mb-4 w-100 h-100 object-fit-cover" />
                 </div>
 
                 <div v-if="about" class="text-center">

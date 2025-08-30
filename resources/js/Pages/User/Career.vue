@@ -35,15 +35,15 @@
                             </div>
                             <!-- Application Form -->
                             <div class="border rounded p-3 flex-fill" style="max-width: 490px;">
-                                <input type="text" placeholder="Name" class="w-full px-4 py-2 border rounded-lg mb-4">
-                                <input type="text" placeholder="Email" class="w-full px-4 py-2 border rounded-lg mb-4">
+                                <input v-model="form.name" type="text" placeholder="Name" class="w-full px-4 py-2 border rounded-lg mb-4">
+                                <input v-model="form.email" type="text" placeholder="Email" class="w-full px-4 py-2 border rounded-lg mb-4">
                                 <div class="flex items-center mb-4">
-                                    <span class="px-3 py-2 border border-r-0 rounded-l-lg bg-gray-100">+95</span>
-                                    <input type="text" placeholder="Phone"
-                                class="w-full px-4 py-2 border border-l-0 rounded-r-lg focus:outline-none">
+                                    <span class="p-2 border border-r-0 rounded-l-lg bg-gray-100">+95</span>
+                                    <input v-model="form.phone" type="text" placeholder="Phone"
+                                class="w-full p-2 border border-l-0 rounded-r-lg focus:outline-none">
                                 </div> 
-                               <textarea placeholder="Massage"
-                                    class="w-full px-4 py-2 border rounded-lg mb-4"></textarea>
+                               <textarea v-model="form.message" placeholder="Massage"
+                                    class="w-full p-2 border rounded-lg mb-4"></textarea>
                                 <div class="d-flex justify-end">
                                     <v-btn color="primary" @click="applyForPosition(position.id)">
                                         Apply
@@ -61,10 +61,20 @@
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
+import { useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
     positions: Array,
 });
+
+const form = useForm({
+
+})
+
+const applyForPosition = (positionId) => {
+    form.position_id = positionId;
+    form.post(route('career.apply'));
+};
 </script>
 
 <style lang="scss" scoped></style>
