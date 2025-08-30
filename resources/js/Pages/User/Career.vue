@@ -8,7 +8,6 @@
                 <div>
                     <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
                 </div>
-
                 <button class="btn btn-primary">Join Us</button>
             </div>
         </section>
@@ -25,30 +24,37 @@
                             <!-- Position Details -->
                             <div class="me-md-4 flex-fill">
                                 <p><strong>Position:</strong> {{ position.name }}</p>
-                                <p><strong>Salary:</strong> {{ position.salary }}</p>
+                                <p><strong>Salary:</strong> {{ position.salary ?? '-' }}</p>
                                 <p><strong>Date:</strong> {{ position.date }}</p>
                                 <p><strong>Place:</strong> {{ position.place }}</p>
                                 <p><strong>Responsibilities:</strong> {{ position.responsibilities }}</p>
                                 <p><strong>Requirements:</strong> {{ position.requirements }}</p>
                                 <p><strong>Highlights:</strong> {{ position.highlight }}</p>
                                 <p><strong>Benefits:</strong>{{ position.benefits }}</p>
-                              
+
                             </div>
                             <!-- Application Form -->
                             <div class="border rounded p-3 flex-fill" style="max-width: 490px;">
-                                <v-text-field label="Name" type="" class="mb-2" />
-                                <v-text-field label="Email" type="email" class="mb-2" />
-                                <v-text-field label="Phone" class="mb-2" />
-                                <v-textarea label="Message" rows="3" class="mb-2" />
-                                <v-btn color="primary" block @click="applyForPosition(position.id)">Apply</v-btn>
+                                <input type="text" placeholder="Name" class="w-full px-4 py-2 border rounded-lg mb-4">
+                                <input type="text" placeholder="Email" class="w-full px-4 py-2 border rounded-lg mb-4">
+                                <div class="flex items-center mb-4">
+                                    <span class="px-3 py-2 border border-r-0 rounded-l-lg bg-gray-100">+95</span>
+                                    <input type="text" placeholder="Phone"
+                                class="w-full px-4 py-2 border border-l-0 rounded-r-lg focus:outline-none">
+                                </div> 
+                               <textarea placeholder="Massage"
+                                    class="w-full px-4 py-2 border rounded-lg mb-4"></textarea>
+                                <div class="d-flex justify-end">
+                                    <v-btn color="primary" @click="applyForPosition(position.id)">
+                                        Apply
+                                    </v-btn>
+                                </div>
                             </div>
                         </div>
                     </v-expansion-panel-text>
                 </v-expansion-panel>
             </v-expansion-panels>
-
         </section>
-
     </Layout>
 </template>
 
