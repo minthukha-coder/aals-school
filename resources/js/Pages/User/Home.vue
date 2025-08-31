@@ -70,12 +70,12 @@
                     </div>
                 </section>
 
-                <section class="bg-green-200 my-4" id="additional-courses">
+                <section class="bg-green-200" id="additional-courses">
                     <div class="max-w-7xl mx-auto md:mt-5">
-                        <h3 class="py-4 p-2">Additional Courses</h3>
+                        <h3 class="pt-3">Additional Courses</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500 p-3">
                             <div v-for="course in additionalCourses" :key="course.id" class="">
-                                <Card :course="course"/>
+                                <Card :course="course" />
                             </div>
                         </div>
                     </div>
@@ -83,14 +83,15 @@
 
                 <section class="hidden md:block" id="learning-pathway">
                     <div class="relative w-full h-full">
-                        <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover rounded-lg" style="height:500px;"/>
+                        <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover"
+                            style="height:500px;" />
                         <h3 class="absolute left-8 top-1/8 transform
                text-white font-bold" style="font-size:70px;">
                             Learning Pathway
                         </h3>
                         <div
                             class="flex items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 py-2 px-10 h-15 rounded-lg text-white font-bold ">
-                            <Link><button class="text-white">Click
+                            <Link :href="route('learning-pathway')"><button class="text-white">Click
                                 Here</button></Link>
                         </div>
                     </div>
@@ -117,7 +118,7 @@
           p-3 text-center text-white font-bold
           md:absolute md:top-1/2 md:left-1/2
           md:transform md:-translate-x-1/2 md:-translate-y-1/2
-          md:z-[-2]
+          md:z-[-2] hidden md:block
         ">
                             </div>
 

@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
+Route::get('/learning-pathway', [UserHomeController::class, 'learningPathway'])->name('learning-pathway');
 Route::get('/career', [UserHomeController::class, 'career'])->name('career');
 Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-courses');
 Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-courses');

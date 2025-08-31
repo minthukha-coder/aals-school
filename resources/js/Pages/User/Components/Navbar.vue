@@ -19,16 +19,16 @@
             <h5 class="text-white font-bold !text-base md:!text-lg">Aung Academy Language School</h5>
 
             <div class="hidden md:flex items-center mx-10">
-                <ul class="flex items-center gap-5 font-bold h-full">
-                    <li>
+                <div class="flex items-center gap-5 font-bold h-full">
+                    <div>
                         <Link :href="route('home')" class="text-white text-decoration-none flex items-center h-full">Home</Link>
-                    </li>
+                    </div>
 
-                       <li>
+                       <div>
                         <Link :href="route('career')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
-                    </li>
+                    </div>
 
-                    <li class="relative group" id="courses">
+                    <div class="relative group" id="courses">
                         <Link href="#" class="text-white text-decoration-none flex items-center h-full">Courses</Link>
 
                         <!-- Dropdown menu -->
@@ -56,9 +56,9 @@
                                 <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">Programming</Link>
                             </div>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="relative group" id="exam-services">
+                    <div class="relative group" id="exam-services">
                         <Link href="#" class="text-white text-decoration-none flex items-center h-full">Exam Services</Link>
 
                         <!-- Dropdown menu -->
@@ -100,18 +100,18 @@
                                     ESL, EFL</Link>
                             </div>
                         </div>
-                    </li>
+                    </div>
 
-                    <li>
+                    <div>
                         <Link :href="route('gallery')" class="text-white text-decoration-none flex items-center h-full">Gallery</Link>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <Link :href="route('contact')" class="text-white text-decoration-none flex items-center h-full">Contact Us</Link>
-                    </li>
-                    <li class="">
+                    </div>
+                    <div class="">
                         <Link :href="route('about')" class="text-white text-decoration-none flex items-center h-full">About Us</Link>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
 
             <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden text-white">

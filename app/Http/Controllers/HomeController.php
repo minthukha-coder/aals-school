@@ -80,7 +80,7 @@ class HomeController extends Controller
 
     //positions
     public function career(){
-        $positions = Position::get();
+        $positions = Position::with('benefits')->get();
         return Inertia::render('User/Career', compact('positions'));
     }
 
@@ -90,18 +90,18 @@ class HomeController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required|string',
-            'message' => 'required|string',
+            'user_message' => 'required|string',
             'position_id' => 'required|integer',
         ]);
 
         // Send Email
         Mail::send('emails.application', $data, function ($message) use ($data) {
-            $message->to('minthukha25122003@email.com') // HR/Admin email
+            $message->to('minthukha25122003@gmail.com') // HR/Admin email
                     ->subject('New Job Application: ' . $data['name'])
                     ->replyTo($data['email']);
         });
 
-        return back()->with('success', 'Application sent successfully!');
+        return redirect()->route('home')->with('success', 'Application sent successfully!');
     }
 
 

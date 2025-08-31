@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Position;
 use Illuminate\Http\Request;
+use App\Models\PositionBenefit;
+use PhpParser\Node\Expr\PostInc;
 use App\Http\Controllers\Controller;
 
 class PositionController extends Controller
@@ -17,7 +19,7 @@ class PositionController extends Controller
 
     public function index()
     {
-        $positions = $this->model->all();
+        $positions = $this->model->with('benefits')->get();
         return inertia('Admin/Position/Index', compact('positions'));
     }
 
@@ -36,15 +38,23 @@ class PositionController extends Controller
             'responsibilities' => 'nullable|string',
             'requirements' => 'nullable|string',
             'highlight' => 'nullable|string',
-            'benefits' => 'nullable|string',
         ]);
-
-        $this->model->create($data);
+        
+        $position = $this->model->create($data);
+        if ($request->has('benefits')) {
+            foreach ($request->benefits as $benefit) {
+                PositionBenefit::create([
+                    'position_id' => $position->id,
+                    'benefit' => $benefit
+                ]);
+            }
+        }
 
         return redirect()->route('admin.positions.index')->with('success', 'Position created successfully.');
     }
 
-    public function edit(Request $request){
+    public function edit(Request $request)
+    {
         $position = $this->model->findOrFail($request->id);
         return inertia('Admin/Position/Edit', compact('position'));
     }
@@ -59,7 +69,6 @@ class PositionController extends Controller
             'responsibilities' => 'nullable|string',
             'requirements' => 'nullable|string',
             'highlight' => 'nullable|string',
-            'benefits' => 'nullable|string',
         ]);
 
         $position = $this->model->findOrFail($request->id);
