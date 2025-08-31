@@ -10,9 +10,9 @@
         </section>
 
         <section class="container py-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="flex border rounded-lg overflow-hidden" v-for="course in foundationCourses" :key="course.id">
-                    <div class="border w-70 h-40 overflow-hidden shadow-lg ">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                <div class="flex rounded-lg overflow-hidden" v-for="course in foundationCourses" :key="course.id">
+                    <div class="w-70 h-40 overflow-hidden shadow-lg ">
                         <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                     </div>
                     <div class=" mx-3 mt-3">
@@ -22,8 +22,6 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
     </Layout>
 </template>

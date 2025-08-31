@@ -9,19 +9,21 @@
             </div>
         </section>
 
-        <section class="" id="additional-courses">
-            <div class="max-w-7xl mx-auto py-4">
-                <h3 class="py-4 px-1">Additional Courses</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 place-items-center p-2">
-                    <div v-for="course in additionalCourses" :key="course.id" class="">
-                        <Card :course="course" />
+        
+        <section class="container py-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                <div class="flex rounded-lg overflow-hidden" v-for="course in additionalCourses" :key="course.id">
+                    <div class="w-70 h-40 overflow-hidden shadow-lg ">
+                        <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                     </div>
-
+                    <div class=" mx-3 mt-3">
+                        <p class="font-bold text-base">{{ course.title }}</p>
+                        <p class="font-bold text-base">Duration : {{ course.duration }}</p>
+                    </div>
                 </div>
-
             </div>
         </section>
+
     </Layout>
 </template>
 

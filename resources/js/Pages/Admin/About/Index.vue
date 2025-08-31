@@ -8,7 +8,7 @@
                 </div>
 
                 <div v-if="about" class="text-center">
-                    <Link :href="route('admin.home.edit')"><button
+                    <Link :href="route('admin.about.edit')"><button
                         class="btn btn-success btn-sm w-10 my-2 float-end"><font-awesome-icon icon="fa-solid fa-pen-to-square" /></button></Link>
                 </div>
 
