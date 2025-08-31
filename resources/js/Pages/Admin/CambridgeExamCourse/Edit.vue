@@ -6,10 +6,12 @@
                 <v-row>
                     <v-col cols="12">
                         <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
+                         <ErrorMessage :text="$page.props.errors.name" />
                     </v-col>
 
                       <v-col cols="12">
                         <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
+                         <ErrorMessage :text="$page.props.errors.duration" />
                     </v-col>
 
                          <v-col cols="12">
@@ -43,6 +45,7 @@
 
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
+import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import { update } from '../../Composables/httpMethod.js';

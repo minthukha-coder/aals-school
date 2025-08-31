@@ -1,12 +1,18 @@
 <template>
     <Layout>
         <h4 class="text-center">Edit About Image</h4>
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
 
-                <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                <v-row>
+                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                    <ErrorMessage :text="$page.props.errors.title" />
+                </v-row>
 
-                <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
+                <v-row>
+                    <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea>
+                    <ErrorMessage :text="$page.props.errors.description" />
+                </v-row>
 
                 <div class="preview flex justify-center relative"  v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
@@ -33,6 +39,7 @@
 
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
+import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
 import {useToast} from 'vue-toastification';

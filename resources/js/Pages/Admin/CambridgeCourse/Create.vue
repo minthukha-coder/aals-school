@@ -5,14 +5,17 @@
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
                     <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
+                     <ErrorMessage :text="$page.props.errors.title" />
                 </v-row>
 
                 <v-row>
                     <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"></v-textarea>
+                     <ErrorMessage :text="$page.props.errors.course" />
                 </v-row>
 
                 <v-row>
                     <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
+                     <ErrorMessage :text="$page.props.errors.duration" />
                 </v-row>
 
 
@@ -41,6 +44,7 @@
 
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
+import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import {  ref } from 'vue';
 import { useToast } from 'vue-toastification';
