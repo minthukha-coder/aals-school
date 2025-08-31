@@ -20,9 +20,9 @@
                         Class Teacher
                     </v-expansion-panel-title>
                     <v-expansion-panel-text>
-                        <div class="d-md-flex justify-content-between">
+                        <div class="d-md-flex justify-content-between row">
                             <!-- Position Details -->
-                            <div class="me-md-4 flex-fill">
+                            <div class="col-md-7">
                                 <p><strong>Position:</strong> {{ position.name }}</p>
                                 <p><strong>Salary:</strong> {{ position.salary ?? '-' }}</p>
                                 <p><strong>Date:</strong> {{ position.date }}</p>
@@ -38,7 +38,7 @@
 
                             </div>
                             <!-- Application Form -->
-                            <div class="border rounded p-3 flex-fill" style="max-width: 490px;">
+                            <div class="border rounded p-3 flex-fill col-md-5">
                                 <input v-model="form.name" type="text" placeholder="Name" class="w-full p-2 border rounded-lg mb-4">
                                 <input v-model="form.email" type="text" placeholder="Email" class="w-full p-2 border rounded-lg mb-4">
                                 <div class="flex items-center mb-4">

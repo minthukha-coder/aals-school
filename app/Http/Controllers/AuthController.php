@@ -17,20 +17,21 @@ class AuthController extends Controller
         return Inertia::render('User/Login');
     }
 
-    public function login(Request $request)
-    {
+        public function login(Request $request)
+        {
 
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ]);
+            $request->validate([
+                'email' => 'required',
+                'password' => 'required'
+            ]);
 
-        $data = $this->userService->login($request);
-        if ($data) {
-            session(['success' => 'Login success']);
-            return redirect()->route('admin.dashboard');
+            $data = $this->userService->login($request);
+            if ($data) {
+                session(['success' => 'Login success']);
+                return redirect()->route('admin.dashboard');
+            }
+
+            return redirect()->back()->with('error', 'Invalid email or password');
         }
-        return redirect()->route('home');
-    }
 
 }

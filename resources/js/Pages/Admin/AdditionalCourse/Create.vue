@@ -1,12 +1,12 @@
 <template>
     <Layout>
-        <h4 class="text-center">Additonal Create Course</h4>
+        <h4 class="text-center">Additional Create Course</h4>
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
                     <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
                     <ErrorMessage
-                        :text="form.errors.duration"
+                        :text="form.errors.title"
                         class="text-danger"/>
                 </v-row>
                      <v-row>

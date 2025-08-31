@@ -8,41 +8,35 @@
                 students of the SPACE Language Academy achieve English language skills that can worthily reflect the
                 level of each course.</p>
 
-
-            <div class="grid grid-cols-3 gap-3 my-3">
+                       <div class="grid grid-cols-3 gap-3 my-3">
                 <div>
                     <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
+                    <img src="../User/images/learning-pathway2.jpg" alt=""
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
-                </div>
-            </div>
-
-
-            
-            <div class="grid grid-cols-3 gap-3 my-3">
-                <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
-                </div>
-                <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
-                </div>
-                <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
-                        class="w-full h-48 object-cover rounded-md" />
+                    <img src="../User/images/learning-pathway3.jpg" alt=""
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
             </div>
 
-            
-
+            <div class="grid grid-cols-3 gap-3 my-3">
+                <div>
+                    <img src="../User/images/learning-pathway4.jpg" alt=""
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
+                </div>
+                <div>
+                    <img src="../User/images/learning-pathway5.jpg" alt=""
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
+                </div>
+                <div>
+                    <img src="../User/images/learning-pathway6.jpg" alt=""
+                        class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
+                </div>
+            </div>
 
         </div>
     </Layout>

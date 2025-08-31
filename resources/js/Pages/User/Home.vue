@@ -1,21 +1,21 @@
     <template>
         <Layout>
             <div class="main-page">
-                <section class="hidden md:block home-page position-relative">
+                <section class="block md:hidden home-page position-relative">
                     <div>
                         <img :src="homeImage?.name" alt="" class="w-full object-cover" style="height: 500px" />
                     </div>
-                    <div class="absolute left-20 top-30 text-white p-2">
+                    <div class="absolute left-0 top-0 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
                     </div>
                 </section>
 
-                <section class="block md:hidden home-page position-relative ">
+                <section class="hidden md:block home-page position-relative ">
                     <div>
-                        <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height:100%;" />
+                        <img :src="homeImage?.name" alt="" class="w-full object-cover" style="height:100vh;" />
                     </div>
-                    <div class="absolute left-0 top-0 text-white p-2">
+                    <div class="absolute left-30 top-50 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
                     </div>
@@ -31,13 +31,13 @@
                         <div class="p-2">
                             <h2 class="font-bold text-xl">{{ about?.title }}</h2>
                             <p>
-                                {{ about?.description }}<a :href="route('about')">Read More....</a>
+                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description">Read More....</span></a>
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <section class="mt-5 max-w-7xl mx-auto" id="courses">
+                <section class="my-5 max-w-7xl mx-auto" id="courses">
                     <h3 class="text-center font-bold text-2xl">Courses</h3>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
