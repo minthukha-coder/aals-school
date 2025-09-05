@@ -16,7 +16,7 @@
 
                     <ul class="dropdown-menu mr-12">
                         <li>
-                             <a :href="route('profile')" class="dropdown-item" @click.prevent="profile">Profile</a>
+                             <a :href="route('admin.profile')" class="dropdown-item" @click.prevent="profile">Profile</a>
                         </li>
                         <li>
                             <a href="#" class="dropdown-item" @click.prevent="logout">Logout</a>
