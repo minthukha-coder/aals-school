@@ -24,24 +24,20 @@ class ProfileController extends Controller
         ]);
     }
 
-
     // Update profile
-    public function updateProfile(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|unique:users,email',
-            'password' => 'nullable|string|min:6|confirmed', // requires password_confirmation field
-        ]);
+   public function updateProfile(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email|unique:users,email,' . Auth::id(),
+        'password' => 'required|string|min:6|confirmed',
+    ]);
 
-        $user = Auth::user();
-        $user->email = $request->email;
+    $user = Auth::user();
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);
+    $user->save();
 
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
-        }
+    return redirect()->route('admin.dashboard')->with('success', 'Profile updated successfully!');
+}
 
-        $user->save();
-
-        return redirect()->route('dashboard')->with('success', 'Profile updated successfully!');
-    }
 }
