@@ -37,7 +37,7 @@ const logout = () => {
 };
 
 const profile = () => {
-  router.visit("/profile");
+  router.visit(route('admin.profile'));
 };
 </script>
 

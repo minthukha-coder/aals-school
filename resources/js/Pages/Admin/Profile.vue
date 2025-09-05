@@ -51,6 +51,8 @@
 import { ref, onMounted } from 'vue';
 import { useForm, usePage } from '@inertiajs/vue3';
 import { useToast } from 'vue-toastification';
+import { route } from 'ziggy-js';
+import { router } from '@inertiajs/vue3';
 
 const toast = useToast();
 const page = usePage();
@@ -67,7 +69,7 @@ const form = useForm({
 
 
 const submit = () => {
-  form.post('/profile/update', {
+  form.post(route('admin.profile.update'), {
     onSuccess: () => {
       toast.success('Profile updated successfully!');
       form.password = '';
