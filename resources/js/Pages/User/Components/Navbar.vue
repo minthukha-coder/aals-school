@@ -15,7 +15,8 @@
 
         </div>
 
-        <div class="bg-green-400 flex justify-between items-center h-14 px-4">
+        <div class="bg-gradient-to-t from-green-600 via-green-700 to-green-800 
+            flex justify-between items-center p-2 shadow-md">
             <h5 class="text-white font-bold !text-base md:!text-lg">Aung Academy Language School</h5>
 
             <div class="hidden md:flex items-center mx-10">

@@ -12,10 +12,14 @@
                 </section>
 
                 <section class="hidden md:block home-page position-relative ">
-                    <div>
-                        <img :src="homeImage?.name" alt="" class="w-full object-cover" style="height:100vh;" />
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <img :src="homeImage?.name" alt="Home Image" class="img-fluid w-100"
+                                style="max-height: 90vh; object-fit: cover;" />
+                        </div>
                     </div>
-                    <div class="absolute left-30 top-50 text-white p-2">
+
+                    <div class="absolute left-20 top-50 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
                     </div>
@@ -31,7 +35,8 @@
                         <div class="p-2">
                             <h2 class="font-bold text-xl">{{ about?.title }}</h2>
                             <p>
-                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description">Read More....</span></a>
+                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description">Read
+                                        More....</span></a>
                             </p>
                         </div>
                     </div>

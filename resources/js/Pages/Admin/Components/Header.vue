@@ -1,8 +1,12 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light" :style="{ backgroundColor: 'var(--theme-color)' }">
         <div class="container-fluid">
-            <img src="../../Admin/images/logo.jpg" alt="Logo" class="rounded-full" style="width: 50px;height:50px;" />
-
+            <div class="flex items-center">
+               <img src="../../Admin/images/logo.jpg" alt="Logo" class="rounded-full" style="width: 50px;height:50px;" />
+                <div class="mx-2 text-white">
+                    <h5 class="text-sm">AALS</h5>
+                </div>
+            </div>
             <div class="flex justify-center items-center">
                 <div class="dropdown">
                     <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -12,7 +16,7 @@
 
                     <ul class="dropdown-menu mr-12">
                         <li>
-                             <a href="#" class="dropdown-item" @click.prevent="profile">Profile</a>
+                             <a :href="route('profile')" class="dropdown-item" @click.prevent="profile">Profile</a>
                         </li>
                         <li>
                             <a href="#" class="dropdown-item" @click.prevent="logout">Logout</a>

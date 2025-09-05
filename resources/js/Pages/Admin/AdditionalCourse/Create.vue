@@ -9,11 +9,11 @@
                         :text="form.errors.title"
                         class="text-danger"/>
                 </v-row>
-                     <v-row>
-                    <v-textarea v-model.number="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                    <ErrorMessage
-                        :text="form.errors.duration"
-                        class="text-danger"/>
+
+                <v-row>
+                    <v-textarea v-model.number="form.duration" rows="1" label="Duration"
+                        variant="outlined"></v-textarea>
+                    <ErrorMessage :text="$page.props.errors.duration" />
                 </v-row>
 
                 <v-row class="preview flex justify-center relative" v-if="formImageUrl">
@@ -40,6 +40,7 @@
 
 <script setup>
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
+import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
 import { post } from '../../Composables/httpMethod.js';
@@ -67,7 +68,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    post(form,route('admin.additional-courses.store'));
+    post(form, route('admin.additional-courses.store'));
 }
 </script>
 

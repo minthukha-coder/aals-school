@@ -1,7 +1,7 @@
 <template>
     <Layout>
-        <div id="contact-us">
-            <h3 class="text-center fw-bold">About Us</h3>
+        <div id="contact-us" class="pb-3">
+            <h4 class="text-center fw-bold">About Us</h4>
 
             <div class="grid grid-cols-1 md:grid-cols-2 mt-5">
                     <div class="px-5">
