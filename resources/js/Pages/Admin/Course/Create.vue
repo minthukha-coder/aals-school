@@ -4,16 +4,16 @@
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                      <ErrorMessage :text="$page.props.errors.title" />
+                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"
+                        :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title" />
                 </v-row>
 
-                <v-row>
-                    <v-textarea v-model="form.description" rows="1" label="Description" variant="outlined"></v-textarea>
-                      <ErrorMessage :text="$page.props.errors.description" />
+                <v-row class="mt-4">
+                    <v-textarea v-model="form.description" rows="1" label="Description" variant="outlined"
+                        :error="!!$page.props.errors.description" :error-messages="$page.props.errors.description" />
                 </v-row>
 
-                <v-row class="preview flex justify-center relative" v-if="formImageUrl">
+                <v-row class="preview flex justify-center relative mt-10" v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
 
                     <div class="absolute top-0 right-0">

@@ -4,18 +4,19 @@
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                     <ErrorMessage :text="$page.props.errors.title" />
+                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"
+                        :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title"></v-textarea>
                 </v-row>
 
-                <v-row>
-                    <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"></v-textarea>
-                     <ErrorMessage :text="$page.props.errors.course" />
+                <v-row class="mt-4">
+                    <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"
+                        :error="!!$page.props.errors.course" :error-messages="$page.props.errors.course"></v-textarea>
                 </v-row>
 
-                <v-row>
-                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                     <ErrorMessage :text="$page.props.errors.duration" />
+                <v-row class="mt-4">
+                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
+                        :error="!!$page.props.errors.duration"
+                        :error-messages="$page.props.errors.duration"></v-textarea>
                 </v-row>
 
 
@@ -46,7 +47,7 @@
 import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
-import {  ref } from 'vue';
+import { ref } from 'vue';
 import { useToast } from 'vue-toastification';
 import { post } from '../../Composables/httpMethod';
 const formImageUrl = ref(null);
@@ -71,7 +72,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    post(form,route('admin.cambridge-courses.store'));
+    post(form, route('admin.cambridge-courses.store'));
 }
 </script>
 

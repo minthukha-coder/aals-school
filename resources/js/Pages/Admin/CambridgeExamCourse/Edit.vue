@@ -5,16 +5,17 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.name" />
+                        <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"
+                            :error="!!$page.props.errors.name" :error-messages="$page.props.errors.name"></v-textarea>
                     </v-col>
 
-                      <v-col cols="12">
-                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.duration" />
+                    <v-col cols="12" class="mt-4">
+                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
+                            :error="!!$page.props.errors.duration"
+                            :error-messages="$page.props.errors.duration"></v-textarea>
                     </v-col>
 
-                         <v-col cols="12">
+                    <v-col cols="12" class="mt-4">
                         <v-textarea v-model="form.months" rows="1" label="Duration" variant="outlined"></v-textarea>
                     </v-col>
 
@@ -62,7 +63,7 @@ const onFileChange = (event) => {
 
 
 const form = useForm({
-    name : props.course?.name || '',
+    name: props.course?.name || '',
     duration: props.course?.duration || '',
     months: props.course?.months || '',
     image: props.course?.image

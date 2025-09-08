@@ -4,14 +4,15 @@
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                     <ErrorMessage :text="$page.props.errors.title" />
+                    <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"
+                        :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title">
+                    </v-textarea>
                 </v-row>
 
-                <v-row>
-                    <v-textarea v-model.number="form.duration" rows="1" label="Duration"
-                        variant="outlined"></v-textarea>
-                    <ErrorMessage :text="$page.props.errors.duration" />
+                <v-row class="mt-4">
+                    <v-textarea v-model.number="form.duration" rows="1" label="Duration" variant="outlined"
+                        :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration">
+                    </v-textarea>
                 </v-row>
 
                 <v-row class="preview flex justify-center relative" v-if="formImageUrl">
