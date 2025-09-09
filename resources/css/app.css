@@ -1,30 +1,28 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'); */
 
-/* @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap'); */
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-
 /* @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 } */
 
-
 :root {
-    --theme-color: #08A74B;
-    --font-family: "Special Gothic Expanded One", sans-serif;
+    --theme-color: #08a74b;
 }
 
-body{
-    font-family: var(--font-family);
-    font-size:1rem;
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-img{
-    max-width:100%;
-    height:auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
