@@ -94,10 +94,12 @@ class HomeController extends Controller
             'position_id' => 'required|integer',
         ]);
 
+        $position = Position::findOrFail($data['position_id']);
+        $data['position_name'] = $position->name;
         // Send Email
         Mail::send('emails.application', $data, function ($message) use ($data) {
             $message->to('minthukha25122003@gmail.com') // HR/Admin email
-                    ->subject('New Job Application: ' . $data['name'])
+            ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
                     ->replyTo($data['email']);
         });
 

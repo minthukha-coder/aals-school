@@ -4,10 +4,10 @@
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                    <v-col cols="12">
+                
                     <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined" />
                     <ErrorMessage :text="$page.props.errors.name" />
-                    </v-col>
+                   
                 </v-row>
 
                 <v-row>

@@ -8,9 +8,9 @@
                 <div class="grid gap-4">
                     <div class="bg-white rounded shadow p-4 hover:shadow-lg transition">
                         <div class="flex space-x-2 mb-3">
-                            <img :src="partnership?.image1" alt="Image 1"
+                            <img :src="partnership?.image1"
                                 class="w-1/2 h-32 object-cover rounded px-2" />
-                            <img :src="partnership?.image2" alt="Image 2"
+                            <img :src="partnership?.image2"
                                 class="w-1/2 h-32 object-cover rounded px-2" />
                         </div>
                         <h2 class="font-semibold text-lg mb-1">{{ partnership?.title }}</h2>

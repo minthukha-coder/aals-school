@@ -1,15 +1,15 @@
 <template>
     <nav class="navbar-section w-full sticky top-0 z-50 bg-white shadow-md">
         <div class="container-fluid flex justify-between items-center">
-            <div class="p-3 flex items-center">
+            <div class="p-2 flex items-center">
                 <img src="../images/logo.jpg" alt="" class="rounded-full w-10 h-10" />
-                <div class="mx-2">
+                <div class="mx-2 mt-2">
                     <h5 class="text-sm">AALS</h5>
                 </div>
             </div>
 
             <div id="search">
-                <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-white"
+                <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-black"
                     placeholder="Search..." style="border:1px solid #80ed99;"/>
             </div>
 

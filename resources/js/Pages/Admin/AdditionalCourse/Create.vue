@@ -11,7 +11,7 @@
                 </v-row>
 
                 <v-row>
-                    <v-textarea v-model.number="form.duration" rows="1" label="Duration"
+                    <v-textarea v-model="form.duration" rows="1" label="Duration"
                         variant="outlined"></v-textarea>
                     <ErrorMessage :text="$page.props.errors.duration" />
                 </v-row>
@@ -47,6 +47,7 @@ import { post } from '../../Composables/httpMethod.js';
 const props = defineProps({
     aboutImage: Object,
 });
+
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
     const file = event.target.files[0];

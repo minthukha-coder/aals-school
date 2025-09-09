@@ -10,7 +10,7 @@
     <p><strong>Name:</strong> {{ $name }}</p>
     <p><strong>Email:</strong> {{ $email }}</p>
     <p><strong>Phone:</strong> {{ $phone }}</p>
-    <p><strong>Position ID:</strong> {{ $position_id }}</p>
+    <p><strong>Position ID:</strong> {{ $position_name }}</p>
 
     <h3>Message</h3>
     <p>{{ $user_message }}</p>
