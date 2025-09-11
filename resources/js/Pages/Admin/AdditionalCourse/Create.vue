@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <h4 class="text-center">Additonal Create Course</h4>
+        <h4 class="text-center">Additional Create Course</h4>
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
@@ -10,7 +10,7 @@
                 </v-row>
 
                 <v-row class="mt-4">
-                    <v-textarea v-model.number="form.duration" rows="1" label="Duration" variant="outlined"
+                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
                         :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration">
                     </v-textarea>
                 </v-row>
@@ -46,6 +46,7 @@ import { post } from '../../Composables/httpMethod.js';
 const props = defineProps({
     aboutImage: Object,
 });
+
 const formImageUrl = ref(null);
 const onFileChange = (event) => {
     const file = event.target.files[0];

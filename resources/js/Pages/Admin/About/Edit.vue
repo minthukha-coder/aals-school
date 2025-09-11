@@ -1,7 +1,7 @@
 <template>
     <Layout>
-        <h4 class="text-center">Edit About Image</h4>
-        <div class="row mt-3">
+        <h4 class="text-center">Edit About</h4>
+        <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
 
                 <v-row>

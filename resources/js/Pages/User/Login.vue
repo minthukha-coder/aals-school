@@ -57,7 +57,7 @@ const submit = () => {
 }
 
 onMounted(() => {
-
+console.log(page);
     if (page.props.flash) {
         if (page.props.flash.success) {
             toast.success(page.props.flash.success);

@@ -1,34 +1,35 @@
 <template>
     <nav class="navbar-section w-full sticky top-0 z-50 bg-white shadow-md">
         <div class="container-fluid flex justify-between items-center">
-            <div class="p-3 flex items-center">
+            <div class="p-2 flex items-center">
                 <img src="../images/logo.jpg" alt="" class="rounded-full w-10 h-10" />
-                <div class="mx-2">
+                <div class="mx-2 mt-2">
                     <h5 class="text-sm">AALS</h5>
                 </div>
             </div>
 
             <div id="search">
-                <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-white"
+                <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-black"
                     placeholder="Search..." style="border:1px solid #80ed99;"/>
             </div>
 
         </div>
 
-        <div class="bg-green-400 flex justify-between items-center h-14 px-4">
+        <div class="bg-gradient-to-t from-green-600 via-green-700 to-green-800 
+            flex justify-between items-center p-2 shadow-md">
             <h5 class="text-white font-bold !text-base md:!text-lg">Aung Academy Language School</h5>
 
             <div class="hidden md:flex items-center mx-10">
-                <ul class="flex items-center gap-5 font-bold h-full">
-                    <li>
+                <div class="flex items-center gap-5 font-bold h-full">
+                    <div>
                         <Link :href="route('home')" class="text-white text-decoration-none flex items-center h-full">Home</Link>
-                    </li>
+                    </div>
 
-                       <li>
+                       <div>
                         <Link :href="route('career')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
-                    </li>
+                    </div>
 
-                    <li class="relative group" id="courses">
+                    <div class="relative group" id="courses">
                         <Link href="#" class="text-white text-decoration-none flex items-center h-full">Courses</Link>
 
                         <!-- Dropdown menu -->
@@ -56,9 +57,9 @@
                                 <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">Programming</Link>
                             </div>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="relative group" id="exam-services">
+                    <div class="relative group" id="exam-services">
                         <Link href="#" class="text-white text-decoration-none flex items-center h-full">Exam Services</Link>
 
                         <!-- Dropdown menu -->
@@ -100,18 +101,18 @@
                                     ESL, EFL</Link>
                             </div>
                         </div>
-                    </li>
+                    </div>
 
-                    <li>
+                    <div>
                         <Link :href="route('gallery')" class="text-white text-decoration-none flex items-center h-full">Gallery</Link>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <Link :href="route('contact')" class="text-white text-decoration-none flex items-center h-full">Contact Us</Link>
-                    </li>
-                    <li class="">
+                    </div>
+                    <div class="">
                         <Link :href="route('about')" class="text-white text-decoration-none flex items-center h-full">About Us</Link>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
 
             <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden text-white">

@@ -32,7 +32,7 @@ class AboutController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif',
         ]);
 
         $about = About::first();
@@ -47,7 +47,7 @@ class AboutController extends Controller
             $aboutImageName = uniqid() . '_' . time() . '.' . $uploadImage->getClientOriginalExtension();
             $uploadImage->storeAs('public/images', $aboutImageName);
 
-            if ($about->image) {
+            if ($about) {
                 Storage::delete('public/images/' . $about->image);
             }
             $about->image = $aboutImageName;

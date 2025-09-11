@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
+Route::get('/learning-pathway', [UserHomeController::class, 'learningPathway'])->name('learning-pathway');
 Route::get('/career', [UserHomeController::class, 'career'])->name('career');
 Route::get('/foundation-courses', [UserHomeController::class, 'foundationCourse'])->name('foundation-courses');
 Route::get('/cambridge-courses', [UserHomeController::class, 'cambridgeCourse'])->name('cambridge-courses');
@@ -29,7 +30,7 @@ Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExam
 Route::get('/international-courses', [UserHomeController::class, 'internationalCourse'])->name('international-courses');
 Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
-
+Route::post('/career/apply', [UserHomeController::class, 'applyForPosition'])->name('career.apply');
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('login');
     Route::post('/login', 'login')->name('login.post');

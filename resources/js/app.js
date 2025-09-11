@@ -35,9 +35,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faFacebook,faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 
-import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser } from '@fortawesome/free-solid-svg-icons'
+import { faPlus,faEnvelope,faLocationDot,faPhone,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser,faXmark } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser)
+library.add(faPlus,faEnvelope,faFacebook,faLocationDot,faPhone,faYoutube,faArrowUpFromBracket,faCircleXmark,faPenToSquare,faTrash,faCirclePlus,faChartPie,faHome,faMapLocationDot,faAddressCard,faBook,faBookBookmark,faBookJournalWhills,faScroll,faHeartCirclePlus,faBookTanakh,faUsersGear,faNewspaper,faUser,faXmark)
 
 const vuetify = createVuetify({
   components,

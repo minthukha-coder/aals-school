@@ -31,9 +31,9 @@
 
         <section class="vh-20 position-relative" id="foundation-course">
             <div>
-                <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                <img src="../User/images/IGCSE.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
-            <div class="absolute left-0 top-30 text-white p-2">
+            <div class="absolute left-0 top-30 text-black p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Course : IGCSE 0 LEVEL ESL, EFL</h3>
                 <h5>Duration : 5 months</h5>
                 <p>March, April, May</p>

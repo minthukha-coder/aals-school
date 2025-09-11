@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
-use App\Models\AdditionalCourse;
-use App\Models\CambridgeCourse;
-use App\Models\CambridgeExamCourse;
-use App\Models\Course;
-use App\Models\FoundationCourse;
-use App\Models\HomeImage;
-use App\Models\InternationalCourse;
-use App\Models\Partnership;
-use App\Models\Position;
 use Inertia\Inertia;
+use App\Models\About;
+use App\Models\Course;
+use App\Models\Position;
+use App\Models\HomeImage;
+use App\Models\Partnership;
 use Illuminate\Http\Request;
+use App\Models\CambridgeCourse;
+use App\Models\AdditionalCourse;
+use App\Models\FoundationCourse;
+use App\Models\CambridgeExamCourse;
+use App\Models\InternationalCourse;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -79,9 +80,32 @@ class HomeController extends Controller
 
     //positions
     public function career(){
-        $positions = Position::get();
+        $positions = Position::with('benefits')->get();
         return Inertia::render('User/Career', compact('positions'));
     }
+
+    //apply for position
+    public function applyForPosition(Request $request){
+           $data = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|string',
+            'user_message' => 'required|string',
+            'position_id' => 'required|integer',
+        ]);
+
+        $position = Position::findOrFail($data['position_id']);
+        $data['position_name'] = $position->name;
+        // Send Email
+        Mail::send('emails.application', $data, function ($message) use ($data) {
+            $message->to('minthukha25122003@gmail.com') // HR/Admin email
+            ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
+                    ->replyTo($data['email']);
+        });
+
+        return redirect()->route('home')->with('success', 'Application sent successfully!');
+    }
+
 
     public function cambridgeCourse()
     {

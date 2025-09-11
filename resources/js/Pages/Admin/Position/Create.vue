@@ -33,9 +33,28 @@
                     <v-textarea v-model="form.highlight" rows="1" label="HighLight" variant="outlined"></v-textarea>
                 </v-row>
 
-                <v-row>
-                    <v-textarea v-model="form.benefits" rows="1" label="Benefits" variant="outlined"></v-textarea>
-                </v-row>
+                <div class="">
+                    <div class="fw-bold fs-5 mb-9">Benefits</div>
+
+                    <div class="border-2 border-danger p-2 flex justify-center my-3 text-danger" @click="addInputBox"
+                        style="cursor: pointer;"> <font-awesome-icon class="mt-1 me-1" icon="fa-solid fa-plus" /> Add
+                        Benefit</div>
+
+
+                    <v-row v-for="(box, index) in inputBoxes" :key="index" class="my-2">
+                        <v-col cols="11">
+                            <v-textarea rows="1" v-model="box.benefits" variant="outlined" label="Benefit" hide-details
+                                required></v-textarea>
+                            <!-- <ErrorMessage :text="$page.props.errors.notes" /> -->
+                        </v-col>
+
+                        <v-col cols="1" class="">
+                            <button @click="removeInputBox(index)" class="btn btn-success"><font-awesome-icon
+                                    icon="fa-solid fa-xmark" /></button>
+                        </v-col>
+
+                    </v-row>
+                </div>
 
 
                 <button @click="submit" class="btn btn-success my-2">Submit</button>
@@ -52,6 +71,14 @@ import { ref } from 'vue';
 import { useToast } from 'vue-toastification';
 import { post } from '../../Composables/httpMethod';
 const toast = useToast();
+const inputBoxes = ref([])
+const addInputBox = () => {
+    inputBoxes.value.push({ benefits: null });
+}
+
+const removeInputBox = (index) => {
+    inputBoxes.value.splice(index, 1);
+};
 
 
 const form = useForm({
@@ -68,6 +95,7 @@ const form = useForm({
 
 const submit = () => {
     console.log(form)
+    form.benefits = inputBoxes.value.map(box => box.benefits);
     post(form, route("admin.positions.store"));
 }
 </script>

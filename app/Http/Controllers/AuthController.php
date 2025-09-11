@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+
 class AuthController extends Controller
 {
     //
-    public function __construct(protected UserService $userService){
-
-    }
+    public function __construct(protected UserService $userService) {}
 
     public function loginPage()
     {
@@ -26,11 +25,16 @@ class AuthController extends Controller
         ]);
 
         $data = $this->userService->login($request);
-        if ($data) {
+        if (isset($data['message'])) {
+            session(['failed' => $data['message']]);
+            return redirect()->back();
+        }
+
+        session(['success' => 'Login success']);
+        if ($data['user']['role'] === 'admin') {
             session(['success' => 'Login success']);
             return redirect()->route('admin.dashboard');
         }
         return redirect()->route('home');
     }
-
 }

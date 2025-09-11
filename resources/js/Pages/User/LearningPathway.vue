@@ -1,10 +1,18 @@
 <template>
     <Layout>
-        <div class="learning-pathway">
-            <h3 class="text-center">Learning Pathway</h3>
-            <div>
+        <div class="container my-3 text-center">
+            <h3>Learning Pathway</h3>
 
+            <div class="grid grid-cols-1 gap-3 border my-2">
+                <img src="../User/images/learning-pathway1.jpg" alt="" class="w-full h-full object-cover rounded-md"
+                    style="height:100%" />
             </div>
+
+            <div class="grid grid-cols-1 gap-3 border my-2">
+                <img src="../User/images/learning-pathway2.jpg" alt="" class="w-full h-full object-cover rounded-md"
+                    style="height:100%" />
+            </div>
+
         </div>
     </Layout>
 </template>

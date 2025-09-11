@@ -20,9 +20,9 @@
                         Class Teacher
                     </v-expansion-panel-title>
                     <v-expansion-panel-text>
-                        <div class="d-md-flex justify-content-between">
+                        <div class="d-md-flex justify-content-between row">
                             <!-- Position Details -->
-                            <div class="me-md-4 flex-fill">
+                            <div class="col-md-7">
                                 <p><strong>Position:</strong> {{ position.name }}</p>
                                 <p><strong>Salary:</strong> {{ position.salary ?? '-' }}</p>
                                 <p><strong>Date:</strong> {{ position.date }}</p>
@@ -30,20 +30,27 @@
                                 <p><strong>Responsibilities:</strong> {{ position.responsibilities }}</p>
                                 <p><strong>Requirements:</strong> {{ position.requirements }}</p>
                                 <p><strong>Highlights:</strong> {{ position.highlight }}</p>
-                                <p><strong>Benefits:</strong>{{ position.benefits }}</p>
+                                <p><strong>Benefits:</strong>
+                                <ul class="p-0 m-0">
+                                    <li v-for="benefit in position.benefits" :key="benefit.id"> - {{ benefit.benefit }}
+                                    </li>
+                                </ul>
+                                </p>
 
                             </div>
                             <!-- Application Form -->
-                            <div class="border rounded p-3 flex-fill" style="max-width: 490px;">
-                                <input type="text" placeholder="Name" class="w-full px-4 py-2 border rounded-lg mb-4">
-                                <input type="text" placeholder="Email" class="w-full px-4 py-2 border rounded-lg mb-4">
+                            <div class="border rounded p-3 flex-fill col-md-5">
+                                <input v-model="form.name" type="text" placeholder="Enter your name"
+                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none" />
+                                <input v-model="form.email" type="text" placeholder="Email"
+                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none">
                                 <div class="flex items-center mb-4">
-                                    <span class="px-3 py-2 border border-r-0 rounded-l-lg bg-gray-100">+95</span>
-                                    <input type="text" placeholder="Phone"
-                                class="w-full px-4 py-2 border border-l-0 rounded-r-lg focus:outline-none">
-                                </div> 
-                               <textarea placeholder="Massage"
-                                    class="w-full px-4 py-2 border rounded-lg mb-4"></textarea>
+                                    <span class="p-2 border rounded-l-lg bg-gray-100">+95</span>
+                                    <input v-model="form.phone" type="text" placeholder="Phone"
+                                        class="w-full p-2 border border-l-0 rounded-r-lg focus:outline-none">
+                                </div>
+                                <textarea v-model="form.user_message" placeholder="Message"
+                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none"></textarea>
                                 <div class="d-flex justify-end">
                                     <v-btn color="primary" @click="applyForPosition(position.id)">
                                         Apply
@@ -61,10 +68,24 @@
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
+import { useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
     positions: Array,
 });
+
+const form = useForm({
+    name: '',
+    email: '',
+    phone: '',
+    user_message: '',
+    position_id: null,
+})
+
+const applyForPosition = (positionId) => {
+    form.position_id = positionId;
+    form.post(route('career.apply'));
+};
 </script>
 
 <style lang="scss" scoped></style>

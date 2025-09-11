@@ -30,7 +30,13 @@
                             <td>{{ position.responsibilities }}</td>
                             <td>{{ position.requirements }}</td>
                             <td>{{ position.highlight }}</td>
-                            <td>{{ position.benefits }}</td>
+                            <td>
+                                <ul class="p-0 m-0">
+                                    <li v-for="benefit in position.benefits" :key="benefit">
+                                         - {{ benefit.benefit }}
+                                    </li>
+                                </ul>
+                            </td>
                             <td>
                                 <div class="flex justify-content-end gap-2">
                                     <Link :href="route('admin.positions.edit', { id: position.id })"

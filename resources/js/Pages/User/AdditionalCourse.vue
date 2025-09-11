@@ -12,8 +12,8 @@
         
         <section class="container py-10">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-                <div class="flex rounded-lg overflow-hidden" v-for="course in additionalCourses" :key="course.id">
-                    <div class="w-70 h-40 overflow-hidden shadow-lg ">
+                <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in additionalCourses" :key="course.id">
+                    <div class="w-full sm:w-70 h-40 overflow-hidden shadow-lg ">
                         <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                     </div>
                     <div class=" mx-3 mt-3">
