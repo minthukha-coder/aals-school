@@ -131,27 +131,27 @@
                     <Link :href="route('foundation-courses')" class="block text-black text-decoration-none">Foundation Courses</Link>
                     <Link :href="route('cambridge-courses')" class="block text-black text-decoration-none">Cambridge Academic English Courses</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">Adult English</Link>
-                    <Link href="#" class="block text-black text-decoration-none">International Student Program</Link>
-                    <Link href="#" class="block text-black text-decoration-none">IGCSE English</Link>
-                    <Link href="#" class="block text-black text-decoration-none">GED</Link>
-                    <Link href="#" class="block text-black text-decoration-none">IELTS</Link>
-                    <Link href="#" class="block text-black text-decoration-none">ICT Coding</Link>
-                    <Link href="#" class="block text-black text-decoration-none">Programming</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">International Student Program</Link>
+                    <Link :href="route('cambridge-courses')" class="block text-black text-decoration-none">IGCSE English</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">GED</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">IELTS</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">ICT Coding</Link>
+                    <Link :href="route('additional-courses')" class="block text-black text-decoration-none">Programming</Link>
                 </div>
             </div>
             <div>
                 <p class="font-bold">Exam Services</p>
                 <div class="pl-4 space-y-1">
-                    <Link href="#" class="block text-black text-decoration-none">KET</Link>
-                    <Link href="#" class="block text-black text-decoration-none">PET</Link>
-                    <Link href="#" class="block text-black text-decoration-none">FEC</Link>
-                    <Link href="#" class="block text-black text-decoration-none">Starters</Link>
-                    <Link href="#" class="block text-black text-decoration-none">Movers</Link>
-                    <Link href="#" class="block text-black text-decoration-none">Flyers</Link>
-                    <Link href="#" class="block text-black text-decoration-none">IELTS</Link>
-                    <Link href="#" class="block text-black text-decoration-none">GED</Link>
-                    <Link href="#" class="block text-black text-decoration-none">Duolingo</Link>
-                    <Link href="#" class="block text-black text-decoration-none">IGCSE O level ESL, EFL</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">KET</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">PET</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">FEC</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">Starters</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">Movers</Link>
+                    <Link :href="route('cambridge-exam-courses')" class="block text-black text-decoration-none">Flyers</Link>
+                    <Link :href="route('international-courses')" class="block text-black text-decoration-none">IELTS</Link>
+                    <Link :href="route('international-courses')" class="block text-black text-decoration-none">GED</Link>
+                    <Link :href="route('international-courses')" class="block text-black text-decoration-none">Duolingo</Link>
+                    <Link :href="route('international-courses')" class="block text-black text-decoration-none">IGCSE O level ESL, EFL</Link>
                 </div>
             </div>
             <Link :href="route('gallery')" class="block text-decoration-nonepy-2">Gallery</Link>

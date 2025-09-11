@@ -16,22 +16,6 @@
                         <h2 class="font-semibold text-lg mb-1">{{ partnership?.title }}</h2>
                         <p class="text-sm text-gray-600">{{ partnership?.description }}</p>
 
-                        <!-- <div class="card-footer bg-white d-flex justify-content-end gap-3 border-top">
-                            <Link :href="route('admin.partnerships.edit', {id : partnership?.id})" class="text-decoration-none">
-                            <button type="button"
-                                class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
-                                <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                Edit
-                            </button>
-                            </Link>
-                            <form @submit.prevent="deletePartnership(partnership?.id)">
-                                <button type="submit"
-                                    class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1">
-                                    <font-awesome-icon icon="fa-solid fa-trash" />
-                                    Delete
-                                </button>
-                            </form>
-                        </div> -->
                     </div>
                 </div>
                 <div v-if="partnership" class="text-center">
@@ -43,7 +27,7 @@
                 </div>
 
                  <div v-else class="text-center mt-4">
-                    <Link :href="route('admin.partnerships.edit')"><button class="btn btn-success"> <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" /> Upload</button></Link>
+                    <Link :href="route('admin.partnerships.create')"><button class="btn btn-success"> <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" /> Upload</button></Link>
                 </div>
             </div>
         </Layout>

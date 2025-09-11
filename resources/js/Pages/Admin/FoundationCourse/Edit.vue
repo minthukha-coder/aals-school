@@ -11,13 +11,11 @@
                     </v-col>
 
                     <v-col cols="12">
-                        <v-textarea v-model="form.age" rows="1" label="Age" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.age" />
+                        <v-textarea v-model="form.age" rows="1" label="Age" variant="outlined"   :error="!!$page.props.errors.age" :error-messages="$page.props.errors.age"></v-textarea>
                     </v-col>
 
                       <v-col cols="12">
-                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.duration" />
+                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"   :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration"></v-textarea>
                     </v-col>
 
                     <v-col cols="12">

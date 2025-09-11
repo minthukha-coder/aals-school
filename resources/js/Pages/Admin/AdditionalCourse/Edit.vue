@@ -6,13 +6,13 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.title" />
+                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"
+                            :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title"></v-textarea>
                     </v-col>
 
-                    <v-col cols="12">
-                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.duration" />
+                    <v-col cols="12" class="mt-4">
+                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
+                            :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration"></v-textarea>
                     </v-col>
 
                     <v-col cols="12">
@@ -45,7 +45,7 @@ import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
-import { update} from '../../Composables/httpMethod.js';
+import { update } from '../../Composables/httpMethod.js';
 const props = defineProps({
     course: Object,
 });
@@ -59,7 +59,7 @@ const onFileChange = (event) => {
 
 const form = useForm({
     title: props.course?.title || '',
-    duration : props.course?.duration || '',
+    duration: props.course?.duration || '',
     image: props.course?.image
 });
 
@@ -69,7 +69,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    update(form,route('admin.additional-courses.update', {id : props.course.id}));
+    update(form, route('admin.additional-courses.update', { id: props.course.id }));
 }
 </script>
 

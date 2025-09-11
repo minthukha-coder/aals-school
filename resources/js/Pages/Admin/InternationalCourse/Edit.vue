@@ -6,12 +6,12 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.name" />
+                        <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"
+                            :error="!!$page.props.errors.name" :error-messages="$page.props.errors.name"></v-textarea>
                     </v-col>
 
 
-                    <v-col cols="12">
+                    <v-col cols="12" class="mt-4">
                         <v-file-input chips prepend-icon="mdi-camera" @change="onFileChange"
                             @input="form.image = $event.target.files[0]" variant="outlined" label="File" show-size
                             clearable @click:clear="clearImage"></v-file-input>
@@ -41,7 +41,7 @@ import Layout from '@/Pages/Admin/Layouts/Layout.vue'
 import ErrorMessage from '../Components/ErrorMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 import { onMounted, ref } from 'vue';
-import { update} from '../../Composables/httpMethod.js';
+import { update } from '../../Composables/httpMethod.js';
 const props = defineProps({
     course: Object,
 });
@@ -64,7 +64,7 @@ const clearImage = () => {
 };
 
 const submit = () => {
-    update(form,route('admin.international-courses.update', {id : props.course.id}));
+    update(form, route('admin.international-courses.update', { id: props.course.id }));
 }
 </script>
 

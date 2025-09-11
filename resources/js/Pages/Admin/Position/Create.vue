@@ -4,13 +4,10 @@
         <div class="row mt-3">
             <div class="col-sm-12 col-md-6 col-lg-6 flex flex-col justify-center mx-auto">
                 <v-row>
-                
-                    <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined" />
-                    <ErrorMessage :text="$page.props.errors.name" />
-                   
+                    <v-textarea v-model="form.name" rows="1" label="Name" variant="outlined"   :error="!!$page.props.errors.name" :error-messages="$page.props.errors.name"/>
                 </v-row>
 
-                <v-row>
+                <v-row class="mt-3">
                     <v-textarea v-model="form.salary" rows="1" label="Salary" variant="outlined"></v-textarea>
                 </v-row>
 

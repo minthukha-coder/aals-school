@@ -5,18 +5,15 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.title" />
+                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"   :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title"></v-textarea>
                     </v-col>
 
-                    <v-col cols="12">
-                        <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.course" />
+                    <v-col cols="12" class="mt-4">
+                        <v-textarea v-model="form.course" rows="1" label="Course" variant="outlined"   :error="!!$page.props.errors.course" :error-messages="$page.props.errors.course"></v-textarea>
                     </v-col>
 
-                      <v-col cols="12">
-                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.duration" />
+                      <v-col cols="12" class="mt-4">
+                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"   :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration"></v-textarea>
                     </v-col>
 
                     <v-col cols="12">
