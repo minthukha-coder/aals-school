@@ -22,7 +22,7 @@ class AboutController extends Controller
     {
         $about = About::first();
         if ($about) {
-            $about->name = asset('storage/images/' . $about->name);
+            $about->image = asset('storage/images/' . $about->image);
         }
         return inertia('Admin/About/Edit', compact('about'));
     }
