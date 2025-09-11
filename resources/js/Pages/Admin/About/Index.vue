@@ -8,6 +8,13 @@
                     <img :src="props.about?.image" alt="" class="rounded-lg mb-4 w-100 h-100 object-fit-cover" />
                 </div>
 
+                <div>
+                    <h3 class="font-bold text-md">{{ props.about?.title }}</h3>
+                    <p class="text-left mt-3">
+                        {{ props.about?.description }}
+                    </p>
+                </div>
+
                 <div v-if="about" class="text-center">
                     <Link :href="route('admin.about.edit')"><button
                         class="btn btn-success btn-sm w-10 my-2 float-end"><font-awesome-icon icon="fa-solid fa-pen-to-square" /></button></Link>

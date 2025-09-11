@@ -3,9 +3,9 @@
             <div class="main-page">
                 <section class="block md:hidden home-page position-relative">
                     <div>
-                        <img :src="homeImage?.name" alt="" class="w-full object-cover" style="height: 500px" />
+                        <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover" style="height: 500px" />
                     </div>
-                    <div class="absolute left-0 top-0 text-white p-2">
+                    <div class="absolute left-0 top-20 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
                     </div>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
 
-                    <div class="absolute left-10 top-70 text-white p-2">
+                    <div class="absolute left-50 top-30 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
                     </div>
