@@ -2,7 +2,7 @@
     <Layout>
 
         <div class="container my-3 text-center">
-            <h3>Gallery</h3>
+            <p class="text-2xl font-bold">Gallery</p>
             <p>The major teaching approach we pursue is communicative and student-oriented approach. We guarantee
                 that
                 students of the SPACE Language Academy achieve English language skills that can worthily reflect the

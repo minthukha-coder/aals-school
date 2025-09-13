@@ -6,8 +6,8 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea>
-                         <ErrorMessage :text="$page.props.errors.title" />
+                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined" :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title"></v-textarea>
+                        
                     </v-col>
 
                     <v-col cols="12">

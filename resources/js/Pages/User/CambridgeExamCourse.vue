@@ -2,33 +2,38 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div>
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                <img src="../User/images/exam_courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
-            <div class="absolute left-0 top-60 text-black p-2">
+            <!-- <div class="absolute left-0 top-60 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
-            </div>
+            </div> -->
         </section>
 
         <section class="" id="cambridge-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <h3 class="py-2 text-center">Cambridge Exam Courses</h3>
+                <p class="text-2xl font-bold py-2 text-center">Cambridge Exam Courses</p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
-                    <div v-for="course in cambridgeExamCourses" :key="course.id" class="flex items-end my-2">
-                        <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">
-                            <img :src="course?.image" alt="" class="w-full h-full object-cover" style="height:100%;"/>
+                    <div v-for="course in cambridgeExamCourses" :key="course.id"
+                        class="flex flex-col sm:flex-row items-end my-2">
+                        <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover" />
                         </div>
-                        <div class="w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6 class="font-bold text-xl">Course : {{ course.name }}</h6>
-                            <p>Duration : {{ course.duration }}</p>
-                            <span class="ml-18">{{ course.months }}</span>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
+                        <div class="w-full sm:w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
+                            <p class="font-bold text-xl text-center sm:text-left text-lg">Course : {{ course.name }}</p>
+                            <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
+                            <span class="block text-center sm:text-left text-lg">{{ course.months }}</span>
+                            <div class="flex justify-center sm:justify-end my-3">
+                                <button class="btn btn-success">
+                                    email me <font-awesome-icon icon="fa-solid fa-envelope" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </section>
+<<<<<<< HEAD
 
         <section class="vh-20 position-relative" id="foundation-course">
             <div>
@@ -39,13 +44,16 @@
             </div>
         </section>
 </Layout>
+=======
+    </Layout>
+>>>>>>> fb9f1b7e89ca0959613213d8e937ce66f63b3c3d
 </template>
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 
 const props = defineProps({
-    cambridgeExamCourses : Array
+    cambridgeExamCourses: Array
 })
 </script>
 

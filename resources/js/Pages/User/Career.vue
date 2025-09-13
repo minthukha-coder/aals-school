@@ -13,7 +13,7 @@
         </section>
 
         <section class="container py-10">
-            <h2>Positions</h2>
+            <p class="text-2xl font-bold">Positions</p>
             <v-expansion-panels>
                 <v-expansion-panel v-for="(position) in positions" :key="position.id">
                     <v-expansion-panel-title>

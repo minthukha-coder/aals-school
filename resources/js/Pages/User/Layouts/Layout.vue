@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="layout">
         <Navbar />
-        <slot />
+        <div class="content">
+            <slot />
+        </div>
         <Footer />
     </div>
 </template>
@@ -11,4 +13,12 @@ import Navbar from '@/Pages/User/Components/Navbar.vue'
 import Footer from '@/Pages/User/Components/Footer.vue'
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.layout {
+    font-family: "Inter", sans-serif;
+}
+
+.content {
+    font-family: "Inter", sans-serif;
+}
+</style>

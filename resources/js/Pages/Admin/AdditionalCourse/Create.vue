@@ -10,7 +10,7 @@
                 </v-row>
 
                 <v-row class="mt-4">
-                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined" style="font-size:24px;"
+                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
                         :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration">
                     </v-textarea>
                 </v-row>
