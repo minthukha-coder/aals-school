@@ -2,20 +2,23 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Mail\Mailables\Content;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\PartnershipController;
-use App\Http\Controllers\Admin\InternationalCourseController;
 use App\Http\Controllers\Admin\CambridgeCourseController;
 use App\Http\Controllers\Admin\AdditionalCourseController;
 use App\Http\Controllers\Admin\FoundationCourseController;
 use App\Http\Controllers\Admin\CambridgeExamCourseController;
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\InternationalCourseController;
 use App\Http\Controllers\HomeController as UserHomeController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
@@ -31,6 +34,7 @@ Route::get('/international-courses', [UserHomeController::class, 'internationalC
 Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 Route::post('/career/apply', [UserHomeController::class, 'applyForPosition'])->name('career.apply');
+Route::get('/search', [UserHomeController::class, 'search'])->name('search');
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('login');
     Route::post('/login', 'login')->name('login.post');
@@ -124,6 +128,15 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
     });
 
     Route::group(['prefix' => 'positions', 'controller' => PositionController::class, 'as' => 'positions.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'contents', 'controller' => ContentController::class, 'as' => 'contents.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');

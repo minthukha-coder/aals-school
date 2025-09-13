@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\About;
 use App\Models\Course;
+use App\Models\Content;
 use App\Models\Position;
 use App\Models\HomeImage;
 use App\Models\Partnership;
@@ -54,7 +55,8 @@ class HomeController extends Controller
     }
 
     //learning pathway
-    public function learningPathway(){
+    public function learningPathway()
+    {
         return Inertia::render('User/LearningPathway');
     }
 
@@ -79,14 +81,16 @@ class HomeController extends Controller
     }
 
     //positions
-    public function career(){
+    public function career()
+    {
         $positions = Position::with('benefits')->get();
         return Inertia::render('User/Career', compact('positions'));
     }
 
     //apply for position
-    public function applyForPosition(Request $request){
-           $data = $request->validate([
+    public function applyForPosition(Request $request)
+    {
+        $data = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required|string',
@@ -99,8 +103,8 @@ class HomeController extends Controller
         // Send Email
         Mail::send('emails.application', $data, function ($message) use ($data) {
             $message->to('minthukha25122003@gmail.com') // HR/Admin email
-            ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
-                    ->replyTo($data['email']);
+                ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
+                ->replyTo($data['email']);
         });
 
         return redirect()->route('home')->with('success', 'Application sent successfully!');
@@ -162,14 +166,29 @@ class HomeController extends Controller
     }
 
     // gallery
-    public function gallery(){
+    public function gallery()
+    {
         return Inertia::render('User/Gallery');
-
     }
 
     //contact
     public function contact()
     {
         return Inertia::render('User/Contact');
+    }
+
+    //search
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $results = Content::where('title', 'LIKE', "%{$query}%")
+            ->orWhere('body', 'LIKE', "%{$query}%")
+            ->get();
+
+        return inertia('User/Search', [
+            'results' => $results,
+            'query' => $query,
+        ]);
     }
 }

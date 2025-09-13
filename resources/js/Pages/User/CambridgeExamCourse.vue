@@ -19,7 +19,7 @@
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
                         </div>
                         <div class="w-full sm:w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
-                            <p class="font-bold text-xl text-center sm:text-left text-lg">Course : {{ course.name }}</p>
+                            <p class="font-bold text-center sm:text-left text-lg">Course : {{ course.name }}</p>
                             <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
                             <span class="block text-center sm:text-left text-lg">{{ course.months }}</span>
                             <div class="flex justify-center sm:justify-end my-3">
@@ -33,20 +33,7 @@
 
             </div>
         </section>
-<<<<<<< HEAD
-
-        <section class="vh-20 position-relative" id="foundation-course">
-            <div>
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
-            </div>
-            <div class="absolute left-0 top-30 text-white p-2">
-                <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
-            </div>
-        </section>
-</Layout>
-=======
     </Layout>
->>>>>>> fb9f1b7e89ca0959613213d8e937ce66f63b3c3d
 </template>
 
 <script setup>
