@@ -33,20 +33,7 @@
 
             </div>
         </section>
-<<<<<<< HEAD
-
-        <section class="vh-20 position-relative" id="foundation-course">
-            <div>
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
-            </div>
-            <div class="absolute left-0 top-30 text-white p-2">
-                <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
-            </div>
-        </section>
-</Layout>
-=======
     </Layout>
->>>>>>> fb9f1b7e89ca0959613213d8e937ce66f63b3c3d
 </template>
 
 <script setup>
