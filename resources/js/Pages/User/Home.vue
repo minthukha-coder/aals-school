@@ -19,21 +19,21 @@
                         </div>
                     </div>
 
-                    <div class="absolute left-50 top-30 text-white p-2">
+                    <!-- <div class="absolute left-50 top-30 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section class="mt-5 max-w-7xl mx-auto" id="about-us">
-                    <h3 class="text-center font-bold text-2xl">About Us</h3>
+                    <p class="text-center font-bold text-2xl">About Us</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
-                            <img :src="about?.image" alt="" class="rounded-tr-[100px] rounded-bl-[100px]"
-                                style="width:400px;height:300px;" />
+                            <img :src="about?.image" alt="" class="w-100 rounded-tr-[100px] rounded-bl-[100px]"
+                                style="height:300px;" />
                         </div>
                         <div class="p-2">
-                            <h2 class="font-bold text-xl">{{ about?.title }}</h2>
+                            <h3 class="font-bold text-lg">{{ about?.title }}</h3>
                             <p>
                                 {{ about?.description }}<a :href="route('about')"><span v-if="about?.description">Read
                                         More....</span></a>
@@ -43,7 +43,7 @@
                 </section>
 
                 <section class="my-5 max-w-7xl mx-auto" id="courses">
-                    <h3 class="text-center font-bold text-2xl">Courses</h3>
+                    <p class="text-center font-bold text-2xl">Courses</p>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
 
@@ -53,7 +53,7 @@
                                 <img :src="course?.image" alt="" class="w-100" style="height:250px;object-fit:cover;" />
                             </div>
                             <div class="p-2">
-                                <h2 class="font-bold text-xl">{{ course.title }}</h2>
+                                <h3 class="font-bold text-xl">{{ course.title }}</h3>
                                 <p class="mt-3">
                                     {{ course.description }}
                                 </p>
@@ -62,7 +62,7 @@
 
                         <template v-else>
                             <div class="p-2">
-                                <h2 class="font-bold text-xl">{{ course.title }}</h2>
+                                <h3 class="font-bold text-xl">{{ course.title }}</h3>
                                 <p class="mt-3">
                                     {{ course.description }}
                                 </p>
@@ -77,7 +77,7 @@
 
                 <section class="bg-green-200" id="additional-courses">
                     <div class="max-w-7xl mx-auto md:mt-5">
-                        <h3 class="pt-3">Additional Courses</h3>
+                        <p class="pt-3 text-2xl font-bold">Additional Courses</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500 p-3">
                             <div v-for="course in additionalCourses" :key="course.id" class="">
                                 <Card :course="course" />
@@ -103,7 +103,7 @@
                 </section>
 
                 <section id="partnership" class="mt-5 max-w-7xl mx-auto" style="margin-bottom:100px;">
-                    <h3 class="font-bold text-center pb-15">Partnership</h3>
+                    <p class="font-bold text-center pb-15 text-2xl">Partnership</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
                         <!-- Left Text Card -->
                         <div class="border border-black card p-3 w-full">

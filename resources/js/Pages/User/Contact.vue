@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <div id="contact-us" class="container-fluid" style="background-color: gainsboro;">
-            <h3 class="text-center fw-bold">Contact Us</h3>
+            <p class="text-center text-2xl fw-bold">Contact Us</p>
             <h4 class="fw-bold">General Enquires</h4>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 place-content-center">
