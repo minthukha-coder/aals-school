@@ -10,12 +10,12 @@
                 </v-row>
 
                 <v-row class="mt-4">
-                    <v-textarea v-model.number="form.duration" rows="1" label="Duration" variant="outlined"
+                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined" style="font-size:24px;"
                         :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration">
                     </v-textarea>
                 </v-row>
 
-                <v-row class="preview flex justify-center relative" v-if="formImageUrl">
+                <v-row class="preview flex justify-center relative " v-if="formImageUrl">
                     <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
 
                     <div class="absolute top-0 right-0">

@@ -2,7 +2,7 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div>
-                <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                <img src="../User/images/career.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
             <div class="absolute left-30 top-40 md:left-20 md:top-60 text-white p-2">
                 <div>

@@ -2,7 +2,7 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div>
-                <img src="../User/images/home.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                <img src="../User/images/cambridge-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
             <div class="absolute left-0 top-40 md:left-20 md:top-60 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:50px;">Cambridge Academic Courses</h4>

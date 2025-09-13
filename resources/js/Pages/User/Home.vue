@@ -15,14 +15,14 @@
                     <div class="row justify-content-center items-center">
                         <div class="col-md-12">
                             <img :src="homeImage?.name" alt="Home Image" class="img-fluid w-100"
-                                style="object-fit: cover;" />
+                                style="height:90vh; object-fit: cover;" />
                         </div>
                     </div>
 
-                    <div class="absolute left-50 top-30 text-white p-2">
+                    <!-- <div class="absolute left-50 top-30 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section class="mt-5 max-w-7xl mx-auto" id="about-us">
@@ -35,7 +35,7 @@
                         <div class="p-2">
                             <h2 class="font-bold text-xl">{{ about?.title }}</h2>
                             <p>
-                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description">Read
+                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description" style="underline:none;"> Read
                                         More....</span></a>
                             </p>
                         </div>
@@ -88,7 +88,7 @@
 
                 <section class="hidden md:block" id="learning-pathway">
                     <div class="relative w-full h-full">
-                        <img src="../User/images/home.jpg" alt="" class="w-full h-full object-cover"
+                        <img src="../User/images/learning-pathway.png" alt="" class="w-full h-full object-cover"
                             style="height:500px;" />
                         <h3 class="absolute left-8 top-1/8 transform
                text-white font-bold" style="font-size:70px;">

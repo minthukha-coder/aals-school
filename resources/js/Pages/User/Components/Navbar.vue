@@ -26,7 +26,7 @@
                     </div>
 
                        <div>
-                        <Link :href="route('career')" class="text-white text-decoration-none flex items-center h-full">Carrier</Link>
+                        <Link :href="route('career')" class="text-white text-decoration-none flex items-center h-full">Career</Link>
                     </div>
 
                     <div class="relative group" id="courses">
@@ -124,7 +124,7 @@
         </div>
 
         <div v-show="isMobileMenuOpen" class="md:hidden bg-white text-black px-4 pb-4 space-y-2">
-            <Link :href="route('home')" class="block py-2 text-bloack">Home</Link>
+            <Link :href="route('home')" class="block py-2 text-black text-decoration-none">Home</Link>
             <div>
                 <p class="font-bold">Courses</p>
                 <div class="pl-4 space-y-1">
@@ -154,9 +154,9 @@
                     <Link :href="route('international-courses')" class="block text-black text-decoration-none">IGCSE O level ESL, EFL</Link>
                 </div>
             </div>
-            <Link :href="route('gallery')" class="block text-decoration-nonepy-2">Gallery</Link>
-            <Link :href="route('contact')" class="block text-decoration-none py-2">Contact Us</Link>
-            <Link :href="route('about')" class="block text-decoration-none py-2">About Us</Link>
+            <Link :href="route('gallery')" class="block text-black text-decoration-none py-2">Gallery</Link>
+            <Link :href="route('contact')" class="block text-black text-decoration-none py-2">Contact Us</Link>
+            <Link :href="route('about')" class="block text-black text-decoration-none py-2">About Us</Link>
         </div>
     </nav>
 </template>
