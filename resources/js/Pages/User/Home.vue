@@ -88,9 +88,9 @@
 
                 <section class="hidden md:block" id="learning-pathway">
                     <div class="relative w-full h-full">
-                        <img src="../User/images/learning-pathway.png" alt="" class="w-full h-full object-cover"
-                            style="height:500px;" />
-                        <h3 class="absolute left-8 top-1/8 transform
+                        <img src="../User/images/learning-pathway.png" alt="" class="w-full h-full object-fit-cover"
+                            style="height:600px;" />
+                        <h3 class="absolute left-8 top-1/4 transform
                text-white font-bold" style="font-size:70px;">
                             Learning Pathway
                         </h3>

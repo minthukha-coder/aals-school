@@ -1,8 +1,8 @@
 <template>
     <Layout>
         <section class="vh-20" id="foundation-course">
-            <div>
-                <img src="../User/images/career.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+            <div class="hidden md:block">
+                <img src="../User/images/career.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
             </div>
             <div class="absolute left-30 top-40 md:left-20 md:top-60 text-white p-2">
                 <div>
@@ -30,12 +30,12 @@
                                 <p><strong>Responsibilities:</strong> {{ position.responsibilities }}</p>
                                 <p><strong>Requirements:</strong> {{ position.requirements }}</p>
                                 <p><strong>Highlights:</strong> {{ position.highlight }}</p>
-                                <p><strong>Benefits:</strong>
+                                <p><strong>Benefits:</strong> </p>
+
                                 <ul class="p-0 m-0">
                                     <li v-for="benefit in position.benefits" :key="benefit.id"> - {{ benefit.benefit }}
                                     </li>
                                 </ul>
-                                </p>
 
                             </div>
                             <!-- Application Form -->

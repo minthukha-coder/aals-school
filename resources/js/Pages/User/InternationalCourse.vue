@@ -1,8 +1,8 @@
 <template>
     <Layout>
         <section class="vh-20" id="international-course">
-            <div>
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+            <div class="hidden md:block">
+                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
             </div>
             <div class="absolute left-20 top-60 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>

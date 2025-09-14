@@ -1,8 +1,8 @@
 <template>
     <Layout>
         <section class="vh-20" id="foundation-course">
-            <div>
-                <img src="../User/images/additional-courses.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+            <div class="hidden md:block">
+                <img src="../User/images/additional-courses.jpg" alt="" class="w-full object-fit-cover" style="height:400px;" />
             </div>
             <!-- <div class="absolute left-0 top-40 md:left-20 md:top-60 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:50px;">Additional Courses</h4>
@@ -17,7 +17,7 @@
                         <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                     </div>
                     <div class="text-center md:!text-left mx-3 mt-3">
-                        <p class="font-bold text-lg text-lg">Course : {{ course.title }}</p>
+                        <p class="font-bold text-lg">Course : {{ course.title }}</p>
                         <p class="text-md">Duration : {{ course.duration }}</p>
                     </div>
                 </div>
@@ -28,7 +28,6 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
-import Card from "../User/Components/Card.vue";
 
 const props = defineProps({
     additionalCourses : Array
