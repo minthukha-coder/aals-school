@@ -10,30 +10,30 @@
 
                        <div class="grid grid-cols-3 gap-3 my-3">
                 <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
+                    <img src="../User/images/learning-pathway-1.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway2.jpg" alt=""
+                    <img src="../User/images/learning-pathway-2.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
+                    <img src="../User/images/learning-pathway-3.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
             </div>
 
             <div class="grid grid-cols-3 gap-3 my-3">
                 <div>
-                    <img src="../User/images/learning-pathway2.jpg" alt=""
+                    <img src="../User/images/learning-pathway-4.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway1.jpg" alt=""
+                    <img src="../User/images/learning-pathway-5.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
                 <div>
-                    <img src="../User/images/learning-pathway2.jpg" alt=""
+                    <img src="../User/images/learning-pathway-6.jpg" alt=""
                         class="w-full object-cover rounded-md" style="height:280px;object-fit:cover;" />
                 </div>
             </div>
