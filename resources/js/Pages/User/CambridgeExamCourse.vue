@@ -19,7 +19,7 @@
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
                         </div>
                         <div class="w-full sm:w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
-                            <p class="font-bold text-xl text-center sm:text-left text-lg">Course : {{ course.name }}</p>
+                            <p class="font-bold text-center sm:text-left text-lg">Course : {{ course.name }}</p>
                             <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
                             <span class="block text-center sm:text-left text-lg">{{ course.months }}</span>
                             <div class="flex justify-center sm:justify-end my-3">

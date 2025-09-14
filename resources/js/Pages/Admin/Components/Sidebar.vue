@@ -20,9 +20,9 @@
                 <SideLink :href="route('admin.international-courses.index')" icon="fa-solid fa-scroll"
                     :isOpen="showInternationalCourse" text="International Exam Services" />
 
-                <!-- <SideLink :href="route('admin.location.index')" icon="fa-solid fa-map-location-dot" :isOpen="showLocation"
-                    text="Location" /> -->
-
+                <SideLink :href="route('admin.contents.index')" icon="a-solid fa-file-contract" :isOpen="showContent"
+                    text="Content" />
+                    
                 <SideLink :href="route('admin.positions.index')" icon="fa-solid fa-users-gear" :isOpen="showPosition"
                     text="Position" />
 
@@ -94,6 +94,12 @@ const showInternationalCourse = ref(
 //     route().current("admin.location.create") ||
 //     route().current("admin.location.edit")
 // );
+
+const showContent = ref(
+    route().current("admin.contents.index") ||
+    route().current("admin.contents.create") ||
+    route().current("admin.contents.edit")
+);
 
 const showPosition = ref(
     route().current("admin.positions.index") ||
