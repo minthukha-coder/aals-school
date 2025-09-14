@@ -191,4 +191,10 @@ class HomeController extends Controller
             'query' => $query,
         ]);
     }
+
+    public function viewContent($id)
+    {
+        $content = Content::findOrFail($id);
+        return Inertia::render('User/ContentView', compact('content'));
+    }
 }

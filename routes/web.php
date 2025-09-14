@@ -35,6 +35,7 @@ Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 Route::post('/career/apply', [UserHomeController::class, 'applyForPosition'])->name('career.apply');
 Route::get('/search', [UserHomeController::class, 'search'])->name('search');
+Route::get('/content/{id}', [UserHomeController::class, 'viewContent'])->name('content.view');
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('login');
     Route::post('/login', 'login')->name('login.post');

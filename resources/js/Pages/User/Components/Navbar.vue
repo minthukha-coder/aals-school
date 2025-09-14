@@ -9,8 +9,8 @@
             </div>
 
             <div id="search">
-                <input type="text" class="form-control w-100 h-10 rounded-pill border-2 text-black"
-                    placeholder="Search..." style="border:1px solid #80ed99;"/>
+                <input v-model="searchQuery" type="text" class="form-control w-100 h-10 rounded-pill border-2 text-black"
+                    placeholder="Search..."  @keyup.enter="handleSearch" style="border:1px solid #80ed99;"/>
             </div>
 
         </div>
@@ -164,6 +164,14 @@
 <script setup>
 import { ref } from 'vue';
 const isMobileMenuOpen = ref(false);
+
+const searchQuery = ref('');
+
+function handleSearch() {
+  if (searchQuery.value.trim()) {
+    window.location.href = `/search?query=${encodeURIComponent(searchQuery.value)}`
+  }
+}
 </script>
 
 <style scoped>
