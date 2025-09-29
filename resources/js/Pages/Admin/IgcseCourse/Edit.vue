@@ -132,6 +132,6 @@ const onSubjectImageChange = (event, index) => {
 
 // Submit update
 const submit = () => {
-  update(form, route('admin.igcse-courses.update', props.course.id));
+  update(form, route('admin.igcse-courses.update', {id : props.course.id}));
 };
 </script>

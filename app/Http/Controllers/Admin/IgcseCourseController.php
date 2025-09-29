@@ -109,9 +109,9 @@ class IgcseCourseController extends Controller
         return inertia('Admin/IgcseCourse/Edit', compact('course'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $course = $this->model->findOrFail($id);
+        $course = $this->model->findOrFail($request->id);
 
         $data = $request->validate([
             'title' => 'required|string|max:255',
@@ -119,7 +119,6 @@ class IgcseCourseController extends Controller
             'price_monthly' => 'required|numeric',
             'image' => 'nullable|image|max:2048',
             'subjects' => 'array',
-            'subjects.*.title' => 'required|string|max:255',
         ]);
 
         if ($request->hasFile('image')) {
