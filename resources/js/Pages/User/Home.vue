@@ -35,7 +35,7 @@
                         <div class="p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
                             <p>
-                                {{ about?.description }}<a :href="route('about')"><span v-if="about?.description" style="underline:none;"> Read
+                                {{ about?.description }}<a :href="route('about')" class="text-decoration-none no-underline text-black"><span v-if="about?.description" > Read
                                         More....</span></a>
                             </p>
                         </div>

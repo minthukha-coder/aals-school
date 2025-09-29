@@ -9,10 +9,12 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\IgsceController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PositionController;
+use App\Http\Controllers\Admin\IgsceCourseController;
 use App\Http\Controllers\Admin\PartnershipController;
 use App\Http\Controllers\Admin\CambridgeCourseController;
 use App\Http\Controllers\Admin\AdditionalCourseController;
@@ -57,6 +59,15 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
     });
 
     Route::group(['prefix' => 'courses', 'controller' => CourseController::class, 'as' => 'courses.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
+
+       Route::group(['prefix' => 'igcse-courses', 'controller' => IgsceCourseController::class, 'as' => 'igcse-courses.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');

@@ -9,6 +9,9 @@
                     :isOpen="showPartnership" text="Partnerships" />
                 <SideLink :href="route('admin.courses.index')" icon="fa-solid fa-book" :isOpen="showCourse"
                     text="Courses" />
+
+                     <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showCourse"
+                    text="IGCSE Courses" />
                 <SideLink :href="route('admin.additional-courses.index')" icon="fa-solid fa-book-bookmark"
                     :isOpen="showAdditionalCourse" text="Additional Courses" />
                 <SideLink :href="route('admin.foundation-courses.index')" icon="fa-solid fa-book-journal-whills"
@@ -57,6 +60,12 @@ const showCourse = ref(
     route().current("admin.courses.index") ||
     route().current("admin.courses.create") ||
     route().current("admin.courses.edit")
+);
+
+const showIGCSECourse = ref(
+    route().current("admin.igcse-courses.index") ||
+    route().current("admin.igcse-courses.create") ||
+    route().current("admin.igcse-courses.edit")
 );
 
 const showAdditionalCourse = ref(

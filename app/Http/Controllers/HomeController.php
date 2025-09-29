@@ -54,6 +54,7 @@ class HomeController extends Controller
         return Inertia::render('User/Home', compact('homeImage', 'about', 'courses', 'additionalCourses', 'partnership'));
     }
 
+
     //learning pathway
     public function learningPathway()
     {
@@ -120,6 +121,16 @@ class HomeController extends Controller
             }
         }
         return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses'));
+    }
+
+    public function igcseCourse(){
+        $igcseCourses = Course::all();
+        if ($igcseCourses) {
+            foreach ($igcseCourses as $igcseCourse) {
+                $igcseCourse->image = asset('storage/images/' . $igcseCourse->image);
+            }
+        }
+        return Inertia::render('User/IGCSECourse', compact('igcseCourses'));
     }
 
     public function additionalCourse()
