@@ -50,7 +50,7 @@
                             </div>
                             <div class="h-40 bg-black mx-3" style="width: 2px"></div>
                             <div class="">
-                                <Link :href="route('cambridge-courses')" class="d-block text-decoration-none text-dark">IGCSE English</Link>
+                                <Link :href="route('igcse-courses')" class="d-block text-decoration-none text-dark">IGCSE English</Link>
                                 <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">GED</Link>
                                 <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">IELTS</Link>
                                 <Link :href="route('additional-courses')" class="d-block text-decoration-none text-dark">ICT Coding</Link>

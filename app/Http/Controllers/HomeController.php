@@ -8,6 +8,8 @@ use App\Models\Course;
 use App\Models\Content;
 use App\Models\Position;
 use App\Models\HomeImage;
+use App\Models\IgcseCourse;
+use App\Models\IgsceCourse;
 use App\Models\Partnership;
 use Illuminate\Http\Request;
 use App\Models\CambridgeCourse;
@@ -123,11 +125,19 @@ class HomeController extends Controller
         return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses'));
     }
 
-    public function igcseCourse(){
-        $igcseCourses = Course::all();
+    public function igcseCourse()
+    {
+        $igcseCourses = IgcseCourse::with('subjects')->get();
         if ($igcseCourses) {
             foreach ($igcseCourses as $igcseCourse) {
-                $igcseCourse->image = asset('storage/images/' . $igcseCourse->image);
+                if ($igcseCourse->image) {
+                    $igcseCourse->image = asset('storage/images/' . $igcseCourse->image);
+                }
+                foreach ($igcseCourse->subjects as $subject) {
+                    if ($subject->image) {
+                        $subject->image = asset('storage/images/' . $subject->image);
+                    }
+                }
             }
         }
         return Inertia::render('User/IGCSECourse', compact('igcseCourses'));
