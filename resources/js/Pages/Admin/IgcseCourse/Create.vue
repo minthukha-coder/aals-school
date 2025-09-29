@@ -36,7 +36,9 @@
             </div>
 
             <h5 class="text-center mt-6">Subjects</h5>
+            <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
             <button class="btn btn-primary my-2" @click="addSubject">+ Add Subject</button>
+            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-3">
 
@@ -55,7 +57,9 @@
             </div>
 
             <!-- Submit -->
+             <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
             <button @click="submit" class="btn btn-success my-3 w-100">Submit Course</button>
+            </div>
         </div>
     </Layout>
 </template>

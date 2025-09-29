@@ -15,6 +15,7 @@ use App\Models\AdditionalCourse;
 use App\Models\FoundationCourse;
 use App\Models\CambridgeExamCourse;
 use App\Models\InternationalCourse;
+use App\Models\IgsceCourse;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -124,14 +125,21 @@ class HomeController extends Controller
     }
 
     public function igcseCourse(){
-        $igcseCourses = Course::all();
-        if ($igcseCourses) {
-            foreach ($igcseCourses as $igcseCourse) {
+    $igcseCourses = IgsceCourse::with('subjects')->get(); 
+    if ($igcseCourses) {
+        foreach ($igcseCourses as $igcseCourse) {
+            if ($igcseCourse->image) {
                 $igcseCourse->image = asset('storage/images/' . $igcseCourse->image);
             }
+            foreach ($igcseCourse->subjects as $subject) {
+                if ($subject->image) {
+                    $subject->image = asset('storage/images/' . $subject->image);
+                }
+            }
         }
-        return Inertia::render('User/IGCSECourse', compact('igcseCourses'));
     }
+    return Inertia::render('User/IGCSECourse', compact('igcseCourses'));
+}
 
     public function additionalCourse()
     {

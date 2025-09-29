@@ -1,90 +1,65 @@
 <template>
     <Layout>
-        <h5 class="text-center">IGCSE Courses Page</h5>
-        <Link :href="route('admin.igcse-courses.create')"><button class="btn btn-success float-end">
-            <font-awesome-icon icon="fa-solid fa-circle-plus" /> Create
-        </button>
-        </Link>
+        <h5 class="text-center mb-4">IGCSE Courses Page</h5>
 
-        <v-row class="mb-5">
-            <v-col cols="12" sm="3" v-for="course in igcseCourses" :key="course.id">
-                <v-card :loading="loading" class="border shadow" style="height: 100%">
-                    <template v-slot:loader="{ isActive }">
-                        <v-progress-linear :active="isActive" color="deep-purple" height="4"
-                            indeterminate></v-progress-linear>
-                    </template>
+        <div class="mb-4 text-end">
+            <Link :href="route('admin.igcse-courses.create')">
+            <button class="btn btn-success">
+                <font-awesome-icon icon="fa-solid fa-circle-plus" /> Create
+            </button>
+            </Link>
+        </div>
 
-                    <div>
-                        <v-img v-if="course.image" height="120" :src="course.image" cover
-                            class="position-relative"></v-img>
-                        <!-- <img class="position-relative" v-else
-                            src="../../../images/default-profile-icon-v0-5ieelpg6lu0b1.jpg" style="
-                      width: 100%;
-                      height: 120px;
-                      object-fit: cover;
-                      object-position: center;
-                    " /> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
+            <div v-for="course in igcseCourses" :key="course.id" class="card mb-4 shadow rounded overflow-hidden">
+                <img :src="course.image" class="card-img-top" alt="Course Image"
+                    style="height: 200px; object-fit: cover;" />
 
-                        <v-card-item>
-                            <h5 class="font-bold my-2">{{ course.title }}</h5>
-                        </v-card-item>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ course.title }}</h5>
+                    <p class="mb-1">Duration: {{ course.duration }}</p>
+                    <p>Price: {{ course.price_monthly }} Ks / month</p>
+                </div>
 
-                        <v-card-text>
-                            <v-row align="center" class="mx-0">
-                                <div class="my-3 text-xs mr-5">
-                                    {{ course.duration }}
-                                </div>
-                            </v-row>
-                            <div class="my-2">{{ course.price_monthly }} per months</div>
-                        </v-card-text>
-                    </div>
+                <div class="card-footer bg-white d-flex justify-content-end gap-2 border-top">
+                    <Link :href="route('admin.igcse-courses.show', { id: course.id })">
+                    <button type="button" class="btn btn-sm btn-outline-info d-flex align-items-center gap-1">
+                        <font-awesome-icon icon="fa-solid fa-info-circle" /> Details
+                    </button>
+                    </Link>
 
-                    <div class="h-100">
-                        <Link :href="route('admin.igcse-courses.show', {
-                            id: course.id,
-                        })
-                            ">
-                        <v-btn color="#EF4444" variant="text">
-                            Details
-                        </v-btn>
-                        </Link>
+                    <Link :href="route('admin.igcse-courses.edit', { id: course.id })">
+                    <button type="button" class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
+                        <font-awesome-icon icon="fa-solid fa-pen-to-square" /> Edit
+                    </button>
+                    </Link>
 
-                        <div class=" bg-white d-flex justify-content-end gap-3 mb-1">
-                            <Link :href="route('admin.igcse-courses.edit', { id: course.id })
-                                " class="text-decoration-none">
-                            <button type="button"
-                                class="btn btn-sm btn-outline-primary d-flex align-items-center gap-1">
-                                <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                Edit
-                            </button>
-                            </Link>
-
-                            <form @submit.prevent="deleteCourse(course.id)">
-                                <button type="submit"
-                                    class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1">
-                                    <font-awesome-icon icon="fa-solid fa-trash" />
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                </v-card>
-
-            </v-col>
-        </v-row>
+                    <form @submit.prevent="deleteCourse(course.id)">
+                        <button type="submit" class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1">
+                            <font-awesome-icon icon="fa-solid fa-trash" /> Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </Layout>
 </template>
 
 <script setup>
-import Layout from "@/Pages/Admin/Layouts/Layout.vue";
+import Layout from '../Layouts/Layout.vue';
+import { del } from '../../Composables/httpMethod';
+
 const props = defineProps({
     igcseCourses: Array,
 });
 
 const deleteCourse = (id) => {
-    del(route("admin.igcse-courses.destroy", { id: id }));
+    del(route('admin.igcse-courses.destroy', { id }));
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.card-title {
+    font-size: 1.1rem;
+}
+</style>

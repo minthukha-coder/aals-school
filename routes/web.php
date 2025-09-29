@@ -33,6 +33,7 @@ Route::get('/about', [UserHomeController::class, 'about'])->name('about');
 Route::get('/courses', [UserHomeController::class, 'courses'])->name('courses');
 Route::get('/cambridge-exam-courses', [UserHomeController::class, 'cambridgeExamCourse'])->name('cambridge-exam-courses');
 Route::get('/international-courses', [UserHomeController::class, 'internationalCourse'])->name('international-courses');
+Route::get('/igcse-courses', [UserHomeController::class, 'igcseCourse'])->name('igcse-courses');
 Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
 Route::post('/career/apply', [UserHomeController::class, 'applyForPosition'])->name('career.apply');
