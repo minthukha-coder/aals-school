@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class IgsceCourse extends Model
+class IgcseCourse extends Model
 {
     //
 
@@ -12,6 +12,6 @@ class IgsceCourse extends Model
 
     public  function subjects()
     {
-        return $this->hasMany(Subject::class, 'igscse_course_id');
+        return $this->hasMany(Subject::class, 'igcse_course_id');
     }
 }

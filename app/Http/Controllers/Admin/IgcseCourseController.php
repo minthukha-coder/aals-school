@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\IgsceCourse;
+use App\Models\IgcseCourse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class IgsceCourseController extends Controller
+class IgcseCourseController extends Controller
 {
     //
-    public function __construct(protected IgsceCourse $model) {}
+    public function __construct(protected IgcseCourse $model) {}
 
     //index
     public function index()
@@ -94,7 +94,18 @@ class IgsceCourseController extends Controller
 
     public function edit(Request $request)
     {
-        $course = $this->model->find($request->id);
+        $course = $this->model->with('subjects')->find($request->id);
+              if ($course->image) {
+            $course->image = asset('storage/images/' . $course->image);
+        }
+
+        if ($course->subjects) {
+            foreach ($course->subjects as $subject) {
+                if ($subject->image) {
+                    $subject->image = asset('storage/images/' . $subject->image);
+                }
+            }
+        }
         return inertia('Admin/IgcseCourse/Edit', compact('course'));
     }
 

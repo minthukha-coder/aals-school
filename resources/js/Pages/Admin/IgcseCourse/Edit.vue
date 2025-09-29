@@ -23,7 +23,7 @@
                 <!-- Preview Main Image -->
                 <v-row class="preview flex justify-center relative mt-6" v-if="formImageUrl || course.image">
                     <v-img class="rounded-lg mb-4 w-100" :height="200" cover
-                        :src="formImageUrl ? formImageUrl : `/storage/${course.image}`" />
+                        :src="formImageUrl ? formImageUrl : course?.image" />
                     <div class="absolute top-0 right-0" v-if="formImageUrl">
                         <button @click="clearImage" class="fs-2">
                             <font-awesome-icon icon="fa-solid fa-circle-xmark" />
@@ -51,9 +51,12 @@
                     <v-file-input @change="onSubjectImageChange($event, index)" label="Subject Image" chips
                         prepend-icon="mdi-image" variant="outlined" clearable />
 
-                    <v-img v-if="subject.preview || subject.image_url"
-                        :src="subject.preview ? subject.preview : `/storage/${subject.image_url}`"
-                        :height="120" class="rounded mt-2" />
+            <v-img 
+      v-if="subject.preview || subject.image_url" 
+      :src="subject.preview ? subject.preview : subject.image_url" 
+      :height="120" 
+      class="rounded mt-2" 
+    />
 
                     <button class="btn btn-danger btn-sm mt-2" @click="removeSubject(index)">
                         Remove Subject
@@ -78,55 +81,57 @@ const props = defineProps({
     course: Object 
 })
 
+console.log(props.course);
+
 const toast = useToast();
-const formImageUrl = ref(null);
+const formImageUrl = ref(props.course.image ?? null);
 
 const form = useForm({
-    title: props.course.title,
-    duration: props.course.duration,
-    price_monthly: props.course.price_monthly,
+  title: props.course.title,
+  duration: props.course.duration,
+  price_monthly: props.course.price_monthly,
+  image: null,
+  subjects: (props.course.subjects ?? []).map(sub => ({
+    title: sub.title,
     image: null,
-    subjects: props.course.subjects.map(sub => ({
-        title: sub.title,
-        image: null,
-        image_url: sub.image,
-        preview: null
-    }))
+    image_url: sub.image,
+    preview: null
+  }))
 });
 
-// Preview new course image
 const onFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        formImageUrl.value = URL.createObjectURL(file);
-        form.image = file;
-    }
+  const file = event.target.files[0];
+  if (file) {
+    formImageUrl.value = URL.createObjectURL(file);
+    form.image = file;
+  }
 };
 
 const clearImage = () => {
-    formImageUrl.value = null;
-    form.image = null;
+  formImageUrl.value = props.course.image ? `/storage/${props.course.image}` : null;
+  form.image = null;
 };
 
-// Subjects
 const addSubject = () => {
-    form.subjects.push({ title: '', image: null, image_url: null, preview: null });
+  form.subjects.push({ title: '', image: null, image_url: null, preview: null });
 };
 
 const removeSubject = (index) => {
-    form.subjects.splice(index, 1);
+  form.subjects.splice(index, 1);
 };
 
 const onSubjectImageChange = (event, index) => {
-    const file = event.target.files[0];
-    if (file) {
-        form.subjects[index].image = file;
-        form.subjects[index].preview = URL.createObjectURL(file);
-    }
+  const file = event.target.files[0];
+  if (file) {
+    form.subjects[index].image = file;
+    form.subjects[index].preview = URL.createObjectURL(file);
+  } else {
+    form.subjects[index].preview = null;
+  }
 };
 
 // Submit update
 const submit = () => {
-    update(form, route('admin.igcse-courses.update', props.course.id));
+  update(form, route('admin.igcse-courses.update', props.course.id));
 };
 </script>

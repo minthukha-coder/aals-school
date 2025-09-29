@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('igsce_courses', function (Blueprint $table) {
+        Schema::create('igcse_courses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('duration');
             $table->unsignedBigInteger('price_monthly');
-            $table->string('image')->nullable(); 
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('igsce_courses');
+        Schema::dropIfExists('igcse_courses');
     }
 };

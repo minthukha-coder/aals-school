@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     //
-    protected $fillable = ['igscse_course_id', 'title', 'image'];
+    protected $fillable = ['igcse_course_id', 'title', 'image'];
 
 
-    public function igsceCourse()
+    public function igcseCourse()
     {
-        return $this->belongsTo(IgsceCourse::class);
+        return $this->belongsTo(IgcseCourse::class);
     }
 }
