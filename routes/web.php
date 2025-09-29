@@ -71,6 +71,7 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');
+        Route::get('/show', 'show')->name('show');
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');

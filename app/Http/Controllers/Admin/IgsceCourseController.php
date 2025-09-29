@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\IgsceCourse;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class IgsceCourseController extends Controller
 {
@@ -15,6 +16,11 @@ class IgsceCourseController extends Controller
     public function index()
     {
         $igcseCourses = $this->model->latest()->get();
+        foreach ($igcseCourses as $course) {
+            if ($course->image) {
+                $course->image = asset('storage/images/' . $course->image);
+            }
+        }
         return inertia('Admin/IgcseCourse/Index', compact('igcseCourses'));
     }
 
@@ -25,15 +31,12 @@ class IgsceCourseController extends Controller
 
     public function store(Request $request)
     {
-
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
             'price_monthly' => 'required|numeric',
             'image' => 'nullable|image|max:2048',
             'subjects' => 'array',
-            'subjects.*.title' => 'required|string|max:255',
-
         ]);
 
 
@@ -46,10 +49,100 @@ class IgsceCourseController extends Controller
         $course = $this->model->create($data);
 
         if (!empty($data['subjects'])) {
-            $course->subjects()->createMany($data['subjects']);
+
+            $subjects = [];
+
+            foreach ($request->subjects as $subject) {
+                $subjectData = [
+                    'title' => $subject['title'] ?? '',
+                ];
+
+                // If subject has image file
+                if (isset($subject['image']) && $subject['image']) {
+                    $imageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
+                    $subject['image']->storeAs('public/images', $imageName);
+                    $subjectData['image'] = $imageName;
+                }
+
+                $subjects[] = $subjectData;
+            }
+
+            $course->subjects()->createMany($subjects);
         }
 
 
         return redirect()->route('admin.igcse-courses.index')->with('success', 'IGCSE Course created successfully.');
+    }
+
+    public function show(Request $request)
+    {
+        $course = $this->model->with('subjects')->find($request->id);
+        if ($course->image) {
+            $course->image = asset('storage/images/' . $course->image);
+        }
+
+        if ($course->subjects) {
+            foreach ($course->subjects as $subject) {
+                if ($subject->image) {
+                    $subject->image = asset('storage/images/' . $subject->image);
+                }
+            }
+        }
+
+        return inertia('Admin/IgcseCourse/Show', compact('course'));
+    }
+
+    public function edit(Request $request)
+    {
+        $course = $this->model->find($request->id);
+        return inertia('Admin/IgcseCourse/Edit', compact('course'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $course = $this->model->findOrFail($id);
+
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'duration' => 'required|string|max:255',
+            'price_monthly' => 'required|numeric',
+            'image' => 'nullable|image|max:2048',
+            'subjects' => 'array',
+            'subjects.*.title' => 'required|string|max:255',
+        ]);
+
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($course->image) {
+                Storage::delete('public/images/' . $course->image);
+            }
+
+            $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('public/images', $imageName);
+            $data['image'] = $imageName;
+        }
+
+        $course->update($data);
+
+        // Update subjects
+        if (isset($data['subjects'])) {
+            $course->subjects()->delete();
+            $course->subjects()->createMany($data['subjects']);
+        }
+
+        return redirect()->route('admin.igcse-courses.index')->with('success', 'IGCSE Course updated successfully.');
+    }
+
+    public function destroy(Request $request)
+    {
+        $course = $this->model->findOrFail($request->id);
+
+        if ($course->image) {
+            Storage::delete('public/images/' . $course->image);
+        }
+
+        $course->delete();
+
+        return redirect()->route('admin.igcse-courses.index')->with('success', 'IGCSE Course deleted successfully.');
     }
 }
