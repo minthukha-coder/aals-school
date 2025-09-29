@@ -10,7 +10,7 @@
                 <SideLink :href="route('admin.courses.index')" icon="fa-solid fa-book" :isOpen="showCourse"
                     text="Courses" />
 
-                     <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showCourse"
+                     <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showIGCSECourse"
                     text="IGCSE Courses" />
                 <SideLink :href="route('admin.additional-courses.index')" icon="fa-solid fa-book-bookmark"
                     :isOpen="showAdditionalCourse" text="Additional Courses" />

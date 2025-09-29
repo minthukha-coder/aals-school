@@ -32,7 +32,6 @@
             <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
                 Subjects
             </h3>
-                            <pre>{{ course }}</pre>
 
             <div v-if="course.subjects && course.subjects.length > 0" 
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
