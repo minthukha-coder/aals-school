@@ -27,7 +27,6 @@
                 </section>
 
                 <section class="mt-5 max-w-7xl mx-auto" id="about-us">
-                    <p class="text-center font-bold text-2xl">About Us</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
                             <img :src="about?.image" alt="" class="" style="width:90%;height:90%;object-fit:cover;" />

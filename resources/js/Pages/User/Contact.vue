@@ -52,9 +52,38 @@
             </div>
 
 
-            <div class="flex justify-center items-center mt-5">
-                <!-- google map -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 mb-5">
+
+                <!-- Application Form -->
+                <div class="border rounded p-3 flex-fill col-md-5">
+                    <input type="text" placeholder="Enter your name"
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none" />
+                    <input type="text" placeholder="Email"
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none">
+                    <div class="flex items-center mb-4">
+                        <span class="p-2 border rounded-l-lg bg-gray-100">+95</span>
+                        <input type="text" placeholder="Phone"
+                            class="w-full p-2 border border-l-0 rounded-r-lg focus:outline-none">
+                    </div>
+                    <textarea placeholder="Message"
+                        class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none"></textarea>
+                    <div class="d-flex justify-end">
+                        <v-btn color="primary">
+                            Apply
+                        </v-btn>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="border rounded p-3 col-md-7">
+                    <GoogleMap api-key="AIzaSyBqvZfzDW7YlZHtfaR-5l1v8f0YkMzswQM"
+                        style="width: 100%; height: 100%; min-height: 150px;" :zoom="15" :center="center">
+                        <Marker :options="{ position: center }"></Marker>
+                    </GoogleMap>
+                </div>
+
             </div>
+
         </div>
     </Layout>
 </template>

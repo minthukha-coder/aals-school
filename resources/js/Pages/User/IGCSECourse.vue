@@ -6,7 +6,7 @@
         </section>
         <section class="container my-6">
             <div v-for="igcse in igcseCourses" :key="igcse.id" class="mb-8">
-                <div class="mx-auto rounded-lg overflow-hidden shadow-lg" style="width:600px;">
+                <div class="mx-auto rounded-lg overflow-hidden shadow-lg" style="width:600px;height:400px;">
                     <img v-if="igcse.image" :src="igcse.image" alt="Course Image" class="w-full object-cover h-64" />
                     <div class="p-4">
                         <p class="font-bold text-lg">{{ igcse.title }}</p>

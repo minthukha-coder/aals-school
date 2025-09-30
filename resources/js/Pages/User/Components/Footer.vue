@@ -1,25 +1,37 @@
 <template>
   <div class="relative">
 
+
     <div class="pt-28 pb-3 bg-gradient-to-t from-green-600 via-green-700 to-green-800">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 justify-items-center md:justify-items-start pt-3">
+      <div class="flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-        <div class="grid gap-4 justify-items-center md:justify-items-start mt-5">
-          <img src="../images/logo-footer.png" alt="" style="width:100px;">
-          <img src="../images/cambridge.png" alt="" style="width:350px;">
-          <img src="../images/british-logo.png" alt="" style="width:210px;">
+      <div class="flex flex-col justify-center mt-5 items-center md:items-start">
+          <div>
+            <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
+          </div>
+          <div class="flex mx-6 mt-3 items-center">
+            <img src="../images/cambridge.png" alt="" style="width:350px;">
+            <!-- <div class="relative ml-2">
+              <h3 class="text-white font-bold text-center md:text-left">UNIVERSITY OF</h3>
+              <h3 class="absolute text-xs font-bold text-white top-8 left-0">CAMBRIDGE</h3>
+            </div> -->
+          </div>
+          <div>
+            <img src="../images/british-logo.png" alt="" style="width:210px;">
+          </div>
         </div>
 
         <!-- Site Links -->
         <div class="text-white text-center md:text-left">
           <h3 class="text-lg font-bold">On this Site</h3>
-          <ul class="mt-4 space-y-2">
+          <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start">
             <li><a :href="route('international-courses')" class="text-white text-lg">Additional Courses</a></li>
             <li><a :href="route('foundation-courses')" class="text-white text-lg">Foundation Courses</a></li>
             <li><a :href="route('cambridge-courses')" class="text-white text-lg">Cambridge Academic</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">Adult English</a></li>
-            <li><a :href="route('international-courses')" class="text-white text-lg">International Student Program</a></li>
+            <li><a :href="route('international-courses')" class="text-white text-lg">International Student Program</a>
+            </li>
             <li><a :href="route('international-courses')" class="text-white text-lg">IGCSE</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">GED</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">IELTS</a></li>
@@ -28,8 +40,8 @@
         </div>
 
         <!-- Extra Links -->
-        <div class="text-white text-center md:text-left mt-5 md:mt-0">
-          <ul class="space-y-2">
+        <div class="text-white mt-5">
+          <ul class="flex flex-col space-y-2 text-center md:!text-start ">
             <li><a href="#" class="text-white text-lg">Home</a></li>
             <li><a href="#" class="text-white text-lg">Exam Services</a></li>
             <li><a href="#" class="text-white text-lg">Gallery</a></li>
@@ -39,29 +51,27 @@
         </div>
 
         <!-- Contact Us Section -->
-        <div class="text-white text-center md:text-left mt-5 md:mt-0">
-          <h3 class="text-lg font-bold">Contact Us</h3>
-          <div class="grid grid-cols-3 gap-2 justify-center md:justify-start mt-3">
-            <div class="bg-blue-500 rounded-full w-10 h-10 grid place-items-center">
+        <div class="flex flex-col text-white items-center md:items-start">
+          <h3 class="text-lg font-bold text-center md:text-left">Contact Us</h3>
+          <div class="flex justify-center md:justify-start items-center gap-2 mt-3">
+            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
               <font-awesome-icon icon="fa-solid fa-envelope" class="text-white" />
             </div>
-            <div class="bg-blue-500 rounded-full w-10 h-10 grid place-items-center">
+            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
               <font-awesome-icon icon="fa-brands fa-facebook" class="text-white" />
             </div>
-            <div class="bg-blue-500 rounded-full w-10 h-10 grid place-items-center">
+            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
               <font-awesome-icon icon="fa-solid fa-location-dot" class="text-white" />
             </div>
           </div>
-
-          <div class="grid grid-cols-[auto_1fr] gap-2 mt-10 justify-center md:justify-start items-center">
+          <div class="flex justify-center md:justify-start items-center gap-2 mt-10" id="phone">
             <font-awesome-icon icon="fa-solid fa-phone" class="fs-5" />
             <div class="flex flex-col opacity-80">
               <span>09778695126</span>
               <span>09778695126</span>
             </div>
           </div>
-
-          <div class="grid grid-cols-[auto_1fr] gap-2 mt-10 justify-center md:justify-start items-center">
+          <div class="flex justify-center md:justify-start items-center gap-2 mt-10" id="email">
             <font-awesome-icon icon="fa-solid fa-envelope" class="fs-4" />
             <span class="opacity-80">aals123@gmail.com</span>
           </div>
@@ -73,6 +83,7 @@
     </div>
 
   </div>
+
 </template>
 
 <script setup>

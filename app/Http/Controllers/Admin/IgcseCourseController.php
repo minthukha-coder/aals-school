@@ -147,7 +147,7 @@ class IgcseCourseController extends Controller
                     'title' => $subject['title'],
                 ];
 
-                if (isset($subject['image']) && $subject['image'] instanceof \Illuminate\Http\UploadedFile) {
+                if (isset($subject['image'])) {
                     $subjectImageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
                     $subject['image']->storeAs('public/images/subjects', $subjectImageName);
                     $subjectData['image'] = $subjectImageName;
