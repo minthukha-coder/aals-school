@@ -38,33 +38,35 @@
                         @click:clear="clearImage" />
                 </div>
 
-                <h5 class="text-center mt-6">Subjects</h5>
-                <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
-                    <button class="btn btn-primary my-2" @click="addSubject">+ Add Subject</button>
+            </div>
+
+
+            <h5 class="text-center mt-6">Subjects</h5>
+            <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
+                <button class="btn btn-primary my-2" @click="addSubject">+ Add Subject</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-3">
+
+                <div v-for="(subject, index) in form.subjects" :key="index" class="p-3 border rounded">
+                    <v-text-field v-model="subject.title" label="Subject Title" variant="outlined" />
+
+                    <v-file-input @change="onSubjectImageChange($event, index)" label="Subject Image" chips
+                        prepend-icon="mdi-image" variant="outlined" clearable />
+
+                    <v-img v-if="subject.preview || subject.image_url"
+                        :src="subject.preview ? subject.preview : subject.image_url" :height="120"
+                        class="rounded mt-2" />
+
+                    <button class="btn btn-danger btn-sm mt-2" @click="removeSubject(index)">
+                        Remove Subject
+                    </button>
                 </div>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-3">
-
-                    <div v-for="(subject, index) in form.subjects" :key="index" class="p-3 border rounded">
-                        <v-text-field v-model="subject.title" label="Subject Title" variant="outlined" />
-
-                        <v-file-input @change="onSubjectImageChange($event, index)" label="Subject Image" chips
-                            prepend-icon="mdi-image" variant="outlined" clearable />
-
-                        <v-img v-if="subject.preview || subject.image_url"
-                            :src="subject.preview ? subject.preview : subject.image_url" :height="120"
-                            class="rounded mt-2" />
-
-                        <button class="btn btn-danger btn-sm mt-2" @click="removeSubject(index)">
-                            Remove Subject
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Submit -->
-                <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
-                    <button @click="submit" class="btn btn-success my-3 w-100">Update Course</button>
-                </div>
+            <!-- Submit -->
+            <div class="col-sm-12 col-md-8 col-lg-6 flex flex-col justify-center mx-auto">
+                <button @click="submit" class="btn btn-success my-3 w-100">Update Course</button>
             </div>
         </div>
     </Layout>

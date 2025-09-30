@@ -39,7 +39,7 @@ class PositionController extends Controller
             'requirements' => 'nullable|string',
             'highlight' => 'nullable|string',
         ]);
-        
+
         $position = $this->model->create($data);
         if ($request->has('benefits')) {
             foreach ($request->benefits as $benefit) {
@@ -55,12 +55,13 @@ class PositionController extends Controller
 
     public function edit(Request $request)
     {
-        $position = $this->model->findOrFail($request->id);
+        $position = $this->model->with('benefits')->findOrFail($request->id);
         return inertia('Admin/Position/Edit', compact('position'));
     }
 
     public function update(Request $request)
     {
+
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'salary' => 'nullable|numeric',
@@ -73,6 +74,19 @@ class PositionController extends Controller
 
         $position = $this->model->findOrFail($request->id);
         $position->update($data);
+
+        if($request->has('benefits')) {
+            // Delete existing benefits
+            PositionBenefit::where('position_id', $position->id)->delete();
+
+            // Add new benefits
+            foreach ($request->benefits as $benefit) {
+                PositionBenefit::create([
+                    'position_id' => $position->id,
+                    'benefit' => $benefit['benefit']
+                ]);
+            }
+        }
 
         return redirect()->route('admin.positions.index')->with('success', 'Position updated successfully.');
     }

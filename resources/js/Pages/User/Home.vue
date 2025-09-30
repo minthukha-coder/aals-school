@@ -3,12 +3,13 @@
             <div class="main-page">
                 <section class="block md:hidden home-page position-relative">
                     <div>
-                        <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover" style="height: 500px" />
+                        <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover"
+                            style="height: 500px" />
                     </div>
-                    <div class="absolute left-0 top-20 text-white p-2">
+                    <!-- <div class="absolute left-0 top-20 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
                         <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
-                    </div>
+                    </div> -->
                 </section>
 
                 <section class="hidden md:block home-page position-relative ">
@@ -29,15 +30,19 @@
                     <p class="text-center font-bold text-2xl">About Us</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
-                            <img :src="about?.image" alt="" class="w-100 rounded-tr-[100px] rounded-bl-[100px]"
-                                style="height:300px;" />
+                            <img :src="about?.image" alt="" class="" style="width:90%;height:90%;object-fit:cover;" />
                         </div>
                         <div class="p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
                             <p>
-                                {{ about?.description }}<a :href="route('about')" class="text-decoration-none no-underline text-black"><span v-if="about?.description" > Read
-                                        More....</span></a>
+                                {{ about?.description?.length > 200 ? about.description.slice(0, 200) :
+                                about.description }}
+                                <a v-if="about?.description?.length > 40" :href="route('about')"
+                                    class="text-decoration-none no-underline ">
+                                    Read More....
+                                </a>
                             </p>
+
                         </div>
                     </div>
                 </section>

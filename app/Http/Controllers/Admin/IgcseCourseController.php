@@ -95,7 +95,7 @@ class IgcseCourseController extends Controller
     public function edit(Request $request)
     {
         $course = $this->model->with('subjects')->find($request->id);
-              if ($course->image) {
+        if ($course->image) {
             $course->image = asset('storage/images/' . $course->image);
         }
 
@@ -121,6 +121,9 @@ class IgcseCourseController extends Controller
             'subjects' => 'array',
         ]);
 
+        $course->update($data);
+
+
         if ($request->hasFile('image')) {
             // Delete old image if exists
             if ($course->image) {
@@ -129,15 +132,31 @@ class IgcseCourseController extends Controller
 
             $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('public/images', $imageName);
-            $data['image'] = $imageName;
+            $course->image = $imageName;
+            $course->save();
         }
 
-        $course->update($data);
 
         // Update subjects
         if (isset($data['subjects'])) {
             $course->subjects()->delete();
-            $course->subjects()->createMany($data['subjects']);
+
+            $subjectsData = [];
+            foreach ($request->subjects as $subject) {
+                $subjectData = [
+                    'title' => $subject['title'],
+                ];
+
+                if (isset($subject['image']) && $subject['image'] instanceof \Illuminate\Http\UploadedFile) {
+                    $subjectImageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
+                    $subject['image']->storeAs('public/images/subjects', $subjectImageName);
+                    $subjectData['image'] = $subjectImageName;
+                }
+
+                $subjectsData[] = $subjectData;
+            }
+
+            $course->subjects()->createMany($subjectsData);
         }
 
         return redirect()->route('admin.igcse-courses.index')->with('success', 'IGCSE Course updated successfully.');

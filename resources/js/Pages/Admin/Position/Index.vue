@@ -27,13 +27,24 @@
                             <td>{{ position.salary }}</td>
                             <td>{{ position.date }}</td>
                             <td>{{ position.place }}</td>
-                            <td>{{ position.responsibilities }}</td>
-                            <td>{{ position.requirements }}</td>
-                            <td>{{ position.highlight }}</td>
+                            <td>
+                                <div
+                                    class="max-h-32 overflow-y-auto border rounded-md bg-gray-50 p-2 text-sm whitespace-normal">
+                                    {{ position.responsibilities }}
+                                </div>
+                            </td>
+                            <td><div
+                                    class="max-h-32 overflow-y-auto border rounded-md bg-gray-50 p-2 text-sm whitespace-normal">
+                                    {{ position.requirements }}
+                                </div></td>
+                            <td><div
+                                    class="max-h-32 overflow-y-auto border rounded-md bg-gray-50 p-2 text-sm whitespace-normal">
+                                    {{ position.highlight }}
+                                </div></td>
                             <td>
                                 <ul class="p-0 m-0">
                                     <li v-for="benefit in position.benefits" :key="benefit">
-                                         - {{ benefit.benefit }}
+                                        - {{ benefit.benefit }}
                                     </li>
                                 </ul>
                             </td>
