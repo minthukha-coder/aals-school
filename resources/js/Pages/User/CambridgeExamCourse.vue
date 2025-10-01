@@ -4,14 +4,14 @@
             <div class="hidden md:block">
                 <img src="../User/images/exam_courses.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
             </div>
-            <!-- <div class="absolute left-0 top-60 text-white p-2">
+            <div class="absolute left-0 top-60 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
-            </div> -->
+            </div>
         </section>
 
         <section class="" id="cambridge-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <p class="text-2xl font-bold py-2 text-center">Cambridge Exam Courses</p>
+                <p class="text-4xl py-2 my-5 text-center font-bold">Cambridge Exam Courses</p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in cambridgeExamCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">

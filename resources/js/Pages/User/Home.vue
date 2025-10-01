@@ -33,6 +33,7 @@
                         </div>
                         <div class="p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
+                            <p class="">{{ about?.subtitle }}</p>
                             <p>
                                 {{ about?.description?.length > 200 ? about.description.slice(0, 200) :
                                 about.description }}

@@ -31,17 +31,19 @@ class AboutController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'subtitle' => 'nullable|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif',
+            'image' => 'nullable',
         ]);
-
         $about = About::first();
+
         if (!$about) {
-            About::create([
-                'title' => $request->title,
-                'description' => $request->description,
-            ]);
+            $about = new About();
         }
+
+        $about->title = $request->title;
+        $about->subtitle = $request->subtitle;
+        $about->description = $request->description;
         if ($request->file('image')) {
             $uploadImage = $request->file('image');
             $aboutImageName = uniqid() . '_' . time() . '.' . $uploadImage->getClientOriginalExtension();
@@ -51,8 +53,9 @@ class AboutController extends Controller
                 Storage::delete('public/images/' . $about->image);
             }
             $about->image = $aboutImageName;
-            $about->save();
         }
+        $about->save();
+
         return redirect()->route('admin.about.index')->with('success', 'About information updated successfully.');
     }
 }

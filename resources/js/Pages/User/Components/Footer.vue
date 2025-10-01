@@ -1,7 +1,5 @@
 <template>
   <div class="relative">
-
-
     <div class="pt-28 pb-3 bg-gradient-to-t from-green-600 via-green-700 to-green-800">
       <div class="flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 

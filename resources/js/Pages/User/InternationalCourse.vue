@@ -12,7 +12,7 @@
 
         <section class="" id="cambridge-exam-courses">
             <div class="max-w-7xl mx-auto mt-5">
-                <h3 class="py-4 text-center">International Exam Courses</h3>
+                <h3 class="text-4xl py-2 my-5 text-center font-bold">International Exam Courses</h3>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
                     <div v-for="course in internationalCourses" :key="course.id" class="flex items-end my-2">
                         <div class=" w-96 h-60 overflow-hidden rounded-2xl shadow-lg ">

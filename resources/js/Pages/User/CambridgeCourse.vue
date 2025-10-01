@@ -4,12 +4,12 @@
             <div class="hidden md:block">
                 <img src="../User/images/cambridge_courses.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
             </div>
-            <!-- <div class="absolute left-0 top-40 md:left-60 md:top-60 lg:left-40 lg:top-60 text-white p-2">
+            <div class="absolute left-0 top-40 md:left-60 md:top-60 lg:left-40 lg:top-60 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:40px;">Cambridge Academic Courses</h4>
-            </div> -->
+            </div>
         </section>
 
-        <p class="text-2xl py-2 text-center font-bold">Cambridge Academic Courses</p>
+        <p class="text-4xl py-2 my-5 text-center font-bold">Cambridge Academic Courses</p>
         <section class="container pb-10">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
                 <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in cambridgeCourses"

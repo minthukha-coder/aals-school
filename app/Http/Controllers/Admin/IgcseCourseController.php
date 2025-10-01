@@ -111,13 +111,13 @@ class IgcseCourseController extends Controller
 
     public function update(Request $request)
     {
+        return $request;
         $course = $this->model->findOrFail($request->id);
 
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
             'price_monthly' => 'required|numeric',
-            'image' => 'nullable|image|max:2048',
             'subjects' => 'array',
         ]);
 
@@ -149,7 +149,7 @@ class IgcseCourseController extends Controller
 
                 if (isset($subject['image'])) {
                     $subjectImageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
-                    $subject['image']->storeAs('public/images/subjects', $subjectImageName);
+                    $subject['image']->storeAs('public/images/', $subjectImageName);
                     $subjectData['image'] = $subjectImageName;
                 }
 

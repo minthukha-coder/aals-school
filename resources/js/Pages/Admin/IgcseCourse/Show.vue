@@ -10,8 +10,8 @@
                         class="rounded-lg w-full md:w-1/3"
                         cover
                     />
-                    
-                    
+
+
                     <div class="flex-1">
                         <h2 class="text-2xl font-bold text-gray-800 mb-2">
                             {{ course.title }}
@@ -20,7 +20,7 @@
                             <strong>Duration:</strong> {{ course.duration }}
                         </p>
                         <p class="text-gray-600 mb-2">
-                            <strong>Monthly Price:</strong> 
+                            <strong>Monthly Price:</strong>
                             <span class="text-green-600 font-semibold">
                                 {{ course.price_monthly.toLocaleString() }} Ks
                             </span>
@@ -33,12 +33,12 @@
                 Subjects
             </h3>
 
-            <div v-if="course.subjects && course.subjects.length > 0" 
+            <div v-if="course.subjects && course.subjects.length > 0"
                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
+
                 <div v-for="(subject, index) in course.subjects" :key="index"
                     class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
-                    
+
                     <v-img
                         v-if="subject.image"
                         :src="subject.image"

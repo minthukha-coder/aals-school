@@ -97,7 +97,6 @@ const form = useForm({
         title: sub.title || '',
         image: null,
         image_url: sub.image || null,
-        preview: null
     })),
 });
 
