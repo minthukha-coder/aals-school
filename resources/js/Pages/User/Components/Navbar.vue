@@ -132,7 +132,7 @@
                     <Link :href="route('cambridge-courses')" class="block text-black text-decoration-none">Cambridge Academic English Courses</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">Adult English</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">International Student Program</Link>
-                    <Link :href="route('cambridge-courses')" class="block text-black text-decoration-none">IGCSE English</Link>
+                    <Link :href="route('igcse-courses')" class="block text-black text-decoration-none">IGCSE English</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">GED</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">IELTS</Link>
                     <Link :href="route('additional-courses')" class="block text-black text-decoration-none">ICT Coding</Link>
