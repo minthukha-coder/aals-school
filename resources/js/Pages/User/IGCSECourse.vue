@@ -1,9 +1,15 @@
 <template>
     <Layout>
-        <section class="vh-20">
-            <img src="../User/images/igcse (2).jpg" alt="IGCSE Banner" class="w-full object-cover"
-                style="height: 300px;" />
+        <section>
+            <div class="hidden md:block ">
+                <img
+                    src="../User/images/igcse-course.jpg"
+                    alt="IGCSE Banner"
+                    class="w-full object-cover" style="height: 400px"
+                />
+            </div>
         </section>
+
         <section class="container my-6">
             <div v-for="igcse in igcseCourses" :key="igcse.id" class="mb-8">
                 <div class="mx-auto max-w-lg rounded-lg overflow-hidden shadow-lg bg-white">
@@ -25,6 +31,7 @@
                         </div>
 
                         <p class="font-semibold text-xl text-gray-700 text-center mt-2">{{ subject.title }}</p>
+
                     </div>
 
                 </div>
@@ -45,7 +52,3 @@ const props = defineProps({
     igcseCourses: Array
 });
 </script>
-
-<style scoped>
-/* optional custom styles */
-</style>

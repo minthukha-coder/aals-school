@@ -10,10 +10,7 @@
           </div>
           <div class="flex mx-6 mt-3 items-center">
             <img src="../images/cambridge.png" alt="" style="width:350px;">
-            <!-- <div class="relative ml-2">
-              <h3 class="text-white font-bold text-center md:text-left">UNIVERSITY OF</h3>
-              <h3 class="absolute text-xs font-bold text-white top-8 left-0">CAMBRIDGE</h3>
-            </div> -->
+
           </div>
           <div>
             <img src="../images/british-logo.png" alt="" style="width:210px;">
@@ -30,7 +27,7 @@
             <li><a :href="route('international-courses')" class="text-white text-lg">Adult English</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">International Student Program</a>
             </li>
-            <li><a :href="route('international-courses')" class="text-white text-lg">IGCSE</a></li>
+            <li><a :href="route('igcse-courses')" class="text-white text-lg">IGCSE</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">GED</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">IELTS</a></li>
             <li><a :href="route('international-courses')" class="text-white text-lg">ICT Coding</a></li>

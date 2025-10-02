@@ -2,10 +2,10 @@
     <Layout>
         <section class="vh-20" id="international-course">
             <div class="hidden md:block">
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-fit-cover"
+                <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-fit-cover"
                     style="height: 400px" />
             </div>
-            <div class="absolute left-20 top-60 text-white p-2">
+            <div class="hidden md:block absolute left-20 top-65 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
             </div>
         </section>
@@ -20,7 +20,7 @@
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                         </div>
                         <div class="w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
-                            <h6 class="font-bold text-xl">Course : {{ course.name }}</h6>
+                            <h5 class="font-bold text-xl">Course : {{ course.name }}</h5>
                             <button @click="openEmail" class="btn btn-success float-end my-3">email me
                                 <font-awesome-icon icon="fa-solid fa-envelope" /></button>
                         </div>
@@ -32,7 +32,7 @@
 
         <section class="vh-20 position-relative" id="foundation-course">
             <div>
-                <img src="../User/images/IGCSE.jpg" alt="" class="w-full object-cover" style="height: 300px" />
+                <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover" style="height: 300px" />
             </div>
             <!-- <div class="absolute left-0 top-30 text-black p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Course : IGCSE 0 LEVEL ESL, EFL</h3>
