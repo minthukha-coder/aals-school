@@ -35,8 +35,8 @@
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
                             <p class="">{{ about?.subtitle }}</p>
                             <p>
-                                {{ about?.description?.length > 200 ? about.description.slice(0, 200) :
-                                about.description }}
+                                {{ about?.description?.length > 200 ? about?.description.slice(0, 200) :
+                                about?.description }}
                                 <a v-if="about?.description?.length > 40" :href="route('about')"
                                     class="text-decoration-none no-underline ">
                                     Read More....
@@ -58,18 +58,18 @@
                                 <img :src="course?.image" alt="" class="w-100" style="height:250px;object-fit:cover;" />
                             </div>
                             <div class="p-2">
-                                <h3 class="font-bold text-xl">{{ course.title }}</h3>
+                                <h3 class="font-bold text-xl">{{ course?.title }}</h3>
                                 <p class="mt-3">
-                                    {{ course.description }}
+                                    {{ course?.description }}
                                 </p>
                             </div>
                         </template>
 
                         <template v-else>
                             <div class="p-2">
-                                <h3 class="font-bold text-xl">{{ course.title }}</h3>
+                                <h3 class="font-bold text-xl">{{ course?.title }}</h3>
                                 <p class="mt-3">
-                                    {{ course.description }}
+                                    {{ course?.description }}
                                 </p>
                             </div>
 
