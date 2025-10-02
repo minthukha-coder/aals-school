@@ -9,6 +9,7 @@
                 />
             </div>
         </section>
+        <p class="text-4xl py-2 my-5 text-center font-bold">IGCSE Courses</p>
         <section class="container my-6">
             <div v-for="igcse in igcseCourses" :key="igcse.id" class="mb-8">
                 <div class="mx-auto max-w-lg rounded-lg overflow-hidden shadow-lg bg-white">
