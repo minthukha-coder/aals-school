@@ -29,7 +29,7 @@
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
-                            <img :src="about?.image" alt="" class="" style="width:90%;height:90%;object-fit:cover;" />
+                            <img :src="about?.image" alt="" class="" style="width:90%;height:350px;object-fit:cover;" />
                         </div>
                         <div class="p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
@@ -48,7 +48,7 @@
                 </section>
 
                 <section class="my-5 container" id="courses">
-                    <p class="text-center font-bold text-2xl">Courses</p>
+                    <p class="text-center font-bold text-4xl">Courses</p>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
 
@@ -58,7 +58,7 @@
                                 <img :src="course?.image" alt="" class="w-100" style="height:250px;object-fit:cover;" />
                             </div>
                             <div class="p-2">
-                                <h3 class="font-bold text-xl">{{ course?.title }}</h3>
+                                <h3 class="font-bold text-2xl">{{ course?.title }}</h3>
                                 <p class="mt-3">
                                     {{ course?.description }}
                                 </p>
@@ -82,7 +82,7 @@
 
                 <section class="bg-green-200 pb-5" id="additional-courses">
                     <div class="container md:mt-5">
-                        <p class="pt-3 text-2xl font-bold">Additional Courses</p>
+                        <p class="pt-3 text-4xl font-bold">Additional Courses</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
                             <div v-for="course in additionalCourses" :key="course.id" class="">
                                 <Card :course="course" />
@@ -108,7 +108,7 @@
                 </section>
 
                 <section id="partnership" class="mt-5 container" style="margin-bottom:100px;">
-                    <p class="font-bold text-center pb-15 text-2xl">Partnership</p>
+                    <p class="font-bold text-center pb-15 text-4xl">Partnership</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
                         <!-- Left Text Card -->
                         <div class="border border-black card p-3 w-full">

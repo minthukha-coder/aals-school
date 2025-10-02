@@ -6,7 +6,7 @@
                     style="height: 500px" />
             </div>
             <div class="hidden md:block absolute left-20 top-65 text-white p-2">
-                <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
+                <h3 class="font-bold mx-20" style="font-size:70px;">Exam Services</h3>
             </div>
         </section>
 

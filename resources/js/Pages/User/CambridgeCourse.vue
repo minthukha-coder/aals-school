@@ -6,7 +6,7 @@
             </div>
 
             <div class="hidden md:block absolute left-0 top-40 md:left-60 md:top-60 lg:left-40 lg:top-60 text-white p-2">
-                <h4 class="font-bold mx-20" style="font-size:40px;">Cambridge Academic Courses</h4>
+                <h4 class="font-bold mx-20" style="font-size:70px;">Cambridge Academic Courses</h4>
             </div>
 
         </section>

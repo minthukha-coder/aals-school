@@ -63,18 +63,19 @@
             <font-awesome-icon icon="fa-solid fa-phone" class="fs-5" />
             <div class="flex flex-col opacity-80">
               <span>09778695126</span>
-              <span>09778695126</span>
+              <span>09763381053</span>
             </div>
           </div>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-10" id="email">
             <font-awesome-icon icon="fa-solid fa-envelope" class="fs-4" />
-            <span class="opacity-80">aals123@gmail.com</span>
+            <span class="opacity-80">chitmyatnoeaung01@gmail.com
+            </span>
           </div>
         </div>
 
       </div>
 
-      <h5 class="text-center text-white mt-5">AALS Aung Academy Language School</h5>
+      <h6 class="text-center text-white mt-5 text-lg">AALS Aung Academy Language School</h6>
     </div>
 
   </div>
