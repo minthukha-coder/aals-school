@@ -10,7 +10,7 @@
                 </v-row>
 
                 <v-row class="mt-4">
-                    <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
+                    <v-textarea v-model="form.duration" rows="1" label="Duration (eg. 3 months)" variant="outlined"
                         :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration">
                     </v-textarea>
                 </v-row>
@@ -22,7 +22,6 @@
                         <button @click="clearImage" class="fs-2"><font-awesome-icon
                                 icon="fa-solid fa-circle-xmark" /></button>
                     </div>
-
                 </v-row>
 
                 <div class="mb-3 p-3">
@@ -30,7 +29,6 @@
                         label="Image Upload" chips prepend-icon="mdi-camera" variant="outlined" clearable
                         @click:clear="clearImage"></v-file-input>
                 </div>
-
                 <button @click="submit" class="btn btn-success my-2">Submit</button>
             </div>
         </div>

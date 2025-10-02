@@ -2,7 +2,8 @@
     <Layout>
         <section class="vh-20" id="international-course">
             <div class="hidden md:block">
-                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
+                <img src="../User/images/exam-courses.jpg" alt="" class="w-full object-fit-cover"
+                    style="height: 400px" />
             </div>
             <div class="absolute left-20 top-60 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
@@ -20,8 +21,8 @@
                         </div>
                         <div class="w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3">
                             <h6 class="font-bold text-xl">Course : {{ course.name }}</h6>
-                            <button class="btn btn-success float-end my-3">email me <font-awesome-icon
-                                    icon="fa-solid fa-envelope" /></button>
+                            <button @click="openEmail" class="btn btn-success float-end my-3">email me
+                                <font-awesome-icon icon="fa-solid fa-envelope" /></button>
                         </div>
                     </div>
                 </div>
@@ -49,6 +50,17 @@ import imageCard from "../User/Components/imageCard.vue";
 const props = defineProps({
     internationalCourses: Array,
 });
+
+const openEmail = () => {
+    const recipient = "chitmyatnoeaung01@gmail.com";
+    const subject = encodeURIComponent("Hello!");
+    const body = encodeURIComponent("Your message here.");
+
+    // Correct Gmail URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank");
+};
+
 </script>
 
 <style lang="scss" scoped></style>

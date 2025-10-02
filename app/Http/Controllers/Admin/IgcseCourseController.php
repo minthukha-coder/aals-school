@@ -111,7 +111,6 @@ class IgcseCourseController extends Controller
 
     public function update(Request $request)
     {
-        return $request;
         $course = $this->model->findOrFail($request->id);
 
         $data = $request->validate([
@@ -123,42 +122,67 @@ class IgcseCourseController extends Controller
 
         $course->update($data);
 
+        if ($request->has('subjects')) {
+            $submittedIds = [];
 
-        if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($course->image) {
-                Storage::delete('public/images/' . $course->image);
-            }
-
-            $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('public/images', $imageName);
-            $course->image = $imageName;
-            $course->save();
-        }
-
-
-        // Update subjects
-        if (isset($data['subjects'])) {
-            $course->subjects()->delete();
-
-            $subjectsData = [];
             foreach ($request->subjects as $subject) {
-                $subjectData = [
-                    'title' => $subject['title'],
-                ];
+                // Update existing subject
+                if (!empty($subject['id'])) {
+                    $existing = $course->subjects()->find($subject['id']);
+                    if ($existing) {
+                        $updateData = [
+                            'title' => $subject['title'],
+                        ];
 
-                if (isset($subject['image'])) {
-                    $subjectImageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
-                    $subject['image']->storeAs('public/images/', $subjectImageName);
-                    $subjectData['image'] = $subjectImageName;
+                        // Check if a new image is uploaded
+                        if (isset($subject['image']) && $subject['image'] instanceof \Illuminate\Http\UploadedFile) {
+                            $imageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
+                            $subject['image']->storeAs('public/images/', $imageName);
+
+                            // Delete old image only if it exists and a new image is uploaded
+                            if ($existing->image) {
+                                Storage::delete('public/images/' . $existing->image);
+                            }
+
+                            $updateData['image'] = $imageName;
+                        } else {
+                            // Retain existing image if no new image is uploaded
+                            $updateData['image'] = $existing->image;
+                        }
+
+                        $existing->update($updateData);
+                        $submittedIds[] = $existing->id;
+                    }
                 }
+                // Create new subject
+                else {
+                    $newData = [
+                        'title' => $subject['title'],
+                    ];
 
-                $subjectsData[] = $subjectData;
+                    if (isset($subject['image']) && $subject['image'] instanceof \Illuminate\Http\UploadedFile) {
+                        $imageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
+                        $subject['image']->storeAs('public/images/', $imageName);
+                        $newData['image'] = $imageName;
+                    } else {
+                        $newData['image'] = null; // No image for new subject if none uploaded
+                    }
+
+                    $newSubject = $course->subjects()->create($newData);
+                    $submittedIds[] = $newSubject->id;
+                }
             }
 
-            $course->subjects()->createMany($subjectsData);
+            // Delete subjects not in the submitted request
+            $course->subjects()
+                ->whereNotIn('id', $submittedIds)
+                ->each(function ($subject) {
+                    if ($subject->image) {
+                        Storage::delete('public/images/' . $subject->image);
+                    }
+                    $subject->delete();
+                });
         }
-
         return redirect()->route('admin.igcse-courses.index')->with('success', 'IGCSE Course updated successfully.');
     }
 

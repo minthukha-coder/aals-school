@@ -36,6 +36,7 @@ Route::get('/international-courses', [UserHomeController::class, 'internationalC
 Route::get('/igcse-courses', action: [UserHomeController::class, 'igcseCourse'])->name('igcse-courses');
 Route::get('/gallery', [UserHomeController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [UserHomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [UserHomeController::class, 'submitContactForm'])->name('contact.submit');
 Route::post('/career/apply', [UserHomeController::class, 'applyForPosition'])->name('career.apply');
 Route::get('/search', [UserHomeController::class, 'search'])->name('search');
 Route::get('/content/{id}', [UserHomeController::class, 'viewContent'])->name('content.view');

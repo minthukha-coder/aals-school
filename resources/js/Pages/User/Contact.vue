@@ -56,23 +56,23 @@
 
             <!-- Application Form -->
             <div class="rounded-2xl p-3">
-                <input type="text" placeholder="Enter your name"
+                <input v-model="form.name" type="text" placeholder="Enter your name"
                     class="w-full p-3 mb-4 border bg-white rounded-lg focus:outline-none" />
 
-                <input type="email" placeholder="Email"
+                <input v-model="form.email" type="email" placeholder="Email"
                     class="w-full p-3 mb-4 border bg-white rounded-lg focus:outline-none" />
 
                 <div class="flex items-center mb-4 ">
-                    <span class="p-3 border rounded-l-lg bg-white text-gray-600 text-sm">+95</span>
-                    <input type="text" placeholder="Phone"
+                    <span class="p-3 border rounded-l-lg bg-white text-gray-600">+95</span>
+                    <input v-model="form.phone" type="text" placeholder="Phone"
                         class="w-full p-3 border bg-white border-l-0 rounded-r-lg focus:outline-none" />
                 </div>
 
-                <textarea placeholder="Message" rows="4"
+                <textarea v-model="form.user_message" placeholder="Message" rows="4"
                     class="w-full p-3 mb-2 border bg-white rounded-lg focus:outline-none"></textarea>
 
                 <div class="flex justify-end">
-                    <v-btn color="primary" class="px-6 rounded-xl shadow-md">
+                    <v-btn @click="contact" color="primary" class="px-6 rounded-xl shadow-md">
                         Send
                     </v-btn>
                 </div>
@@ -80,10 +80,7 @@
 
             <!-- Google Map -->
             <div class="overflow-hidden">
-                <GoogleMap api-key="AIzaSyBqvZfzDW7YlZHtfaR-5l1v8f0YkMzswQM" style="width:100%;height:460px;" :zoom="15"
-                    :center="center">
-                    <Marker :options="{ position: center }"></Marker>
-                </GoogleMap>
+                <div id="map" style="width: 100%; height: 460px;"></div>
             </div>
 
         </div>
@@ -92,9 +89,41 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
-import { GoogleMap, Marker } from "vue3-google-map";
+import { onMounted } from 'vue';
+import { useForm } from '@inertiajs/vue3'
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
-const center = { lat: 16.8661, lng: 96.1951 }
+const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
+
+const form = useForm({
+    name: '',
+    email: '',
+    phone: '',
+    user_message: '',
+})
+const contact = () => {
+    form.post(route('contact.submit'));
+}
+
+onMounted(() => {
+    // Create map instance
+    const map = L.map('map').setView([center.lat, center.lng], 15);
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add marker
+    L.marker([center.lat, center.lng]).addTo(map);
+});
+
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+/* Fix Leaflet icon issue */
+.leaflet-marker-icon {
+    background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png');
+}
+</style>

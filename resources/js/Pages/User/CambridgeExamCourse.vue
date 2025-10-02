@@ -2,7 +2,8 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
-                <img src="../User/images/exam_courses.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
+                <img src="../User/images/exam_courses.jpg" alt="" class="w-full object-fit-cover"
+                    style="height: 400px" />
             </div>
             <div class="absolute left-0 top-60 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
@@ -23,7 +24,7 @@
                             <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
                             <span class="block text-center sm:text-left text-lg">{{ course.months }}</span>
                             <div class="flex justify-center sm:justify-end my-3">
-                                <button class="btn btn-success">
+                                <button @click="openEmail" class="btn btn-success">
                                     email me <font-awesome-icon icon="fa-solid fa-envelope" />
                                 </button>
                             </div>
@@ -42,6 +43,18 @@ import Layout from "../User/Layouts/Layout.vue";
 const props = defineProps({
     cambridgeExamCourses: Array
 })
+
+const openEmail = () => {
+  const recipient = "chitmyatnoeaung01@gmail.com";
+  const subject = encodeURIComponent("Hello!");
+  const body = encodeURIComponent("Your message here.");
+
+  // Correct Gmail URL
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+  window.open(gmailUrl, "_blank");
+};
+
+
 </script>
 
 <style lang="scss" scoped></style>

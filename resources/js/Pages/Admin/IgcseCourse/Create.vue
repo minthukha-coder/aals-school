@@ -15,7 +15,7 @@
                 </v-row>
 
                 <v-row class="mt-4">
-                    <v-text-field v-model="form.price_monthly" label="Price Monthly (Ks)" variant="outlined"
+                    <v-text-field v-model="form.price_monthly" label="Price Monthly (Ks) (eg. 10000)" variant="outlined"
                         :error="!!$page.props.errors.price_monthly"
                         :error-messages="$page.props.errors.price_monthly" />
                 </v-row>

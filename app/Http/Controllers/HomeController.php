@@ -105,7 +105,7 @@ class HomeController extends Controller
         $data['position_name'] = $position->name;
         // Send Email
         Mail::send('emails.application', $data, function ($message) use ($data) {
-            $message->to('minthukha25122003@gmail.com') // HR/Admin email
+            $message->to('minthukha25122003@gmail.com')
                 ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
                 ->replyTo($data['email']);
         });
@@ -196,6 +196,26 @@ class HomeController extends Controller
     public function contact()
     {
         return Inertia::render('User/Contact');
+    }
+
+    //contact email
+    public function submitContactForm(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'user_message' => 'required|string',
+        ]);
+
+        // Send email
+        Mail::send('emails.contact', $data, function ($message) use ($data) {
+            $message->to('minthukha25122003@gmail.com')
+                ->subject('New Contact Form Submission from ' . $data['name'])
+                ->replyTo($data['email']);
+        });
+
+        return redirect()->route('home')->with('success', 'Your message has been sent successfully!');
     }
 
     //search

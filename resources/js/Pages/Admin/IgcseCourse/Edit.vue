@@ -53,7 +53,6 @@
 
                     <v-file-input @change="onSubjectImageChange($event, index)" label="Subject Image" chips
                         prepend-icon="mdi-image" variant="outlined" clearable />
-
                     <v-img v-if="subject.preview || subject.image_url"
                         :src="subject.preview ? subject.preview : subject.image_url" :height="120"
                         class="rounded mt-2" />
@@ -94,9 +93,11 @@ const form = useForm({
     price_monthly: props.course.price_monthly,
     image: null,
     subjects: (props.course.subjects || []).map(sub => ({
+        id: sub.id || null,
         title: sub.title || '',
         image: null,
         image_url: sub.image || null,
+        preview: null,
     })),
 });
 
@@ -114,7 +115,7 @@ const clearImage = () => {
 };
 
 const addSubject = () => {
-    form.subjects.push({ title: '', image: null, image_url: null, preview: null });
+    form.subjects.push({ id: null, title: '', image: null, image_url: null, preview: null });
 };
 
 const removeSubject = (index) => {
@@ -127,7 +128,8 @@ const onSubjectImageChange = (event, index) => {
         form.subjects[index].image = file;
         form.subjects[index].preview = URL.createObjectURL(file);
     } else {
-        form.subjects[index].preview = null;
+        form.subjects[index].image = null;
+        form.subjects[index].preview = form.subjects[index].image_url; // Restore original image URL
     }
 };
 
@@ -136,3 +138,4 @@ const submit = () => {
     update(form, route('admin.igcse-courses.update', { id: props.course.id }));
 };
 </script>
+
