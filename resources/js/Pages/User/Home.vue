@@ -26,7 +26,7 @@
                     </div> -->
                 </section>
 
-                <section class="mt-5 max-w-7xl mx-auto" id="about-us">
+                <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
                             <img :src="about?.image" alt="" class="" style="width:90%;height:90%;object-fit:cover;" />
@@ -47,7 +47,7 @@
                     </div>
                 </section>
 
-                <section class="my-5 max-w-7xl mx-auto" id="courses">
+                <section class="my-5 container" id="courses">
                     <p class="text-center font-bold text-2xl">Courses</p>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
@@ -80,10 +80,10 @@
                     </div>
                 </section>
 
-                <section class="bg-green-200" id="additional-courses">
-                    <div class="max-w-7xl mx-auto md:mt-5">
+                <section class="bg-green-200 pb-5" id="additional-courses">
+                    <div class="container md:mt-5">
                         <p class="pt-3 text-2xl font-bold">Additional Courses</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500 p-3">
+                        <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
                             <div v-for="course in additionalCourses" :key="course.id" class="">
                                 <Card :course="course" />
                             </div>
@@ -107,7 +107,7 @@
                     </div>
                 </section>
 
-                <section id="partnership" class="mt-5 max-w-7xl mx-auto" style="margin-bottom:100px;">
+                <section id="partnership" class="mt-5 container" style="margin-bottom:100px;">
                     <p class="font-bold text-center pb-15 text-2xl">Partnership</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
                         <!-- Left Text Card -->

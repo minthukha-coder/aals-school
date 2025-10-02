@@ -3,7 +3,7 @@
         <section class="vh-20" id="international-course">
             <div class="hidden md:block">
                 <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-fit-cover"
-                    style="height: 400px" />
+                    style="height: 500px" />
             </div>
             <div class="hidden md:block absolute left-20 top-65 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:50px;">Exam Services</h3>
@@ -12,7 +12,7 @@
 
 
         <section class="" id="cambridge-exam-courses">
-            <div class="max-w-7xl mx-auto mt-5">
+            <div class="container mt-5">
                 <h3 class="text-4xl py-2 my-5 text-center font-bold">International Exam Courses</h3>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-5">
                     <div v-for="course in internationalCourses" :key="course.id" class="flex items-end my-2">

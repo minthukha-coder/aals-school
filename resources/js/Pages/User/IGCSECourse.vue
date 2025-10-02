@@ -5,11 +5,10 @@
                 <img
                     src="../User/images/igcse-course.jpg"
                     alt="IGCSE Banner"
-                    class="w-full object-cover" style="height: 400px"
+                    class="w-full object-cover" style="height: 500px"
                 />
             </div>
         </section>
-
         <section class="container my-6">
             <div v-for="igcse in igcseCourses" :key="igcse.id" class="mb-8">
                 <div class="mx-auto max-w-lg rounded-lg overflow-hidden shadow-lg bg-white">
