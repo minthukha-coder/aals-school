@@ -65,7 +65,8 @@ const showCourse = ref(
 const showIGCSECourse = ref(
     route().current("admin.igcse-courses.index") ||
     route().current("admin.igcse-courses.create") ||
-    route().current("admin.igcse-courses.edit")
+    route().current("admin.igcse-courses.edit") ||
+    route().current("admin.igcse-courses.show")
 );
 
 const showAdditionalCourse = ref(

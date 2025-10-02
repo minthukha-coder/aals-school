@@ -34,7 +34,7 @@
                     <v-textarea v-model="form.highlight" rows="1" label="HighLight" variant="outlined"></v-textarea>
                 </v-row>
 
-                <v-row>
+                
                     <div>
                         <div class="fw-bold fs-5 mb-9">Benefits</div>
 
@@ -57,7 +57,7 @@
                             </v-col>
                         </v-row>
                     </div>
-                </v-row>
+                
 
 
 
