@@ -160,6 +160,15 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::delete('/', 'destroy')->name('destroy');
     });
 
+    // Route::group(['prefix' => 'gallery', 'controller' => GalleryController::class, 'as' => 'gallery.'], function () {
+    //     Route::get('/', 'index')->name('index');
+    //     Route::get('/create', 'create')->name('create');
+    //     Route::post('/', 'store')->name('store');
+    //     Route::get('/edit', 'edit')->name('edit');
+    //     Route::post('/update', 'update')->name('update');
+    //     Route::delete('/', 'destroy')->name('destroy');
+    // });
+
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile', 'profile')->name('profile');
         Route::post('/profile/update', 'updateProfile')->name('profile.update');

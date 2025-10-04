@@ -6,10 +6,10 @@
                         <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover"
                             style="height: 500px" />
                     </div>
-                    <!-- <div class="absolute left-0 top-20 text-white p-2">
-                        <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
-                        <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
-                    </div> -->
+                    <div class="absolute left-0 top-20 text-white p-2">
+                        <h3 class=" font-bold" style="font-size:40px;">Welcome To </h3>
+                        <span class="text-2xl font-bold" style="font-size:40px;"> AALS - Aung Academy Language School</span>
+                    </div>
                 </section>
 
                 <section class="hidden md:block home-page position-relative ">
@@ -20,10 +20,10 @@
                         </div>
                     </div>
 
-                    <!-- <div class="absolute left-50 top-30 text-white p-2">
-                        <h3 class=" font-bold" style="font-size:40px;">Welcome To AALS</h3>
-                        <span class="text-2xl font-bold" style="font-size:40px;">Aung Academy Language School</span>
-                    </div> -->
+                    <div class="absolute left-20 top-40 text-white p-2">
+                        <h3 class=" font-bold" style="font-size:60px;">Welcome To AALS</h3>
+                        <span class="text-2xl font-bold" style="font-size:60px;">Aung Academy Language School</span>
+                    </div>
                 </section>
 
                 <section class="mt-5 container" id="about-us">

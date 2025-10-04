@@ -10,7 +10,7 @@
                 <SideLink :href="route('admin.courses.index')" icon="fa-solid fa-book" :isOpen="showCourse"
                     text="Courses" />
 
-                     <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showIGCSECourse"
+                <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showIGCSECourse"
                     text="IGCSE Courses" />
                 <SideLink :href="route('admin.additional-courses.index')" icon="fa-solid fa-book-bookmark"
                     :isOpen="showAdditionalCourse" text="Additional Courses" />
@@ -25,9 +25,12 @@
 
                 <SideLink :href="route('admin.contents.index')" icon="a-solid fa-file-contract" :isOpen="showContent"
                     text="Content" />
-                    
+
                 <SideLink :href="route('admin.positions.index')" icon="fa-solid fa-users-gear" :isOpen="showPosition"
                     text="Position" />
+
+                <SideLink :href="route('admin.gallery.index')" icon="fa-solid fa-users-gear" :isOpen="showGallery"
+                    text="Gallery" />
 
             </ul>
 
@@ -115,6 +118,12 @@ const showPosition = ref(
     route().current("admin.positions.index") ||
     route().current("admin.positions.create") ||
     route().current("admin.positions.edit")
+);
+
+const showGallery = ref(
+    route().current("admin.gallery.index") ||
+    route().current("admin.gallery.create") ||
+    route().current("admin.gallery.edit")
 );
 </script>
 

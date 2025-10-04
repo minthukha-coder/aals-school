@@ -18,7 +18,7 @@
         </div>
 
         <!-- Site Links -->
-        <div class="text-white text-center md:text-left">
+        <div class="text-white text-center md:text-left mt-5">
           <h3 class="text-lg font-bold">On this Site</h3>
           <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start">
             <li><a :href="route('international-courses')" class="text-white text-lg">Additional Courses</a></li>
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Contact Us Section -->
-        <div class="flex flex-col text-white items-center md:items-start">
+        <div class="flex flex-col text-white items-center md:items-start mt-5">
           <h3 class="text-lg font-bold text-center md:text-left">Contact Us</h3>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-3">
             <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
