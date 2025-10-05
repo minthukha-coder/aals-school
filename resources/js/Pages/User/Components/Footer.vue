@@ -18,9 +18,9 @@
         </div>
 
         <!-- Site Links -->
-        <div class="text-white text-center md:text-left mt-5">
+        <div class="text-white md:text-left mt-5">
           <h3 class="text-lg font-bold">On this Site</h3>
-          <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start">
+          <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start m-0 p-0">
             <li><a :href="route('international-courses')" class="text-white text-lg">Additional Courses</a></li>
             <li><a :href="route('foundation-courses')" class="text-white text-lg">Foundation Courses</a></li>
             <li><a :href="route('cambridge-courses')" class="text-white text-lg">Cambridge Academic</a></li>
@@ -36,7 +36,7 @@
 
         <!-- Extra Links -->
         <div class="text-white mt-5">
-          <ul class="flex flex-col space-y-2 text-center md:!text-start ">
+          <ul class="flex flex-col space-y-2 text-center md:!text-start mt-5">
             <li><a href="#" class="text-white text-lg">Home</a></li>
             <li><a href="#" class="text-white text-lg">Exam Services</a></li>
             <li><a href="#" class="text-white text-lg">Gallery</a></li>

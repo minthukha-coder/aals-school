@@ -8,7 +8,7 @@
                 </div>
             </div>
 
-            <div id="search">
+            <div id="search" class="mx-4">
                 <input v-model="searchQuery" type="text" class="form-control h-10 rounded-pill border-2 text-black"
                     placeholder="Search..."  @keyup.enter="handleSearch" style="width:150px;border:1px solid #80ed99;"/>
             </div>

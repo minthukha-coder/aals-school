@@ -21,8 +21,8 @@
                     </div>
 
                     <div class="absolute left-20 top-40 text-white p-2">
-                        <h3 class=" font-bold" style="font-size:60px;">Welcome To AALS</h3>
-                        <span class="text-2xl font-bold" style="font-size:60px;">Aung Academy Language School</span>
+                        <h3 class=" font-bold" style="font-size:60px;">Welcome To </h3>
+                        <span class="text-2xl font-bold" style="font-size:50px;">AALS Aung Academy Language School</span>
                     </div>
                 </section>
 
@@ -31,7 +31,7 @@
                         <div class="px-5">
                             <img :src="about?.image" alt="" class="" style="width:90%;height:350px;object-fit:cover;" />
                         </div>
-                        <div class="p-2">
+                        <div class="flex justify-center flex-col p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
                             <p class="">{{ about?.subtitle }}</p>
                             <p>
