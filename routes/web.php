@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\IgcseController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\IgcseCourseController;
@@ -160,14 +161,14 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::delete('/', 'destroy')->name('destroy');
     });
 
-    // Route::group(['prefix' => 'gallery', 'controller' => GalleryController::class, 'as' => 'gallery.'], function () {
-    //     Route::get('/', 'index')->name('index');
-    //     Route::get('/create', 'create')->name('create');
-    //     Route::post('/', 'store')->name('store');
-    //     Route::get('/edit', 'edit')->name('edit');
-    //     Route::post('/update', 'update')->name('update');
-    //     Route::delete('/', 'destroy')->name('destroy');
-    // });
+    Route::group(['prefix' => 'gallery', 'controller' => GalleryController::class, 'as' => 'gallery.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/', 'store')->name('store');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+        Route::delete('/', 'destroy')->name('destroy');
+    });
 
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile', 'profile')->name('profile');

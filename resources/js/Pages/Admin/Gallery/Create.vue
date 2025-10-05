@@ -1,0 +1,53 @@
+<template>
+    <Layout>
+        <div class="container mt-4">
+            <h5 class="text-center mb-4">Add New Image</h5>
+
+            <v-row class="preview flex justify-center relative" v-if="formImageUrl">
+                <v-img class="rounded-lg mb-4 w-100" :height="300" cover v-if="formImageUrl" :src="formImageUrl" />
+
+                <div class="absolute top-0 right-0">
+                    <button @click="clearImage" class="fs-2"><font-awesome-icon
+                            icon="fa-solid fa-circle-xmark" /></button>
+                </div>
+
+            </v-row>
+
+
+            <div class="mb-3 p-3">
+                <v-file-input @change="onFileChange($event)" @input="form.image = $event.target.files[0]"
+                    label="Image Upload" chips prepend-icon="mdi-camera" variant="outlined" clearable
+                    @click:clear="clearImage"></v-file-input>
+            </div>
+
+            <button @click="submit" class="btn btn-success my-2 float-end">Submit</button>
+
+        </div>
+    </Layout>
+</template>
+
+<script setup>
+import Layout from '../Layouts/Layout.vue';
+import { Link, useForm } from '@inertiajs/vue3';
+import { ref } from 'vue';
+const formImageUrl = ref(null);
+const onFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        formImageUrl.value = URL.createObjectURL(file);
+    }
+};
+
+
+const form = useForm({
+    image: null,
+});
+
+
+
+const submit = () => {
+    form.post(route('admin.gallery.store'));
+};
+</script>
+
+<style scoped></style>

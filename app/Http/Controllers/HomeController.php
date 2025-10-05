@@ -16,6 +16,7 @@ use App\Models\CambridgeCourse;
 use App\Models\AdditionalCourse;
 use App\Models\FoundationCourse;
 use App\Models\CambridgeExamCourse;
+use App\Models\Gallery;
 use App\Models\InternationalCourse;
 use Illuminate\Support\Facades\Mail;
 
@@ -189,7 +190,11 @@ class HomeController extends Controller
     // gallery
     public function gallery()
     {
-        return Inertia::render('User/Gallery');
+        $galleries = Gallery::all();
+        foreach($galleries as $gallery) {
+            $gallery->image = asset('storage/images/' . $gallery->image);
+        }
+        return Inertia::render('User/Gallery', compact('galleries'));
     }
 
     //contact
