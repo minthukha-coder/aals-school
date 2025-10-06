@@ -8,7 +8,7 @@
                 <div>
                     <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
                 </div>
-                <button class="btn btn-success">Join Us</button>
+                <h3 class="text-success">Join Us</h3>
             </div>
         </section>
 

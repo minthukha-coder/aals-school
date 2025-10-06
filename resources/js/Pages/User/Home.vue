@@ -22,14 +22,14 @@
 
                     <div class="absolute left-20 top-40 text-white p-2">
                         <h3 class=" font-bold" style="font-size:60px;">Welcome To </h3>
-                        <span class="text-2xl font-bold" style="font-size:50px;">AALS Aung Academy Language School</span>
+                        <h3 class="text-2xl font-bold" style="font-size:50px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
                     </div>
                 </section>
 
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="px-5">
-                            <img :src="about?.image" alt="" class="" style="width:90%;height:350px;object-fit:cover;" />
+                            <img :src="about?.image" alt="" class="" style="width:90%;height:380px;object-fit:cover;" />
                         </div>
                         <div class="flex justify-center flex-col p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>

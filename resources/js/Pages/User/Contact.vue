@@ -1,18 +1,19 @@
 <template>
     <Layout>
         <div id="contact-us" class="container-fluid">
-            <p class="text-center text-2xl fw-bold">Contact Us</p>
-            <h4 class="fw-bold">General Enquires</h4>
+            <p class="text-center text-4xl fw-bold my-3">Contact Us</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 place-content-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 place-content-center">
                 <div class="flex flex-col items-center">
+                <h4 class="fw-bold my-3">General Enquires</h4>
+
                     <div class="flex items-center gap-2">
                         <img src="../User/images/telephone.png" alt="" style="width:40px;">
                         <h3>Telephone</h3>
                     </div>
                     <div class="flex flex-col items-center">
                         <span>09778695126</span>
-                        <span>09778695126</span>
+                        <span>09763381053</span>
                     </div>
 
                     <div class="flex items-center gap-2 mt-3">
@@ -28,11 +29,11 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center mt-3">
                     <img src="../User/images/email.png" alt="" style="width:40px;">
 
                     <h3>Mail</h3>
-                    <span>09778695126</span>
+                    <span>chitmyatnoeaung01@gmail.com</span>
                 </div>
 
                 <div class="flex flex-col items-center">
