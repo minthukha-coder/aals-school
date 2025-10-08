@@ -4,7 +4,7 @@
       <div class="container flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-      <div class="flex flex-col justify-center mt-5 items-center md:items-start">
+      <div class="flex flex-col justify-center mt-5 items-center md:items-">
           <div>
             <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
           </div>
@@ -18,8 +18,8 @@
         </div>
 
         <!-- Site Links -->
-        <div class="text-white md:text-left mt-5">
-          <h3 class="text-lg font-bold">On this Site</h3>
+        <div class="text-white text-center md:text-left lg:text-left mt-5">
+          <h3 class="text-lg font-bold text-center md:!text-left lg:!text-left">On this Site</h3>
           <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start m-0 p-0">
             <li><a :href="route('international-courses')" class="text-white text-lg">Additional Courses</a></li>
             <li><a :href="route('foundation-courses')" class="text-white text-lg">Foundation Courses</a></li>
@@ -35,8 +35,8 @@
         </div>
 
         <!-- Extra Links -->
-        <div class="text-white mt-5">
-          <ul class="flex flex-col space-y-2 text-center md:!text-start mt-5">
+        <div class="text-white md:!mt-5 lg:!mt-5">
+          <ul class="flex flex-col space-y-2 text-center md:!text-start m-0 p-0 md:!mt-7 lg:!mt-7">
             <li><a href="#" class="text-white text-lg">Home</a></li>
             <li><a href="#" class="text-white text-lg">Exam Services</a></li>
             <li><a href="#" class="text-white text-lg">Gallery</a></li>
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Contact Us Section -->
-        <div class="flex flex-col text-white items-center md:items-start mt-5">
+        <div class="flex flex-col text-white items-center md:items-start md:!mt-12 lg:!mt-12">
           <h3 class="text-lg font-bold text-center md:text-left">Contact Us</h3>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-3">
             <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">

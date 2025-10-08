@@ -6,10 +6,10 @@
                         <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover"
                             style="height: 500px" />
                     </div>
-                    <div class="absolute left-0 top-20 text-white p-2">
-                        <h3 class=" font-bold" style="font-size:40px;">Welcome To </h3>
-                        <h3 class="text-2xl font-bold" style="font-size:30px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
-                    </div>
+                    <!-- <div class="absolute left-0 top-20 text-white p-2">
+                        <h3 class=" font-bold" style="font-size:30px;">Welcome To </h3>
+                        <h3 class="text-2xl font-bold" style="font-size:30px;">AALS - <span style="font-size:20px;">Aung Academy Language School</span></h3>
+                    </div> -->
                 </section>
 
                 <section class="hidden md:block home-page position-relative ">
@@ -28,7 +28,7 @@
 
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                        <div class="px-5">
+                        <div class="flex justify-center">
                             <img :src="about?.image" alt="" class="" style="width:90%;height:380px;object-fit:cover;" />
                         </div>
                         <div class="flex justify-center flex-col p-2">
@@ -48,13 +48,13 @@
                 </section>
 
                 <section class="my-5 container" id="courses">
-                    <p class="text-center font-bold text-5xl">Courses</p>
+                    <p class="text-center font-bold text-4xl md:text-5xl">Courses</p>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
 
                         <template v-if="index !== 1">
 
-                            <div class="px-5">
+                            <div class="">
                                 <img :src="course?.image" alt="" class="w-100" style="height:250px;object-fit:cover;" />
                             </div>
                             <div class="p-2">
@@ -73,7 +73,7 @@
                                 </p>
                             </div>
 
-                            <div class="px-5">
+                            <div class="">
                                 <img :src="course?.image" alt="" class="w-100" style="height:250px;object-fit:cover;" />
                             </div>
                         </template>
@@ -82,7 +82,7 @@
 
                 <section class="bg-green-200 pb-5" id="additional-courses">
                     <div class="container md:mt-5">
-                        <p class="py-4 text-5xl font-bold">Additional Courses</p>
+                        <p class="py-4 text-4xl md:text-5xl text-center font-bold">Additional Courses</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
                             <div v-for="course in additionalCourses.slice(0,3)" :key="course.id" class="">
                                 <Card :course="course" />
@@ -107,10 +107,9 @@
                     </div>
                 </section>
 
-                <section id="partnership" class="mt-5 container" style="margin-bottom:100px;">
-                    <p class="font-bold text-center pb-15 text-5xl">Partnership</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
-                        <!-- Left Text Card -->
+                <section id="partnership" class="container" style="margin-bottom:100px;">
+                    <p class="font-bold text-center text-4xl md:text-5xl my-4 md:my-5 lg:my-5">Partnership</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:!pt-16 lg:!pt-16">
                         <div class="border border-black card p-3 w-full">
                             <h4>{{ partnership?.title }}</h4>
                             <p>{{ partnership?.description }}</p>
