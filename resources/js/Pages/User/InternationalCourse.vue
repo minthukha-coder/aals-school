@@ -13,7 +13,7 @@
 
         <section class="" id="international-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <p class="text-4xl py-2 my-5 text-center font-bold">International Exam Courses
+                <p class="text-5xl py-2 my-5 text-center font-bold">International Exam Courses
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in internationalCourses" :key="course.id"

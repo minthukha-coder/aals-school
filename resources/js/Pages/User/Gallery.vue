@@ -2,7 +2,7 @@
     <Layout>
 
         <div class="container my-3 text-center">
-            <p class="text-4xl font-bold my-3">Gallery</p>
+            <p class="text-5xl font-bold my-5">Gallery</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-3">
                 <div v-for="gallery in galleries" :key="gallery.id">

@@ -8,7 +8,7 @@
                     </div>
                     <div class="absolute left-0 top-20 text-white p-2">
                         <h3 class=" font-bold" style="font-size:40px;">Welcome To </h3>
-                        <span class="text-2xl font-bold" style="font-size:40px;"> AALS - Aung Academy Language School</span>
+                        <h3 class="text-2xl font-bold" style="font-size:30px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
                     </div>
                 </section>
 
@@ -22,7 +22,7 @@
 
                     <div class="absolute left-20 top-40 text-white p-2">
                         <h3 class=" font-bold" style="font-size:60px;">Welcome To </h3>
-                        <h3 class="text-2xl font-bold" style="font-size:50px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
+                        <h3 class="text-2xl font-bold" style="font-size:60px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
                     </div>
                 </section>
 
@@ -48,7 +48,7 @@
                 </section>
 
                 <section class="my-5 container" id="courses">
-                    <p class="text-center font-bold text-4xl">Courses</p>
+                    <p class="text-center font-bold text-5xl">Courses</p>
                     <div v-for="(course, index) in courses" :key="course.id"
                         class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
 
@@ -82,9 +82,9 @@
 
                 <section class="bg-green-200 pb-5" id="additional-courses">
                     <div class="container md:mt-5">
-                        <p class="pt-3 text-4xl font-bold">Additional Courses</p>
+                        <p class="py-4 text-5xl font-bold">Additional Courses</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
-                            <div v-for="course in additionalCourses" :key="course.id" class="">
+                            <div v-for="course in additionalCourses.slice(0,3)" :key="course.id" class="">
                                 <Card :course="course" />
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                 </section>
 
                 <section id="partnership" class="mt-5 container" style="margin-bottom:100px;">
-                    <p class="font-bold text-center pb-15 text-4xl">Partnership</p>
+                    <p class="font-bold text-center pb-15 text-5xl">Partnership</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
                         <!-- Left Text Card -->
                         <div class="border border-black card p-3 w-full">

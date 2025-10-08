@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <div id="contact-us" class="container-fluid">
-            <p class="text-center text-4xl fw-bold my-3">Contact Us</p>
+            <p class="text-center text-5xl fw-bold my-5">Contact Us</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 place-content-center">
                 <div class="flex flex-col items-center">
@@ -83,7 +83,7 @@
 
 
             <!-- Google Map -->
-            <div class="overflow-hidden">
+            <div class="overflow-hidden" style="z-index:0;">
                 <div id="map" style="width: 100%; height: 410px;"></div>
             </div>
 

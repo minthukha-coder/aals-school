@@ -1,7 +1,7 @@
 <template>
     <Layout>
-        <div id="contact-us" class="pb-3 mt-3">
-            <p class="text-2xl text-center fw-bold">About Us</p>
+        <div id="contact-us" class="pb-3">
+            <p class="text-5xl text-center fw-bold my-4">About Us</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="flex justify-center md:justify-start ">
@@ -10,7 +10,7 @@
                 </div>
 
                 <div
-                    class="text-center md:!text-start md:mt-0 p-5 flex flex-col justify-center items-center md:!items-start">
+                    class="text-center md:!text-start md:mt-0 pt-5 flex flex-col justify-center items-center md:!items-start">
                     <h2 class="font-bold text-xl my-2">{{ about?.title }}</h2>
 
                     <p class="text-lg my-3">{{ about?.subtitle }}</p>
