@@ -9,7 +9,7 @@
                 <h4 class="font-bold mx-20" style="font-size:70px;">Foundation Courses</h4>
             </div>
         </section>
-        <p class="text-5xl py-2 my-5 text-center font-bold">Foundation Courses</p>
+        <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Foundation Courses</p>
         <section class="container pb-10">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
                 <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in foundationCourses"

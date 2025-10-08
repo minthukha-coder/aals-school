@@ -18,7 +18,7 @@
         </div>
 
         <!-- Site Links -->
-        <div class="text-white text-center md:text-left lg:text-left mt-5">
+        <div class="text-white text-center md:text-left lg:text-left md:!mt-5 lg:!mt-5">
           <h3 class="text-lg font-bold text-center md:!text-left lg:!text-left">On this Site</h3>
           <ul class="flex flex-col mt-4 space-y-2 text-center md:!text-start m-0 p-0">
             <li><a :href="route('international-courses')" class="text-white text-lg">Additional Courses</a></li>
@@ -37,11 +37,11 @@
         <!-- Extra Links -->
         <div class="text-white md:!mt-5 lg:!mt-5">
           <ul class="flex flex-col space-y-2 text-center md:!text-start m-0 p-0 md:!mt-7 lg:!mt-7">
-            <li><a href="#" class="text-white text-lg">Home</a></li>
-            <li><a href="#" class="text-white text-lg">Exam Services</a></li>
-            <li><a href="#" class="text-white text-lg">Gallery</a></li>
-            <li><a href="#" class="text-white text-lg">Contact Us</a></li>
-            <li><a href="#" class="text-white text-lg">About Us</a></li>
+            <li><a :href="route('home')" class="text-white text-lg">Home</a></li>
+            <li><a :href="route('cambridge-exam-courses')" class="text-white text-lg">Exam Services</a></li>
+            <li><a :href="route('gallery')" class="text-white text-lg">Gallery</a></li>
+            <li><a :href="route('contact')" class="text-white text-lg">Contact Us</a></li>
+            <li><a :href="route('about')" class="text-white text-lg">About Us</a></li>
           </ul>
         </div>
 

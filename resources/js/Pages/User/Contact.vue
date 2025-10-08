@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <div id="contact-us" class="container-fluid">
-            <p class="text-center py-2 text-5xl fw-bold">Contact Us</p>
+            <p class="text-center py-2 text-4xl md:text-5xl lg:text-5xl fw-bold mt-3 md:my-5 lg:my-5">Contact Us</p>
             <h4 class="fw-bold">General Enquires</h4>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 place-content-center">
@@ -46,7 +46,7 @@
 
             <div id="address" class="flex justify-center mt-5">
                 <p class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-location-dot" /> <span class="font-bold text-xl">Address : No.
+                    <font-awesome-icon icon="fa-solid fa-location-dot" class="mx-2"/> <span class="font-bold text-lg md:text-xl lg:text-xl">Address : No.
                         (205), Shop House (28), Han-thar-waddy Street, Times City Yangon, Kamaryut, Yangon</span>
                 </p>
             </div>
@@ -79,7 +79,7 @@
             </div>
 
             <!-- Google Map -->
-            <div class="overflow-hidden w-full md:block hidden">
+            <div class="overflow-hidden w-full">
                 <div id="map" class="w-full h-460 md:h-full"></div>
             </div>
 
@@ -96,7 +96,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 
-
 const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
 
 const form = useForm({
@@ -110,23 +109,25 @@ const contact = () => {
 }
 
 onMounted(() => {
-    // Create map instance
     const map = L.map('map').setView([center.lat, center.lng], 15);
 
-    // Add OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Add marker
     L.marker([center.lat, center.lng]).addTo(map);
 });
 
 </script>
 
 <style scoped>
-/* Fix Leaflet icon issue */
-.leaflet-marker-icon {
-    background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png');
+
+.dot-icon {
+  width: 12px;
+  height: 12px;
+  background-color: red; /* dot color */
+  border-radius: 50%;
+  border: 2px solid white; /* optional border */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 </style>

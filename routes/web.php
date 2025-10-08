@@ -1,15 +1,11 @@
 <?php
 
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Mail\Mailables\Content;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SearchController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\IgcseController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\GalleryController;

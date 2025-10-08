@@ -7,13 +7,13 @@
                     style="height: 500px" />
             </div>
             <div class="hidden md:block absolute left-0 top-60 text-white p-2">
-                <h3 class="font-bold mx-20 text-5xl">Exam Services</h3>
+                <h3 class="font-bold mx-20">Exam Services</h3>
             </div>
         </section>
 
         <section class="" id="international-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <p class="text-5xl py-2 my-5 text-center font-bold">International Exam Courses
+                <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">International Exam Courses
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in internationalCourses" :key="course.id"

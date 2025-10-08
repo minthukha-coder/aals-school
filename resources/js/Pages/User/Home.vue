@@ -6,10 +6,11 @@
                         <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover"
                             style="height: 500px" />
                     </div>
-                    <!-- <div class="absolute left-0 top-20 text-white p-2">
-                        <h3 class=" font-bold" style="font-size:30px;">Welcome To </h3>
-                        <h3 class="text-2xl font-bold" style="font-size:30px;">AALS - <span style="font-size:20px;">Aung Academy Language School</span></h3>
-                    </div> -->
+                    <div class="absolute left-0 top-20 text-white p-2">
+                        <h3 class=" font-bold" style="font-size:50px;">Welcome To </h3>
+                        <h3 class="text-2xl font-bold" style="font-size:40px;">AALS - <span style="font-size:35px;">Aung
+                                Academy Language School</span></h3>
+                    </div>
                 </section>
 
                 <section class="hidden md:block home-page position-relative ">
@@ -22,7 +23,8 @@
 
                     <div class="absolute left-20 top-40 text-white p-2">
                         <h3 class=" font-bold" style="font-size:60px;">Welcome To </h3>
-                        <h3 class="text-2xl font-bold" style="font-size:60px;">AALS - <span style="font-size:40px;">Aung Academy Language School</span></h3>
+                        <h3 class="text-2xl font-bold" style="font-size:60px;">AALS - <span style="font-size:40px;">Aung
+                                Academy Language School</span></h3>
                     </div>
                 </section>
 
@@ -36,7 +38,7 @@
                             <p class="">{{ about?.subtitle }}</p>
                             <p>
                                 {{ about?.description?.length > 200 ? about?.description.slice(0, 200) :
-                                about?.description }}
+                                    about?.description }}
                                 <a v-if="about?.description?.length > 40" :href="route('about')"
                                     class="text-decoration-none no-underline ">
                                     Read More....
@@ -84,21 +86,30 @@
                     <div class="container md:mt-5">
                         <p class="py-4 text-4xl md:text-5xl text-center font-bold">Additional Courses</p>
                         <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
-                            <div v-for="course in additionalCourses.slice(0,3)" :key="course.id" class="">
+                            <div v-for="course in additionalCourses.slice(0, 3)" :key="course.id" class="">
                                 <Card :course="course" />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="hidden md:block" id="learning-pathway">
+                <section class="" id="learning-pathway">
                     <div class="relative w-full h-full">
                         <img src="../User/images/learning-pathway.png" alt="" class="w-full h-full object-fit-cover"
                             style="height:600px;" />
-                        <h3 class="absolute left-8 top-1/4 transform
+                        <div class="hidden md:block">
+                            <h3 class="absolute left-8 top-1/4 transform
                text-white font-bold" style="font-size:70px;">
-                            Learning Pathway
-                        </h3>
+                                Learning Pathway
+                            </h3>
+                        </div>
+
+                        <div class="block md:hidden">
+                            <h3 class="absolute left-8 top-10 transform
+               text-white font-bold" style="font-size:40px;">
+                                Learning Pathway
+                            </h3>
+                        </div>
                         <div
                             class="flex items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-400 py-2 px-10 h-15 rounded-lg text-white font-bold ">
                             <Link :href="route('learning-pathway')"><button class="text-white">Click

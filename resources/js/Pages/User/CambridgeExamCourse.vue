@@ -13,7 +13,7 @@
 
         <section class="" id="cambridge-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <p class="text-5xl py-2 my-5 text-center font-bold">Cambridge Exam Courses</p>
+                <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Cambridge Exam Courses</p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in cambridgeExamCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
