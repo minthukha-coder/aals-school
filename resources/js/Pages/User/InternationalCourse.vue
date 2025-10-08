@@ -18,8 +18,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in internationalCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
-                        <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
+                        <!-- <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
+                        </div> -->
+                         <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         <div
                             class="w-full sm:max-w-[250px] md:max-w-[300px] h-auto overflow-hidden rounded-2xl shadow-lg p-3 flex flex-col justify-between mx-auto sm:mx-0">

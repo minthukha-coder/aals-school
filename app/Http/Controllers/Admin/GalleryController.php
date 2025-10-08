@@ -78,9 +78,9 @@ class GalleryController extends Controller
         return redirect()->route('admin.gallery.index')->with('success', 'Image updated successfully.');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $gallery = Gallery::findOrFail($id);
+        $gallery = Gallery::findOrFail($request->id);
 
         // Delete image file from storage if it exists
         if ($gallery->image && Storage::exists('public/images/' . $gallery->image)) {
