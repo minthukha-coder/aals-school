@@ -4,7 +4,7 @@
             <p class="text-5xl text-center fw-bold my-4">About Us</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex justify-center md:justify-start ">
+                <div class="flex justify-center md:justify-start mx-4 md:mx-0">
                     <img :src="about?.image" alt="About Image" class="object-cover"
                         style="max-width: 100%; height: 400px;" />
                 </div>

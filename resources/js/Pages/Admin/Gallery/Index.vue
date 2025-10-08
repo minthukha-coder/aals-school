@@ -5,30 +5,21 @@
 
             <div class="row">
                 <Link :href="route('admin.gallery.create')">
-                    <button class="btn btn-success float-end">
-                        <font-awesome-icon icon="fa-solid fa-circle-plus" /> Create
-                    </button>
+                <button class="btn btn-success float-end">
+                    <font-awesome-icon icon="fa-solid fa-circle-plus" /> Create
+                </button>
                 </Link>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-3 mt-3">
-                    <div
-                        v-for="gallery in galleries"
-                        :key="gallery.id"
-                        class="card mb-4 shadow rounded overflow-hidden"
-                    >
-                        <img
-                            :src="gallery?.image"
-                            class="card-img-top"
-                            alt="Gallery Image"
-                            style="height: 250px; object-fit: cover;"
-                        />
+                    <div v-for="gallery in galleries" :key="gallery.id"
+                        class="card mb-4 shadow rounded overflow-hidden">
+                        <img :src="gallery?.image" class="card-img-top" alt="Gallery Image"
+                            style="height: 250px; object-fit: cover;" />
 
                         <div class="card-footer bg-white d-flex justify-content-end border-top">
-                            <form @submit.prevent="deleteImage(image.id)">
-                                <button
-                                    type="submit"
-                                    class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
-                                >
+                            <form @submit.prevent="deleteImage(gallery.id)">
+                                <button type="submit"
+                                    class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1">
                                     <font-awesome-icon icon="fa-solid fa-trash" />
                                     Delete
                                 </button>

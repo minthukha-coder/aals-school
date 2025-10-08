@@ -13,12 +13,15 @@
 
         <section class="" id="cambridge-exam-courses">
             <div class="max-w-7xl mx-auto">
-                <p class="text-4xl py-2 my-5 text-center font-bold">Cambridge Exam Courses</p>
+                <p class="text-5xl py-2 my-5 text-center font-bold">Cambridge Exam Courses</p>
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in cambridgeExamCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
-                        <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
+                        <!-- <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
+                        </div> -->
+                        <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         <div class="w-full sm:w-70 h-51 overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
                             <p class="font-bold text-center sm:text-left text-lg">Course : {{ course.name }}</p>
@@ -46,13 +49,13 @@ const props = defineProps({
 })
 
 const openEmail = () => {
-  const recipient = "chitmyatnoeaung01@gmail.com";
-  const subject = encodeURIComponent("Hello!");
-  const body = encodeURIComponent("Your message here.");
+    const recipient = "chitmyatnoeaung01@gmail.com";
+    const subject = encodeURIComponent("Hello!");
+    const body = encodeURIComponent("Your message here.");
 
-  // Correct Gmail URL
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
-  window.open(gmailUrl, "_blank");
+    // Correct Gmail URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, "_blank");
 };
 
 
