@@ -10,7 +10,8 @@
 
                 <v-row class="mt-4">
                     <v-textarea v-model="form.description" rows="1" label="Description" variant="outlined"
-                        :error="!!$page.props.errors.description" :error-messages="$page.props.errors.description" />
+                        :error="!!$page.props.errors.description" :error-messages="$page.props.errors.description" @input="limitWords"
+/>
                 </v-row>
 
                 <v-row class="preview flex justify-center relative mt-10" v-if="formImageUrl">
@@ -64,6 +65,13 @@ const clearImage = () => {
     formImageUrl.value = null;
     form.name = null;
 };
+
+function limitWords() {
+  const words = form.description.trim().split(/\s+/)
+  if (words.length > 800) {
+    form.description = words.slice(0, 800).join(' ')
+  }
+}
 
 const submit = () => {
     post(form, route('admin.courses.store'));

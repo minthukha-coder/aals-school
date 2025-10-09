@@ -55,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="background-color:#dff4e2;">
 
             <!-- Application Form -->
-            <div class="rounded-2xl p-3 w-full mx-auto">
+            <div class="rounded-2xl p-3 mx-auto">
                 <input v-model="form.name" type="text" placeholder="Enter your name"
                     class="w-full p-3 mb-4 border bg-white rounded-lg focus:outline-none" />
 
@@ -109,25 +109,44 @@ const contact = () => {
 }
 
 onMounted(() => {
-    const map = L.map('map').setView([center.lat, center.lng], 15);
+  const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+  // Load Google Maps script dynamically
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCecIUeBdj2PJeg1DzrxC8Qvf0NOccHdMg&callback=initMap`;
+  script.async = true;
+  document.head.appendChild(script);
 
-    L.marker([center.lat, center.lng]).addTo(map);
+  window.initMap = () => {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center,
+      zoom: 15,
+      disableDefaultUI: true,
+      gestureHandling: "auto",
+    });
+
+    // Red dot marker
+    const dot = {
+      path: google.maps.SymbolPath.CIRCLE,
+      scale: 8,
+      fillColor: "#ff3b30",
+      fillOpacity: 1,
+      strokeColor: "#fff",
+      strokeWeight: 2,
+    };
+
+    new google.maps.Marker({
+      position: center,
+      map,
+      icon: dot,
+      title: "Our Location",
+      optimized: false,
+    });
+  };
 });
-
 </script>
 
 <style scoped>
 
-.dot-icon {
-  width: 12px;
-  height: 12px;
-  background-color: red; /* dot color */
-  border-radius: 50%;
-  border: 2px solid white; /* optional border */
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-}
+
 </style>

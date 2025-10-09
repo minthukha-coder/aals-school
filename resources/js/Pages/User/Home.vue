@@ -31,7 +31,7 @@
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="flex justify-center">
-                            <img :src="about?.image" alt="" class="" style="width:90%;height:380px;object-fit:cover;" />
+                            <img :src="about?.image" alt="" class="" style="width:100%;height:450px;object-fit:cover;" />
                         </div>
                         <div class="flex justify-center flex-col p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>

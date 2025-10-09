@@ -2,11 +2,11 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
-                <img src="../User/images/foundation-course.jpg" alt="" class="w-full object-fit-cover"
-                    style="height: 700px" />
+                <img src="../User/images/foundation-course.jpg" alt="" class="w-full h-full object-fit-cover"
+                    />
             </div>
-            <div class="hidden md:block absolute left-30 top-40 md:left-60 md:top-60 lg:left-40 lg:top-60 text-white p-2">
-                <h4 class="font-bold mx-20" style="font-size:70px;">Foundation Courses</h4>
+            <div class="hidden md:block absolute left-30 top-50 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:60px;">Foundation Courses</h4>
             </div>
         </section>
         <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Foundation Courses</p>

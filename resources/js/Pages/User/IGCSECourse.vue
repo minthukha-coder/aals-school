@@ -5,7 +5,7 @@
                 <img
                     src="../User/images/igcse-course.jpg"
                     alt="IGCSE Banner"
-                    class="w-full object-cover" style="height: 500px"
+                    class="w-full h-full object-cover"
                 />
             </div>
         </section>
