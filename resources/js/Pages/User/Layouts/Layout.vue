@@ -15,10 +15,10 @@ import Footer from '@/Pages/User/Components/Footer.vue'
 
 <style scoped>
 .layout {
-    font-family: "Inter", sans-serif;
+    font-family: "Jost", sans-serif;
 }
 
 .content {
-    font-family: "Inter", sans-serif;
+    font-family: "Jost", sans-serif;
 }
 </style>
