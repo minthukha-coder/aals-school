@@ -54,7 +54,6 @@ const onFileChange = (event) => {
 };
 
 
-
 const form = useForm({
     title: '',
     description: '',
@@ -66,7 +65,7 @@ const clearImage = () => {
     form.name = null;
 };
 
-function limitWords() {
+const limitWords = () => {
   const words = form.description.trim().split(/\s+/)
   if (words.length > 800) {
     form.description = words.slice(0, 800).join(' ')

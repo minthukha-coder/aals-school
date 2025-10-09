@@ -6,13 +6,13 @@
             <div class="col-md-6">
                 <v-row>
                     <v-col cols="12">
-                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined"></v-textarea   
-                        :error="!!$page.props.errors.title" :error-messages="$page.props.errors.title">
+                        <v-textarea v-model="form.title" rows="1" label="Title" variant="outlined" :error="!!$page.props.errors.title" ></v-textarea   
+                        >
                     </v-col>
 
                     <v-col cols="12">
-                        <v-textarea v-model="form.description" label="Description" variant="outlined"></v-textarea   
-                        :error="!!$page.props.errors.description" :error-messages="$page.props.errors.description">
+                        <v-textarea v-model="form.description" label="Description" variant="outlined" :error="!!$page.props.errors.description" @input="limitWords"></v-textarea   
+                        >
                     </v-col>
 
                     <v-col cols="12">
@@ -67,6 +67,15 @@ const clearImage = () => {
     formImageUrl.value = null;
     form.name = null;
 };
+
+
+const limitWords = () => {
+  const words = form.description.trim().split(/\s+/)
+  if (words.length > 800) {
+    form.description = words.slice(0, 800).join(' ')
+  }
+}
+
 
 const submit = () => {
     update(form,route('admin.courses.update', {id : props.course.id}));
