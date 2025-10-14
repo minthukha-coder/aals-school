@@ -8,7 +8,7 @@
                     <div class="input-group">
                         <label for="username" style="color:#70e000">Email</label>
                         <input v-model="form.email" type="text" name="username" id="username" placeholder="">
-                    </div>
+                    </div>p
                     <div class="input-group">
                         <label for="password" style="color:#70e000">Password</label>
                         <input @keyup.enter="submit" v-model="form.password" :type="showPassword ? 'text' : 'password'" name="password" id="password" placeholder="">
@@ -69,7 +69,20 @@ console.log(page);
     }
 })
 
+onUpdated(() => {
+console.log('Updated', page.props.flash)
+    if (page.props.flash) {
+        if (page.props.flash.success) {
+            toast.success(page.props.flash.success);
+            page.props.flash.success = '';
+        } else if (page.props.flash.failed) {
+            toast.error(page.props.flash.failed);
+            page.props.flash.failed = '';
+            
+        }
+    }
 
+})
 
 </script>
 

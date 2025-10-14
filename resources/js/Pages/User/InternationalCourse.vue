@@ -9,8 +9,8 @@
                 <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover"
                     style="height: 500px" />
             </div>
-            <div class="hidden md:block absolute left-0 top-60 text-white p-2">
-                <h3 class="font-bold mx-20">Exam Services</h3>
+            <div class="hidden md:block absolute left-30 top-50 text-white p-2">
+                <h3 class="font-bold mx-20" style="font-size:60px;">Exam Services</h3>
             </div>
         </section>
 

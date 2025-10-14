@@ -25,9 +25,10 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            session(['failed' => 'Wrong Email or password']);
-            return back();
+        $data = $this->userService->login($request);
+        if (isset($data['message'])) {
+            session(['error' => $data['message']]);
+            return redirect()->back();
         }
 
         session(['success' => 'Login success']);
