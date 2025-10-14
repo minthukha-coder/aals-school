@@ -1,6 +1,5 @@
 *
 !private/
 !public/
-
-
+!public/build/
 !.gitignore
