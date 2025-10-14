@@ -1,9 +1,11 @@
 <template>
+
+    <Head title="Cambridge Exam Course - Aung Academy Language School" />
+
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
-                <img src="../User/images/cambridge-course.jpg" alt="" class="w-full h-full object-fit-cover"
-                     />
+                <img src="../User/images/cambridge-course.jpg" alt="" class="w-full h-full object-fit-cover" />
             </div>
 
             <div class="hidden md:block absolute left-30 top-50 text-white p-2">
@@ -43,6 +45,7 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     cambridgeExamCourses: Array

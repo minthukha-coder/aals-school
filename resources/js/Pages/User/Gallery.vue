@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Gallery - Aung Academy Language School" />
+
     <Layout>
 
         <div class="container my-3 text-center">
@@ -16,6 +19,7 @@
 
 <script setup>
 import Layout from './Layouts/Layout.vue';
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     galleries: Object,

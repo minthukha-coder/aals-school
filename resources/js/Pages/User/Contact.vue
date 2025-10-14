@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Contact - Aung Academy Language School" />
+
     <Layout>
         <div id="contact-us" class="container-fluid">
             <p class="text-center py-2 text-4xl md:text-5xl lg:text-5xl fw-bold mt-3 md:my-5 lg:my-5">Contact Us</p>
@@ -46,7 +49,8 @@
 
             <div id="address" class="flex justify-center mt-5">
                 <p class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-location-dot" class="mx-2"/> <span class="font-bold text-lg md:text-xl lg:text-xl">Address : No.
+                    <font-awesome-icon icon="fa-solid fa-location-dot" class="mx-2" /> <span
+                        class="font-bold text-lg md:text-xl lg:text-xl">Address : No.
                         (205), Shop House (28), Han-thar-waddy Street, Times City Yangon, Kamaryut, Yangon</span>
                 </p>
             </div>
@@ -92,9 +96,7 @@
 import Layout from "../User/Layouts/Layout.vue";
 import { onMounted } from 'vue';
 import { useForm } from '@inertiajs/vue3'
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
+import { Head } from '@inertiajs/vue3'
 
 const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
 
@@ -109,44 +111,41 @@ const contact = () => {
 }
 
 onMounted(() => {
-  const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
+    const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
 
-  // Load Google Maps script dynamically
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCecIUeBdj2PJeg1DzrxC8Qvf0NOccHdMg&callback=initMap`;
-  script.async = true;
-  document.head.appendChild(script);
+    // Load Google Maps script dynamically
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCecIUeBdj2PJeg1DzrxC8Qvf0NOccHdMg&callback=initMap`;
+    script.async = true;
+    document.head.appendChild(script);
 
-  window.initMap = () => {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      center,
-      zoom: 15,
-      disableDefaultUI: true,
-      gestureHandling: "auto",
-    });
+    window.initMap = () => {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center,
+            zoom: 15,
+            disableDefaultUI: true,
+            gestureHandling: "auto",
+        });
 
-    // Red dot marker
-    const dot = {
-      path: google.maps.SymbolPath.CIRCLE,
-      scale: 8,
-      fillColor: "#ff3b30",
-      fillOpacity: 1,
-      strokeColor: "#fff",
-      strokeWeight: 2,
+        // Red dot marker
+        const dot = {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8,
+            fillColor: "#ff3b30",
+            fillOpacity: 1,
+            strokeColor: "#fff",
+            strokeWeight: 2,
+        };
+
+        new google.maps.Marker({
+            position: center,
+            map,
+            icon: dot,
+            title: "Our Location",
+            optimized: false,
+        });
     };
-
-    new google.maps.Marker({
-      position: center,
-      map,
-      icon: dot,
-      title: "Our Location",
-      optimized: false,
-    });
-  };
 });
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>

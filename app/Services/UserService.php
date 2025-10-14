@@ -22,11 +22,10 @@ class UserService
         }
 
         Auth::login($user);
-        // $token = $user->createToken('AALS_Token')->plainTextToken;
+        $request->session()->regenerate();
 
         $data = [
             'user' => $user,
-            // 'token' => $token
         ];
 
         return $data;

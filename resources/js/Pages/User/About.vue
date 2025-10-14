@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="About - Aung Academy Language School" />
+
     <Layout>
         <div id="contact-us" class="pb-3 container">
             <p class="text-4xl md:text-5xl lg:text-5xl text-center fw-bold my-4">About Us</p>
@@ -25,6 +28,7 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     about: Object,

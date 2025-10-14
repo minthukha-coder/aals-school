@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Additional Course - Aung Academy Language School" />
+
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
@@ -11,7 +14,8 @@
         <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Additional Courses</p>
         <section class="container pb-10">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-                <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in additionalCourses" :key="course.id">
+                <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in additionalCourses"
+                    :key="course.id">
                     <div class="w-full sm:w-70 h-40 overflow-hidden shadow-lg ">
                         <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
                     </div>
@@ -27,9 +31,10 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
-    additionalCourses : Array
+    additionalCourses: Array
 })
 </script>
 

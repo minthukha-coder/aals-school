@@ -33,11 +33,11 @@ import { ref, onMounted } from "vue"
 import { router } from "@inertiajs/vue3";
 
 const logout = () => {
-  router.visit("/login");
+  router.post(route('logout'));
 };
 
 const profile = () => {
-  router.visit(route('admin.profile'));
+  router.get(route('admin.profile'));
 };
 </script>
 

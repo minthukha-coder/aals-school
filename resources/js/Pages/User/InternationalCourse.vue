@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="International Course - Aung Academy Language School" />
+
     <Layout>
         <!-- Hero Section -->
         <section class="vh-20 relative" id="international-course">
@@ -21,7 +24,7 @@
                         <!-- <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
                         </div> -->
-                         <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+                        <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         <div
@@ -41,19 +44,12 @@
 
             </div>
         </section>
-
-        <!-- Bottom Hero Section -->
-        <!-- <section class="vh-20" id="foundation-course">
-            <div>
-                <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover"
-                    style="height: 300px" />
-            </div>
-        </section> -->
     </Layout>
 </template>
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     internationalCourses: Array,

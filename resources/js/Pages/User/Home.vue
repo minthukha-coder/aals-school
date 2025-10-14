@@ -1,4 +1,7 @@
     <template>
+
+        <Head title="Home - Aung Academy Language School" />
+
         <Layout>
             <div class="main-page">
                 <section class="block md:hidden home-page position-relative">
@@ -31,7 +34,8 @@
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="flex justify-center">
-                            <img :src="about?.image" alt="" class="" style="width:100%;height:450px;object-fit:cover;" />
+                            <img :src="about?.image" alt="" class=""
+                                style="width:100%;height:450px;object-fit:cover;" />
                         </div>
                         <div class="flex justify-center flex-col p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
@@ -157,6 +161,7 @@
 import Layout from "../User/Layouts/Layout.vue";
 import Card from "../User/Components/Card.vue";
 import imageCard from "../User/Components/imageCard.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     homeImage: Object,

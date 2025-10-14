@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Services\UserService;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -31,10 +32,21 @@ class AuthController extends Controller
         }
 
         session(['success' => 'Login success']);
-        if ($data['user']['role'] === 'admin') {
+        if ($data['user']->role === 'admin') {
             session(['success' => 'Login success']);
             return redirect()->route('admin.dashboard');
         }
         return redirect()->route('home');
+    }
+
+     public function logout()
+    {
+        $role = Auth::user()->role;
+        Auth::logout();
+
+        if ($role == 'admin') {
+            session(['success' => 'Logout success']);
+            return redirect()->route('login');
+        }
     }
 }

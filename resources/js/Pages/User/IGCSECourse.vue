@@ -1,4 +1,6 @@
 <template>
+          <Head title="IGCSE Course - Aung Academy Language School" />
+
     <Layout>
         <section>
             <div class="hidden md:block ">
@@ -47,6 +49,7 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     igcseCourses: Array

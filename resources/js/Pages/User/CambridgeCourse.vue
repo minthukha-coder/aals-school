@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Cambridge Course - Aung Academy Language School" />
+
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
@@ -34,6 +37,7 @@
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     cambridgeCourses: Array,

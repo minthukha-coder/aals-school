@@ -1,9 +1,11 @@
 <template>
+
+    <Head title="Foundation Course - Aung Academy Language School" />
+
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
-                <img src="../User/images/foundation-course.jpg" alt="" class="w-full h-full object-fit-cover"
-                    />
+                <img src="../User/images/foundation-course.jpg" alt="" class="w-full h-full object-fit-cover" />
             </div>
             <div class="hidden md:block absolute left-30 top-50 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:60px;">Foundation Courses</h4>
@@ -30,13 +32,13 @@
                             <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
                             <span class="block text-center sm:text-left text-lg">{{ course.months }}</span> -->
 
-
     </Layout>
 </template>
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
+import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     foundationCourses: Array,

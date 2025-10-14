@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Learning Pathway - Aung Academy Language School" />
+
     <Layout>
         <div class="container my-3 text-center">
             <h3 class="my-3 fw-bold text-4xl md:text-5xl lg:text-5xl">Learning Pathway</h3>
@@ -19,6 +22,8 @@
 
 <script setup>
 import Layout from './Layouts/Layout.vue';
+import { Head } from '@inertiajs/vue3'
+
 </script>
 
 <style lang="scss" scoped></style>
