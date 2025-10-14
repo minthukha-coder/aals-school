@@ -25,21 +25,16 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        $data = $this->userService->login($request);
-        if (isset($data['message'])) {
-            session(['failed' => $data['message']]);
-            return redirect()->back();
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            session(['failed' => 'Wrong Email or password']);
+            return back();
         }
 
         session(['success' => 'Login success']);
-        if ($data['user']->role === 'admin') {
-            session(['success' => 'Login success']);
-            return redirect()->route('admin.dashboard');
-        }
-        return redirect()->route('home');
+        return redirect()->route('admin.dashboard');
     }
 
-     public function logout()
+    public function logout()
     {
         $role = Auth::user()->role;
         Auth::logout();

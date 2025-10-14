@@ -18,11 +18,10 @@ class UserService
         }
 
         if (!Hash::check($request->password, $user->password)) {
-            return sendError(401, message: "The password you entered is incorrect");
+            return sendError(401, "The password you entered is incorrect");
         }
 
         Auth::login($user);
-        $request->session()->regenerate();
 
         $data = [
             'user' => $user,
