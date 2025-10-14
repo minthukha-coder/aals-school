@@ -1,6 +1,7 @@
 <template>
 
     <Head title="Cambridge Course - Aung Academy Language School" />
+    
 
     <Layout>
         <section class="vh-20" id="foundation-course">
