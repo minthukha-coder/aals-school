@@ -12,6 +12,7 @@
             <!-- <div class="hidden md:block absolute left-30 top-49 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:60px;">Exam Services</h3>
             </div> -->
+            
         </section>
 
         <section class="" id="international-exam-courses">
