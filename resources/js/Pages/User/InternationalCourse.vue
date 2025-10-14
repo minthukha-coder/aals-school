@@ -7,11 +7,11 @@
         <section class="vh-20 relative" id="international-course">
             <div class="hidden md:block">
                 <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover"
-                    style="height: 500px" />
+                    />
             </div>
-            <div class="hidden md:block absolute left-30 top-50 text-white p-2">
+            <!-- <div class="hidden md:block absolute left-30 top-49 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:60px;">Exam Services</h3>
-            </div>
+            </div> -->
         </section>
 
         <section class="" id="international-exam-courses">
