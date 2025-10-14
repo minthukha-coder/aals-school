@@ -4,7 +4,7 @@
       <div class="container flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-      <div class="flex flex-col justify-center mt-5 items-center md:items-">
+      <div class="flex flex-col justify-center mt-5 items-center">
           <div>
             <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
           </div>

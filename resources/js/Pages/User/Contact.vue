@@ -80,6 +80,7 @@
                         <v-btn @click="contact" color="primary" class="px-6 rounded-xl shadow-md">
                             Send
                         </v-btn>
+                        
                     </div>
                 </div>
             </div>
