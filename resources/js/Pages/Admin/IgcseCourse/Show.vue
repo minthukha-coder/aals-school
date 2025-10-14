@@ -19,6 +19,7 @@
                         <p class="text-gray-600 mb-2">
                             <strong>Duration:</strong> {{ course.duration }}
                         </p>
+                        
                         <p class="text-gray-600 mb-2">
                             <strong>Monthly Price:</strong>
                             <span class="text-green-600 font-semibold">
