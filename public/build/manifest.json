@@ -93,12 +93,12 @@
     "src": "resources/js/Pages/User/images/telephone.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-MLKf_8vX.js",
+    "file": "assets/app-BhIws-rc.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-kJq3N85L.css"
+      "assets/app-BdP0bQx4.css"
     ],
     "assets": [
       "assets/logo-BPWYFurT.jpg",

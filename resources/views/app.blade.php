@@ -9,6 +9,9 @@
   @vite('resources/js/app.js')
 
   <title inertia>Aung Academy Language School</title>
+  <meta name="description" content="Learn English, IELTS, and more at Aung Academy Language School.">
+  <meta name="keywords" content="English courses, IELTS, Myanmar, language school">
+  <meta name="author" content="Aung Academy">
   <link rel="icon" type="image/png" href="{{ asset('/images/favicon.png') }}">
 
 

@@ -69,20 +69,6 @@ console.log(page);
     }
 })
 
-onUpdated(() => {
-console.log('Updated', page.props.flash)
-    if (page.props.flash) {
-        if (page.props.flash.success) {
-            toast.success(page.props.flash.success);
-            page.props.flash.success = '';
-        } else if (page.props.flash.failed) {
-            toast.error(page.props.flash.failed);
-            page.props.flash.failed = '';
-            
-        }
-    }
-
-})
 
 </script>
 
