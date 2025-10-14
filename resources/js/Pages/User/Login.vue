@@ -81,6 +81,7 @@ console.log(page);
     color: rgba(243, 244, 246, 1);
 }
 
+
 .title {
     font-size: 23px;
     font-weight: 600;
