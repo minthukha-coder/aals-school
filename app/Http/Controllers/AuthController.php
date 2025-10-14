@@ -36,12 +36,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        $role = Auth::user()->role;
         Auth::logout();
 
-        if ($role == 'admin') {
-            session(['success' => 'Logout success']);
-            return redirect()->route('login');
-        }
+        session(['success' => 'Logout success']);
+        return redirect()->route('login');
     }
 }
