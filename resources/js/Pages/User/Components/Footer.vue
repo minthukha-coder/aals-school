@@ -7,6 +7,7 @@
       <div class="flex flex-col justify-center mt-5 items-center">
           <div>
             <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
+            
           </div>
           <div class="flex mx-6 mt-3 items-center">
             <img src="../images/cambridge.png" alt="" style="width:350px;">
