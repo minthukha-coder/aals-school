@@ -1,10 +1,10 @@
 <template>
   <div class="relative">
     <div class="pt-28 pb-3 bg-gradient-to-t from-green-600 via-green-700 to-green-800">
-      <div class="container flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
+      <div class=" flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-      <div class="flex flex-col justify-center mt-5 items-center">
+      <div class="flex flex-col justify-center mt-5">
           <div>
             <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
             
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Extra Links -->
-        <div class="text-white md:!mt-5 lg:!mt-5">
+        <div class="text-white md:!mt-18 lg:!mt-18">
           <ul class="flex flex-col space-y-2 text-center md:!text-start m-0 p-0 md:!mt-7 lg:!mt-7">
             <li><a href="#" class="text-white text-lg">Home</a></li>
             <li><a href="#" class="text-white text-lg">Exam Services</a></li>

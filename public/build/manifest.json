@@ -16,7 +16,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-Cn_pFaA-.css",
+    "file": "assets/app-BdXXLM1B.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -41,7 +41,7 @@
     "src": "resources/js/Pages/User/images/cambridge.png"
   },
   "resources/js/Pages/User/images/career.jpg": {
-    "file": "assets/career-NiK7ihOz.jpg",
+    "file": "assets/career-CTZ7bA0y.jpg",
     "src": "resources/js/Pages/User/images/career.jpg"
   },
   "resources/js/Pages/User/images/clock.png": {
@@ -61,7 +61,7 @@
     "src": "resources/js/Pages/User/images/home-phone-size.jpg"
   },
   "resources/js/Pages/User/images/igcse-course.jpg": {
-    "file": "assets/igcse-course-0N0IcASq.jpg",
+    "file": "assets/igcse-course-BcLzpqM8.jpg",
     "src": "resources/js/Pages/User/images/igcse-course.jpg"
   },
   "resources/js/Pages/User/images/international-student-exam.jpg": {
@@ -93,12 +93,12 @@
     "src": "resources/js/Pages/User/images/telephone.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BRw9bTTR.js",
+    "file": "assets/app-D0IW1b18.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-B0LOm5xf.css"
+      "assets/app-4uIr78IK.css"
     ],
     "assets": [
       "assets/logo-BPWYFurT.jpg",
@@ -108,14 +108,14 @@
       "assets/british-logo-DB7Bttf2.png",
       "assets/additional-course-Cos7P20B.jpg",
       "assets/cambridge-course-DkkBty3z.jpg",
-      "assets/career-NiK7ihOz.jpg",
+      "assets/career-CTZ7bA0y.jpg",
       "assets/telephone-DsT9iFCQ.png",
       "assets/email-BPvo-aU-.png",
       "assets/clock-suE3wdPL.png",
       "assets/foundation-course-B0LAxR1O.jpg",
       "assets/home-phone-size-CrNNu0jj.jpg",
       "assets/learning-pathway-BNUXXhVe.png",
-      "assets/igcse-course-0N0IcASq.jpg",
+      "assets/igcse-course-BcLzpqM8.jpg",
       "assets/international-student-exam-mRZZ44uK.jpg",
       "assets/learning-pathway1-BoP0KvR9.jpg",
       "assets/learning-pathway2-CpJTW3rP.jpg",

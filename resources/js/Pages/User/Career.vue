@@ -5,13 +5,13 @@
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
-                <img src="../User/images/career.jpg" alt="" class="w-full object-fit-cover" style="height: 400px" />
+                <img src="../User/images/career.jpg" alt="" class="w-full object-fit-cover" />
             </div>
-            <div class="absolute left-30 top-40 md:left-20 md:top-60 text-white p-2">
+            <div class="absolute left-30 top-40 md:left-20 md:top-70 text-white p-2">
                 <div>
                     <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
                 </div>
-                <h3 class="text-success">Join Us</h3>
+                <h3 class="text-white">Join Us</h3>
             </div>
         </section>
 
