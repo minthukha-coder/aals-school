@@ -12,6 +12,7 @@
                     <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
                 </div>
                 <h3 class="text-white">Join Us</h3>
+                
             </div>
         </section>
 
