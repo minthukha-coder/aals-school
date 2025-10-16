@@ -23,5 +23,7 @@ yarn-error.log
 
 
 !public/build/
+!public/build/**
+
 !.gitignore
 !private/
