@@ -34,8 +34,8 @@
                 <section class="mt-5 container" id="about-us">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                         <div class="flex justify-center">
-                            <img :src="about?.image" alt="" class=""
-                                style="width:100%;height:450px;object-fit:cover;" />
+                            <img :src="about?.image" alt="" class="object-cover"
+                                style="max-width:100%;height:450px;" />
                         </div>
                         <div class="flex justify-center flex-col p-2">
                             <h3 class="font-bold text-lg">{{ about?.title }}</h3>
@@ -122,7 +122,7 @@
                     </div>
                 </section>
 
-                <section id="partnership" class="container" style="margin-bottom:100px;">
+                <section id="partnership" class="container pb-0 md:!pb-5" style="margin-bottom:100px;">
                     <p class="font-bold text-center text-4xl md:text-5xl my-4 md:my-5 lg:my-5">Partnership</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:!pt-16 lg:!pt-16">
                         <div class="border border-black card p-3 w-full">

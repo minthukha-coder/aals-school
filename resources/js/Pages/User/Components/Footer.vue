@@ -4,9 +4,9 @@
       <div class=" flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-      <div class="flex flex-col justify-center mt-5">
+      <div class="flex flex-col mt-5">
           <div>
-            <img src="../images/logo-footer.png" class="mx-6" alt="" style="width:100px;">
+            <img src="../images/logo-footer.png" class="mx-auto md:!mx-6" alt="" style="width:100px;">
             
           </div>
           <div class="flex mx-6 mt-3 items-center">
@@ -14,7 +14,7 @@
 
           </div>
           <div>
-            <img src="../images/british-logo.png" alt="" style="width:210px;">
+            <img src="../images/british-logo.png" class="mx-auto md:!mx-0" alt="" style="width:210px;">
           </div>
         </div>
 

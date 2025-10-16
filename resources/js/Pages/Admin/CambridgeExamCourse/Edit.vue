@@ -16,7 +16,7 @@
                     </v-col>
 
                     <v-col cols="12" class="mt-4">
-                        <v-textarea v-model="form.months" rows="1" label="Duration" variant="outlined"></v-textarea>
+                        <v-textarea v-model="form.months" rows="1" label="Months" variant="outlined"></v-textarea>
                     </v-col>
 
                     <v-col cols="12">
