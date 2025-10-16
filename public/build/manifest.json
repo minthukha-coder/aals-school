@@ -1,0 +1,128 @@
+{
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
+    "file": "assets/materialdesignicons-webfont-CSr8KVlo.eot",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf": {
+    "file": "assets/materialdesignicons-webfont-B7mPwVP_.ttf",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff": {
+    "file": "assets/materialdesignicons-webfont-PXm3-2wK.woff",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff"
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2": {
+    "file": "assets/materialdesignicons-webfont-Dp5v-WZN.woff2",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-gfnUykj0.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/Pages/Admin/images/logo.jpg": {
+    "file": "assets/logo-BPWYFurT.jpg",
+    "src": "resources/js/Pages/Admin/images/logo.jpg"
+  },
+  "resources/js/Pages/User/images/additional-course.jpg": {
+    "file": "assets/additional-course-Cos7P20B.jpg",
+    "src": "resources/js/Pages/User/images/additional-course.jpg"
+  },
+  "resources/js/Pages/User/images/british-logo.png": {
+    "file": "assets/british-logo-DB7Bttf2.png",
+    "src": "resources/js/Pages/User/images/british-logo.png"
+  },
+  "resources/js/Pages/User/images/cambridge-course.jpg": {
+    "file": "assets/cambridge-course-DkkBty3z.jpg",
+    "src": "resources/js/Pages/User/images/cambridge-course.jpg"
+  },
+  "resources/js/Pages/User/images/cambridge.png": {
+    "file": "assets/cambridge-BkVJg4mY.png",
+    "src": "resources/js/Pages/User/images/cambridge.png"
+  },
+  "resources/js/Pages/User/images/career.jpg": {
+    "file": "assets/career-CTZ7bA0y.jpg",
+    "src": "resources/js/Pages/User/images/career.jpg"
+  },
+  "resources/js/Pages/User/images/clock.png": {
+    "file": "assets/clock-suE3wdPL.png",
+    "src": "resources/js/Pages/User/images/clock.png"
+  },
+  "resources/js/Pages/User/images/email.png": {
+    "file": "assets/email-BPvo-aU-.png",
+    "src": "resources/js/Pages/User/images/email.png"
+  },
+  "resources/js/Pages/User/images/foundation-course.jpg": {
+    "file": "assets/foundation-course-B0LAxR1O.jpg",
+    "src": "resources/js/Pages/User/images/foundation-course.jpg"
+  },
+  "resources/js/Pages/User/images/home-phone-size.jpg": {
+    "file": "assets/home-phone-size-CrNNu0jj.jpg",
+    "src": "resources/js/Pages/User/images/home-phone-size.jpg"
+  },
+  "resources/js/Pages/User/images/igcse-course.jpg": {
+    "file": "assets/igcse-course-BcLzpqM8.jpg",
+    "src": "resources/js/Pages/User/images/igcse-course.jpg"
+  },
+  "resources/js/Pages/User/images/international-student-exam.jpg": {
+    "file": "assets/international-student-exam-mRZZ44uK.jpg",
+    "src": "resources/js/Pages/User/images/international-student-exam.jpg"
+  },
+  "resources/js/Pages/User/images/learning-pathway.png": {
+    "file": "assets/learning-pathway-BNUXXhVe.png",
+    "src": "resources/js/Pages/User/images/learning-pathway.png"
+  },
+  "resources/js/Pages/User/images/learning-pathway1.jpg": {
+    "file": "assets/learning-pathway1-BoP0KvR9.jpg",
+    "src": "resources/js/Pages/User/images/learning-pathway1.jpg"
+  },
+  "resources/js/Pages/User/images/learning-pathway2.jpg": {
+    "file": "assets/learning-pathway2-CpJTW3rP.jpg",
+    "src": "resources/js/Pages/User/images/learning-pathway2.jpg"
+  },
+  "resources/js/Pages/User/images/logo-footer.png": {
+    "file": "assets/logo-footer-BJ1spiYr.png",
+    "src": "resources/js/Pages/User/images/logo-footer.png"
+  },
+  "resources/js/Pages/User/images/logo.jpg": {
+    "file": "assets/logo-DG-_gEfa.jpg",
+    "src": "resources/js/Pages/User/images/logo.jpg"
+  },
+  "resources/js/Pages/User/images/telephone.png": {
+    "file": "assets/telephone-DsT9iFCQ.png",
+    "src": "resources/js/Pages/User/images/telephone.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BC1LP6hb.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-v0Hj9_w0.css"
+    ],
+    "assets": [
+      "assets/logo-BPWYFurT.jpg",
+      "assets/logo-DG-_gEfa.jpg",
+      "assets/logo-footer-BJ1spiYr.png",
+      "assets/cambridge-BkVJg4mY.png",
+      "assets/british-logo-DB7Bttf2.png",
+      "assets/additional-course-Cos7P20B.jpg",
+      "assets/cambridge-course-DkkBty3z.jpg",
+      "assets/career-CTZ7bA0y.jpg",
+      "assets/telephone-DsT9iFCQ.png",
+      "assets/email-BPvo-aU-.png",
+      "assets/clock-suE3wdPL.png",
+      "assets/foundation-course-B0LAxR1O.jpg",
+      "assets/home-phone-size-CrNNu0jj.jpg",
+      "assets/learning-pathway-BNUXXhVe.png",
+      "assets/igcse-course-BcLzpqM8.jpg",
+      "assets/international-student-exam-mRZZ44uK.jpg",
+      "assets/learning-pathway1-BoP0KvR9.jpg",
+      "assets/learning-pathway2-CpJTW3rP.jpg",
+      "assets/materialdesignicons-webfont-CSr8KVlo.eot",
+      "assets/materialdesignicons-webfont-Dp5v-WZN.woff2",
+      "assets/materialdesignicons-webfont-PXm3-2wK.woff",
+      "assets/materialdesignicons-webfont-B7mPwVP_.ttf"
+    ]
+  }
+}
