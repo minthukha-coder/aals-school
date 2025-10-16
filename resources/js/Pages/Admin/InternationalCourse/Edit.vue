@@ -10,8 +10,12 @@
                             :error="!!$page.props.errors.name" :error-messages="$page.props.errors.name"></v-textarea>
                     </v-col>
 
+                    <v-col cols="12">
+                        <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
+                            :error="!!$page.props.errors.duration" :error-messages="$page.props.errors.duration"></v-textarea>
+                    </v-col>
 
-                    <v-col cols="12" class="mt-4">
+                    <v-col cols="12">
                         <v-file-input chips prepend-icon="mdi-camera" @change="onFileChange"
                             @input="form.image = $event.target.files[0]" variant="outlined" label="File" show-size
                             clearable @click:clear="clearImage"></v-file-input>
@@ -55,7 +59,8 @@ const onFileChange = (event) => {
 
 const form = useForm({
     name: props.course?.name || '',
-    image: props.course?.image
+    image: props.course?.image,
+    duration: props.course?.duration
 });
 
 const clearImage = () => {

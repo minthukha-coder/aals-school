@@ -12,6 +12,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title fw-bold">{{ course.name }}</h5>
+                            <p class="card-text text-muted">{{ course.duration }}</p>
                         </div>
 
                         <div class="card-footer bg-white d-flex justify-content-end gap-3 border-top">
