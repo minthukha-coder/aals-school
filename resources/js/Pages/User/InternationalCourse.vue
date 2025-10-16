@@ -6,7 +6,7 @@
         <!-- Hero Section -->
         <section class="vh-20 relative" id="international-course">
             <div class="hidden md:block">
-                <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover"
+                <img src="./images/international-student-exam.jpg" alt="" class="w-full object-cover"
                     />
             </div>
             <!-- <div class="hidden md:block absolute left-30 top-49 text-white p-2">

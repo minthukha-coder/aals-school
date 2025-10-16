@@ -37,7 +37,7 @@
 
 <script setup>
 import Layout from "../User/Layouts/Layout.vue";
-import imageCard from "../User/Components/imageCard.vue";
+
 import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
