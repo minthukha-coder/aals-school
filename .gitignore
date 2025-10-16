@@ -22,7 +22,7 @@ yarn-error.log
 /.zed
 
 
-!public/build/
+!public/build
 !public/build/**
 
 !.gitignore
