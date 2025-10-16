@@ -9,6 +9,7 @@
             <div class="grid grid-cols-1 gap-3 my-2">
                 <img src="../User/images/learning-pathway1.jpg" alt="" class="w-full h-full object-cover rounded-md"
                     style="height:100%" />
+                    
             </div>
 
             <div class="grid grid-cols-1 gap-3">
