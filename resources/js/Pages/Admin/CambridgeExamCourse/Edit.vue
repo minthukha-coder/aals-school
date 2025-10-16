@@ -19,7 +19,6 @@
                         <v-textarea v-model="form.months" rows="1" label="Months" variant="outlined"></v-textarea>
                     </v-col>
                     
-
                     <v-col cols="12">
                         <v-file-input chips prepend-icon="mdi-camera" @change="onFileChange"
                             @input="form.image = $event.target.files[0]" variant="outlined" label="File" show-size
