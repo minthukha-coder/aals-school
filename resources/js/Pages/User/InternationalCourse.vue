@@ -23,8 +23,8 @@
                     <div v-for="course in internationalCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
 
-                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0" style="height:200px;">
-                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
+                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0" >
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" style="height:200px;" />
                         </div>
                         
                         <div
