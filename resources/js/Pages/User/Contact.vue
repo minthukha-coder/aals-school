@@ -65,7 +65,7 @@
                     <div class="mb-3">
                         <input v-model="form.name" type="text" placeholder="Enter your name"
                             class="w-full p-3  border bg-white rounded-lg focus:outline-none" />
-                        <ErrorMessage :text="form.errors.user_message" />
+                        <ErrorMessage :text="form.errors.name" />
                     </div>
 
 
