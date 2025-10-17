@@ -50,7 +50,8 @@
 
             <div id="address" class="flex justify-center mt-5">
                 <p class="flex items-center">
-                    <font-awesome-icon icon="fa-solid fa-location-dot" class="mx-2" /> <span class="font-bold text-xl">Address : No.
+                    <font-awesome-icon icon="fa-solid fa-location-dot" class="mx-2" /> <span
+                        class="font-bold text-xl">Address : No.
                         (3), Chapter. 26, 99th St., Foundation Park, Nawaday, Yangon, Myanmar</span>
                 </p>
             </div>
@@ -61,27 +62,44 @@
             <!-- Application Form -->
             <div class="col-span-1.5 rounded-2xl p-3 max-w-lg w-full mx-auto">
                 <div class="rounded-2xl p-3">
-                    <input v-model="form.name" type="text" placeholder="Enter your name"
-                        class="w-full p-3 mb-4 border bg-white rounded-lg focus:outline-none" />
-
-                    <input v-model="form.email" type="email" placeholder="Email"
-                        class="w-full p-3 mb-4 border bg-white rounded-lg focus:outline-none" />
-
-                    <div class="flex items-center mb-4 ">
-                        <span class="p-3 border rounded-l-lg bg-white text-gray-600">+95</span>
-                        <input v-model="form.phone" type="text" placeholder="Phone"
-                            class="w-full p-3 border bg-white border-l-0 rounded-r-lg focus:outline-none" />
+                    <div class="mb-3">
+                        <input v-model="form.name" type="text" placeholder="Enter your name"
+                            class="w-full p-3  border bg-white rounded-lg focus:outline-none" />
+                        <ErrorMessage :text="form.errors.user_message" />
                     </div>
 
-                    <textarea v-model="form.user_message" placeholder="Message" rows="4"
-                        class="w-full p-3 mb-2 border bg-white rounded-lg focus:outline-none"></textarea>
+
+                    <div class="mb-3">
+                        <input v-model="form.email" type="email" placeholder="Email"
+                            class="w-full p-3 border bg-white rounded-lg focus:outline-none" />
+                        <ErrorMessage :text="form.errors.email" />
+                    </div>
+
+
+                    <div class="mb-3">
+                        <div class="flex items-center">
+                            <span class="p-3 border rounded-l-lg bg-white text-gray-600">+95</span>
+                            <input v-model="form.phone" type="text" placeholder="Phone"
+                                class="w-full p-3 border bg-white border-l-0 rounded-r-lg focus:outline-none" />
+                        </div>
+                        <ErrorMessage :text="form.errors.phone" />
+
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea v-model="form.user_message" placeholder="Message" rows="4"
+                            class="w-full p-3 border bg-white rounded-lg focus:outline-none"></textarea>
+                        <ErrorMessage :text="form.errors.user_message" />
+
+                    </div>
+
 
                     <div class="flex justify-end">
                         <v-btn @click="contact" color="primary" class="px-6 rounded-xl shadow-md">
                             Send
                         </v-btn>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>
@@ -101,8 +119,7 @@ import Layout from "../User/Layouts/Layout.vue";
 import { onMounted } from 'vue';
 import { useForm } from '@inertiajs/vue3'
 import { Head } from '@inertiajs/vue3'
-
-const center = { lat: 16.863395753560457, lng: 96.06817014376111 };
+import ErrorMessage from "../Admin/Components/ErrorMessage.vue";
 
 const form = useForm({
     name: '',

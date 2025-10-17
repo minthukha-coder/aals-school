@@ -12,7 +12,7 @@
                     <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
                 </div>
                 <h3 class="text-white">Join Us</h3>
-                
+
             </div>
         </section>
 
@@ -44,21 +44,44 @@
                             </div>
                             <!-- Application Form -->
                             <div class="border rounded p-3 flex-fill col-md-5">
-                                <input v-model="form.name" type="text" placeholder="Enter your name"
-                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none" />
-                                <input v-model="form.email" type="text" placeholder="Email"
-                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none">
-                                <div class="flex items-center mb-4">
-                                    <span class="p-2 border rounded-l-lg bg-gray-100">+95</span>
-                                    <input v-model="form.phone" type="text" placeholder="Phone"
-                                        class="w-full p-2 border border-l-0 rounded-r-lg focus:outline-none">
+                                <div class="mb-3">
+                                    <input v-model="form.name" type="text" placeholder="Enter your name"
+                                        class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none" />
+                                    <ErrorMessage :text="form.errors.name" />
+
                                 </div>
-                                <textarea v-model="form.user_message" placeholder="Message"
-                                    class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none"></textarea>
+
+                                <div class="mb-3">
+                                    <input v-model="form.email" type="text" placeholder="Email"
+                                        class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none">
+                                    <ErrorMessage :text="form.errors.email" />
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="flex items-center ">
+                                        <span class="p-2 border rounded-l-lg bg-gray-100">+95</span>
+                                        <input v-model="form.phone" type="text" placeholder="Phone"
+                                            class="w-full p-2 border border-l-0 rounded-r-lg focus:outline-none">
+                                    </div>
+                                    <ErrorMessage :text="form.errors.phone" />
+
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <textarea v-model="form.user_message" placeholder="Message"
+                                        class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none"></textarea>
+                                    <ErrorMessage :text="form.errors.user_message" />
+
+                                </div>
+
+
                                 <div class="d-flex justify-end">
                                     <v-btn color="primary" @click="applyForPosition(position.id)">
                                         Apply
                                     </v-btn>
+
                                 </div>
                             </div>
                         </div>
@@ -74,7 +97,7 @@ import Layout from "../User/Layouts/Layout.vue";
 import imageCard from "../User/Components/imageCard.vue";
 import { useForm } from '@inertiajs/vue3';
 import { Head } from '@inertiajs/vue3'
-
+import ErrorMessage from "../Admin/Components/ErrorMessage.vue";
 const props = defineProps({
     positions: Array,
 });

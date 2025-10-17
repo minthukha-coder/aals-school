@@ -1,5 +1,5 @@
 <template>
-    <span v-if="text" class="text-red-500 text-xs my-2">{{ text }}</span>
+    <span v-if="text" class="text-red-500 text-xs">{{ text }}</span>
 </template>
 
 <script setup>
