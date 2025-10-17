@@ -21,7 +21,7 @@
                         class="flex flex-col sm:flex-row items-end my-2">
 
                         <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0">
-                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" style="height:200px;"/>
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" style="height:300px;"/>
                         </div>
                         <div class="w-full sm:w-70 h-auto overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
                             <p class="font-bold text-center sm:text-left text-lg">Course : {{ course.name }}</p>
