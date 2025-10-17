@@ -22,10 +22,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 place-items-center my-3">
                     <div v-for="course in internationalCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
-                        <!-- <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
-                            <img :src="course?.image" alt="" class="w-full h-full object-cover" />
-                        </div> -->
-                        <div class="w-[90%] sm:w-96 h-auto overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+
+                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0" style="height:200px;">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         

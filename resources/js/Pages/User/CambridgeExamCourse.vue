@@ -20,7 +20,7 @@
                     <div v-for="course in cambridgeExamCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
 
-                        <div class="w-[90%] sm:w-96 h-auto overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0" style="height:200px;">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         <div class="w-full sm:w-70 h-auto overflow-hidden rounded-2xl shadow-lg p-3 mx-auto sm:mx-0">
@@ -29,7 +29,7 @@
                             <span class="block text-center sm:text-left text-lg">{{ course.months }}</span>
                             <div class="flex justify-center sm:justify-end my-3">
                                 <button @click="openEmail" class="btn btn-success">
-                                    email me <font-awesome-icon icon="fa-solid fa-envelope"/>
+                                    email me <font-awesome-icon icon="fa-solid fa-envelope" />
                                 </button>
                             </div>
                         </div>
