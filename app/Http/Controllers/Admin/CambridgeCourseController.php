@@ -46,7 +46,7 @@ class CambridgeCourseController extends Controller
         }
         $this->model->create($data);
 
-        return redirect()->route('admin.cambridge-courses.index')->with('success', 'Cambridge Course created successfully.');
+        return redirect()->route('admin.cambridge-courses.index')->with('success','Cambridge Course created successfully.');
     }
 
 

@@ -9,13 +9,13 @@
                             :error="!!$page.props.errors.name" :error-messages="$page.props.errors.name"></v-textarea>
                     </v-col>
 
-                    <v-col cols="12" class="mt-4">
+                    <v-col cols="12" class="">
                         <v-textarea v-model="form.duration" rows="1" label="Duration" variant="outlined"
                             :error="!!$page.props.errors.duration"
                             :error-messages="$page.props.errors.duration"></v-textarea>
                     </v-col>
 
-                    <v-col cols="12" class="mt-4">
+                    <v-col cols="12" class="">
                         <v-textarea v-model="form.months" rows="1" label="Months" variant="outlined"></v-textarea>
                     </v-col>
                     

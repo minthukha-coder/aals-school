@@ -25,7 +25,7 @@
                         <!-- <div class="w-full sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover" />
                         </div> -->
-                        <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
+                        <div class="w-[90%] sm:w-96 h-auto overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
                         

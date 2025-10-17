@@ -89,7 +89,7 @@
                 <section class="bg-green-200 pb-5" id="additional-courses">
                     <div class="container md:mt-5">
                         <p class="py-4 text-4xl md:text-5xl text-center font-bold">Additional Courses</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 border border-green-500">
+                        <div class="grid grid-cols-1 md:grid-cols-3 space-x-4 gap-3 mb-3 ">
                             <div v-for="course in additionalCourses.slice(0, 3)" :key="course.id" class="">
                                 <Card :course="course" />
                             </div>

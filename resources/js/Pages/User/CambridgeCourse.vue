@@ -2,7 +2,6 @@
 
     <Head title="Cambridge Course - Aung Academy Language School" />
     
-
     <Layout>
         <section class="vh-20" id="foundation-course">
             <div class="hidden md:block">
@@ -20,13 +19,20 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
                 <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in cambridgeCourses"
                     :key="course.id">
-                    <div class="w-full sm:w-70 h-40 overflow-hidden shadow-lg ">
-                        <img :src="course.image" alt="" class="w-full h-full object-cover" style="height:100%;" />
+                   <div id="image" class="sm:w-1/2 w-full h-48 overflow-hidden">
+                        <img :src="course.image" alt="Course Image"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-lg" />
                     </div>
-                    <div class="mx-3 mt-3 text-center md:!text-left">
-                        <p class="font-bold text-lg">{{ course.title }}</p>
-                        <p class="text-md">Course : {{ course.course }}</p>
-                        <p class="text-md">Duration : {{ course.duration }}</p>
+                    <div id="text" class="sm:w-1/2 w-full flex flex-col p-4">
+                         <p class="font-bold text-lg text-gray-800 mb-1 break-words">
+                             {{ course.title }}
+                        </p>
+                        <p class="font-bold text-lg text-gray-800 mb-1 break-words">
+                            Course: {{ course.course }}
+                        </p>
+                        <p class="text-lg text-gray-600 break-words">
+                            Duration: {{ course.duration }}
+                        </p>
                     </div>
                 </div>
             </div>
