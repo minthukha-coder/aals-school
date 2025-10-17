@@ -106,7 +106,7 @@ class HomeController extends Controller
         $data['position_name'] = $position->name;
         // Send Email
         Mail::send('emails.application', $data, function ($message) use ($data) {
-            $message->to('minthukha25122003@gmail.com')
+            $message->to('chitmyatnoeaung01@gmail.com')
                 ->subject('New Job Application: ' . $data['name'] . ' for ' . $data['position_name'])
                 ->replyTo($data['email']);
         });
@@ -215,7 +215,7 @@ class HomeController extends Controller
 
         // Send email
         Mail::send('emails.contact', $data, function ($message) use ($data) {
-            $message->to('minthukha25122003@gmail.com')
+            $message->to('chitmyatnoeaung01@gmail.com')
                 ->subject('New Contact Form Submission from ' . $data['name'])
                 ->replyTo($data['email']);
         });
