@@ -10,5 +10,6 @@ class InternationalCourse extends Model
     protected $fillable = [
         'name',
         'image',
+        'duration'
     ];
 }

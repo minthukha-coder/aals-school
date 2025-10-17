@@ -28,11 +28,13 @@
                         <div class="w-[90%] sm:w-96 h-60 overflow-hidden rounded-2xl shadow-lg mx-auto sm:mb-0">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" />
                         </div>
+                        
                         <div
                             class="w-full sm:max-w-[250px] md:max-w-[300px] h-auto overflow-hidden rounded-2xl shadow-lg p-3 flex flex-col justify-between mx-auto sm:mx-0">
                             <p class="font-bold text-center sm:text-left text-lg mb-2">
                                 Course : {{ course.name }}
                             </p>
+                            <p class="text-center sm:text-left text-lg">Duration : {{ course.duration }}</p>
                             <div class="flex justify-center sm:justify-end mt-2">
                                 <button @click="openEmail" class="btn btn-success flex items-center gap-2">
                                     email me <font-awesome-icon icon="fa-solid fa-envelope" />

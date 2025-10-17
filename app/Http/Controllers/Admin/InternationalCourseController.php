@@ -35,6 +35,7 @@ class InternationalCourseController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'duration' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,avif|max:2048',
         ]);
 
@@ -62,6 +63,7 @@ class InternationalCourseController extends Controller
         $course = $this->model->findOrFail($request->id);
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'duration' => 'required|string'
         ]);
 
         if ($request->file('image')) {
