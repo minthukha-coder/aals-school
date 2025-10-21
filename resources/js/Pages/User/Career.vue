@@ -3,18 +3,21 @@
     <Head title="Career - Aung Academy Language School" />
 
     <Layout>
-        <section class="vh-20" id="foundation-course">
-            <div class="hidden md:block">
-                <img src="../User/images/career.jpg" alt="" class="w-full object-fit-cover" />
-            </div>
-            <div class="absolute left-30 top-40 md:left-20 md:top-70 text-white p-2">
-                <div>
-                    <h4 class="font-bold" style="font-size:50px;">Career Opportunies</h4>
-                </div>
-                <h3 class="text-white">Join Us</h3>
+        <section id="career" class="relative overflow-hidden">
+            <div class="hidden md:block w-full h-[650px]">
+                <img src="../User/images/career.jpg" alt="Career Opportunities"
+                    class="w-full h-full object-cover object-center">
 
             </div>
+
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="absolute left-6 md:left-20 top-1/3 text-white">
+                <h4 class="font-bold text-4xl md:text-6xl mb-2">Career Opportunities</h4>
+                <h3 class="text-xl md:text-2xl">Join Us</h3>
+            </div>
         </section>
+
 
         <section class="container py-10">
             <p class="text-2xl font-bold">Positions</p>

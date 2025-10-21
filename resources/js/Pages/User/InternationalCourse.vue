@@ -4,15 +4,15 @@
 
     <Layout>
         <!-- Hero Section -->
-        <section class="vh-20 relative" id="international-course">
-            <div class="hidden md:block">
-                <img src="../User/images/international-student-exam.jpg" alt="" class="w-full object-cover"
-                    />
+        <section class="relative overflow-hidden" id="international-course">
+            <div class="hidden md:block w-full h-[650px]">
+                <img src="../User/images/international-exam.jpg" alt="" class="w-full h-full object-cover" />
             </div>
-            <!-- <div class="hidden md:block absolute left-30 top-49 text-white p-2">
-                <h3 class="font-bold mx-20" style="font-size:60px;">Exam Services</h3>
-            </div> -->
-            
+
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:60px;">International Courses</h4>
+            </div>
         </section>
 
         <section class="" id="international-exam-courses">
@@ -23,10 +23,11 @@
                     <div v-for="course in internationalCourses" :key="course.id"
                         class="flex flex-col sm:flex-row items-end my-2">
 
-                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0" >
-                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl" style="height:200px;" />
+                        <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0">
+                            <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl"
+                                style="height:200px;" />
                         </div>
-                        
+
                         <div
                             class="w-full sm:max-w-[250px] md:max-w-[300px] h-auto overflow-hidden rounded-2xl shadow-lg p-3 flex flex-col justify-between mx-auto sm:mx-0">
                             <p class="font-bold text-center sm:text-left text-lg mb-2">
@@ -57,7 +58,7 @@ const props = defineProps({
 });
 
 const openEmail = () => {
-    const recipient = "chitmyatnoeaung01@gmail.com";
+    const recipient = "aals222023@gmail.com";
     const subject = encodeURIComponent("Hello!");
     const body = encodeURIComponent("Your message here.");
 

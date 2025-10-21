@@ -3,13 +3,13 @@
     <Head title="Additional Course - Aung Academy Language School" />
 
     <Layout>
-        <section class="vh-20" id="foundation-course">
-            <div class="hidden md:block">
-                <img src="../User/images/additional-course.jpg" alt="" class="w-full h-full object-fit-cover" />
+        <section class="relative overflow-hidden" id="foundation-course">
+            <div class="hidden md:block w-full h-[650px]">
+                <img src="../User/images/additional.jpg" alt="" class="w-full h-full object-cover" />
             </div>
-            <!-- <div class="hidden md:block absolute left-30 top-90 text-white p-2">
-                <h4 class="font-bold mx-20" style="font-size:60px;">Additional Courses</h4>
-            </div> -->
+
+            <div class="absolute inset-0 bg-black/50"></div>
+
         </section>
         <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Additional Courses</p>
         <section class="container pb-10">

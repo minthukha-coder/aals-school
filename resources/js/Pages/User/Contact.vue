@@ -36,7 +36,7 @@
                     <img src="../User/images/email.png" alt="" style="width:40px;">
 
                     <h3>Mail</h3>
-                    <span>chitmyatnoeaung01@gmail.com</span>
+                    <span>aals222023@gmail.com</span>
                 </div>
 
                 <div class="flex flex-col items-center">

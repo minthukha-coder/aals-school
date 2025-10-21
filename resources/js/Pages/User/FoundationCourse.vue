@@ -3,11 +3,13 @@
     <Head title="Foundation Course - Aung Academy Language School" />
 
     <Layout>
-        <section class="vh-20" id="foundation-course">
-            <div class="hidden md:block">
-                <img src="../User/images/foundation-course.jpg" alt="" class="w-full h-full object-fit-cover" />
+        <section class="relative overflow-hidden" id="foundation-course">
+            <div class="hidden md:block w-full h-[650px]">
+                <img src="../User/images/foundation.jpg" alt="" class="w-full h-full object-cover" />
             </div>
-            <div class="hidden md:block absolute left-30 top-50 text-white p-2">
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:60px;">Foundation Courses</h4>
             </div>
         </section>
@@ -16,13 +18,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
                 <div class="flex flex-col sm:flex-row rounded-lg overflow-hidden" v-for="course in foundationCourses"
                     :key="course.id">
-                     <div id="image" class="sm:w-1/2 w-full h-48 overflow-hidden">
+                    <div id="image" class="sm:w-1/2 w-full h-48 overflow-hidden">
                         <img :src="course.image" alt="Course Image"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-lg" />
                     </div>
                     <div id="text" class="sm:w-1/2 w-full flex flex-col p-4">
-                         <p class="font-bold text-lg text-gray-800 mb-1 break-words">
-                             {{ course.title }}
+                        <p class="font-bold text-lg text-gray-800 mb-1 break-words">
+                            {{ course.title }}
                         </p>
                         <p class="font-bold text-lg text-gray-800 mb-1 break-words">
                             Age: {{ course.age }}

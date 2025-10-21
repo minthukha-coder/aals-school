@@ -4,10 +4,10 @@
       <div class=" flex flex-col md:flex-row justify-evenly items-center md:items-start pt-3 gap-10">
 
         <!-- Logos -->
-      <div class="flex flex-col mt-5">
+        <div class="flex flex-col mt-5">
           <div>
             <img src="../images/logo-footer.png" class="mx-auto md:!mx-6" alt="" style="width:100px;">
-            
+
           </div>
           <div class="flex mx-6 mt-3 items-center">
             <img src="../images/cambridge.png" alt="" style="width:350px;">
@@ -38,11 +38,11 @@
         <!-- Extra Links -->
         <div class="text-white md:!mt-18 lg:!mt-18">
           <ul class="flex flex-col space-y-2 text-center md:!text-start m-0 p-0 md:!mt-7 lg:!mt-7">
-            <li><a href="#" class="text-white text-lg">Home</a></li>
-            <li><a href="#" class="text-white text-lg">Exam Services</a></li>
-            <li><a href="#" class="text-white text-lg">Gallery</a></li>
-            <li><a href="#" class="text-white text-lg">Contact Us</a></li>
-            <li><a href="#" class="text-white text-lg">About Us</a></li>
+            <li><a :href="route('home')" class="text-white text-lg">Home</a></li>
+            <li><a :href="route('cambridge-exam-courses')" class="text-white text-lg">Exam Services</a></li>
+            <li><a :href="route('gallery')" class="text-white text-lg">Gallery</a></li>
+            <li><a :href="route('contact')" class="text-white text-lg">Contact Us</a></li>
+            <li><a :href="route('about')" class="text-white text-lg">About Us</a></li>
           </ul>
         </div>
 
@@ -50,15 +50,24 @@
         <div class="flex flex-col text-white items-center md:items-start md:!mt-12 lg:!mt-12">
           <h3 class="text-lg font-bold text-center md:text-left">Contact Us</h3>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-3">
-            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
-              <font-awesome-icon icon="fa-solid fa-envelope" class="text-white" />
-            </div>
-            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
-              <font-awesome-icon icon="fa-brands fa-facebook" class="text-white" />
-            </div>
-            <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
-              <font-awesome-icon icon="fa-solid fa-location-dot" class="text-white" />
-            </div>
+            <a href="mailto:aals222023@gmail.com">
+              <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
+                <font-awesome-icon icon="fa-solid fa-envelope" class="text-white" />
+              </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/1CrEwvdH4H/" target="_blank" rel="noopener noreferrer">
+              <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
+                <font-awesome-icon icon="fa-brands fa-facebook" class="text-white" />
+              </div>
+            </a>
+
+            <a :href="route('contact')">
+              <div class="flex justify-center items-center bg-blue-500 rounded-full w-10 h-10">
+                <font-awesome-icon icon="fa-solid fa-location-dot" class="text-white" />
+              </div>
+            </a>
+
           </div>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-10" id="phone">
             <font-awesome-icon icon="fa-solid fa-phone" class="fs-5" />
@@ -69,7 +78,7 @@
           </div>
           <div class="flex justify-center md:justify-start items-center gap-2 mt-10" id="email">
             <font-awesome-icon icon="fa-solid fa-envelope" class="fs-4" />
-            <span class="opacity-80">chitmyatnoeaung01@gmail.com
+            <span class="opacity-80">aals222023@gmail.com
             </span>
           </div>
         </div>
@@ -84,6 +93,8 @@
 </template>
 
 <script setup>
+import { route } from 'ziggy-js';
+
 
 </script>
 

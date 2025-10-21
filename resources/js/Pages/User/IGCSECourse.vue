@@ -1,21 +1,24 @@
 <template>
-          <Head title="IGCSE Course - Aung Academy Language School" />
+
+    <Head title="IGCSE Course - Aung Academy Language School" />
 
     <Layout>
-        <section>
-            <div class="hidden md:block ">
-                <img
-                    src="../User/images/igcse-course.jpg"
-                    alt="IGCSE Banner"
-                    class="w-full h-full object-cover"
-                />
+        <section class="relative overflow-hidden">
+            <div class="hidden md:block w-full h-[650px]">
+                <img src="../User/images/IGCSE.jpg" alt="IGCSE Banner" class="w-full h-full object-cover" />
+            </div>
+
+            <div class="absolute inset-0 bg-black/50"></div>
+             <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:60px;">IGCSE Courses</h4>
             </div>
         </section>
         <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">IGCSE Courses</p>
         <section class="container my-6">
             <div v-for="igcse in igcseCourses" :key="igcse.id" class="mb-8">
                 <div class="mx-auto rounded-lg overflow-hidden shadow-lg bg-white">
-                    <img v-if="igcse.image" :src="igcse.image" alt="Course Image" class="w-full object-cover" style="height:500px;"/>
+                    <img v-if="igcse.image" :src="igcse.image" alt="Course Image" class="w-full object-cover"
+                        style="height:500px;" />
                     <div class="px-4">
                         <p class="font-bold text-xl mb-2 my-3">{{ igcse?.title }}</p>
                         <p class="text-gray-700 mb-1">Duration: {{ igcse?.duration }}</p>

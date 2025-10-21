@@ -15,6 +15,16 @@
   <link rel="icon" type="image/png" href="{{ asset('/images/favicon.png') }}">
 
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://aals.aungacademylanguageschool.com",
+      "logo": "https://aals.aungacademylanguageschool.com/images/logo.jpg",
+      "name": "Aung Academy Language School"
+    }
+  </script>
+
   @inertiaHead
 </head>
 
