@@ -8,6 +8,7 @@
       <div class="right-content p-4">
         <slot />
       </div>
+      
     </div>
   </div>
 </template>
