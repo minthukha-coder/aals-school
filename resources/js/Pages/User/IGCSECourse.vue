@@ -4,7 +4,7 @@
 
     <Layout>
         <section class="relative overflow-hidden">
-            <div class="hidden md:block w-full h-[650px]">
+            <div class="hidden md:block w-full h-full">
                 <img src="../User/images/IGCSE.jpg" alt="IGCSE Banner" class="w-full h-full object-cover" />
             </div>
 

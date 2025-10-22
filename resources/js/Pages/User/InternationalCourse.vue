@@ -5,7 +5,7 @@
     <Layout>
         <!-- Hero Section -->
         <section class="relative overflow-hidden" id="international-course">
-            <div class="hidden md:block w-full h-[650px]">
+            <div class="hidden md:block w-full h-full">
                 <img src="../User/images/international-exam.jpg" alt="" class="w-full h-full object-cover" />
             </div>
 

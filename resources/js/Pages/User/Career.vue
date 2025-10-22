@@ -4,17 +4,15 @@
 
     <Layout>
         <section id="career" class="relative overflow-hidden">
-            <div class="hidden md:block w-full h-[650px]">
+            <div class="hidden md:block w-full h-full">
                 <img src="../User/images/career.jpg" alt="Career Opportunities"
                     class="w-full h-full object-cover object-center">
 
             </div>
-
             <div class="absolute inset-0 bg-black/50"></div>
-
-            <div class="absolute left-6 md:left-20 top-1/3 text-white">
-                <h4 class="font-bold text-4xl md:text-6xl mb-2">Career Opportunities</h4>
-                <h3 class="text-xl md:text-2xl">Join Us</h3>
+            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:70px;">Career Opportunities</h4>
+                <h4 class="font-bold mx-20" style="font-size:70px;">Join Us</h4>
             </div>
         </section>
 
@@ -31,7 +29,8 @@
                             <!-- Position Details -->
                             <div class="col-md-7">
                                 <p><strong>Position:</strong> {{ position.name }}</p>
-                                <p><strong>Salary:</strong> {{ position.salary ?? '-' }}</p>
+                                <p><strong>Salary:</strong> {{ position.salary ? parseInt(position.salary) + ' MMK' :
+                                    '-' }}</p>
                                 <p><strong>Date:</strong> {{ position.date }}</p>
                                 <p><strong>Place:</strong> {{ position.place }}</p>
                                 <p><strong>Responsibilities:</strong> {{ position.responsibilities }}</p>

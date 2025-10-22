@@ -4,7 +4,7 @@
 
     <Layout>
         <section class="relative overflow-hidden" id="foundation-course">
-            <div class="hidden md:block w-full h-[650px]">
+            <div class="hidden md:block w-full h-full">
                 <img src="../User/images/cambridge-exam.jpg" alt="" class="w-full h-full object-cover" />
             </div>
 
