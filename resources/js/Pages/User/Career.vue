@@ -12,7 +12,6 @@
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:70px;">Career Opportunities</h4>
-                <h4 class="font-bold mx-20" style="font-size:70px;">Join Us</h4>
             </div>
         </section>
 

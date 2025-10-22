@@ -9,7 +9,9 @@
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>
-
+                    <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+                <h4 class="font-bold mx-20" style="font-size:70px;">Additional Courses</h4>
+            </div>
         </section>
         <p class="text-4xl md:text-5xl lg:text-5xl py-2 my-5 text-center font-bold">Additional Courses</p>
         <section class="container pb-10">
