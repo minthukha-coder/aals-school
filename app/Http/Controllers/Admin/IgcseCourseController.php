@@ -117,8 +117,22 @@ class IgcseCourseController extends Controller
             'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
             'price_monthly' => 'required|numeric',
+            'image' => 'nullable|image|max:2048',
             'subjects' => 'array',
         ]);
+
+
+        if ($request->hasFile('image')) {
+            if ($course->image) {
+                Storage::delete('public/images/' . $course->image);
+            }
+
+            $imageName = uniqid() . '_' . time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('public/images', $imageName);
+            $data['image'] = $imageName;
+        } else {
+            $data['image'] = $course->image;
+        }
 
         $course->update($data);
 
@@ -126,7 +140,6 @@ class IgcseCourseController extends Controller
             $submittedIds = [];
 
             foreach ($request->subjects as $subject) {
-                // Update existing subject
                 if (!empty($subject['id'])) {
                     $existing = $course->subjects()->find($subject['id']);
                     if ($existing) {
@@ -134,19 +147,16 @@ class IgcseCourseController extends Controller
                             'title' => $subject['title'],
                         ];
 
-                        // Check if a new image is uploaded
                         if (isset($subject['image']) && $subject['image'] instanceof \Illuminate\Http\UploadedFile) {
                             $imageName = uniqid() . '_' . time() . '.' . $subject['image']->getClientOriginalExtension();
                             $subject['image']->storeAs('public/images/', $imageName);
 
-                            // Delete old image only if it exists and a new image is uploaded
                             if ($existing->image) {
                                 Storage::delete('public/images/' . $existing->image);
                             }
 
                             $updateData['image'] = $imageName;
                         } else {
-                            // Retain existing image if no new image is uploaded
                             $updateData['image'] = $existing->image;
                         }
 
@@ -154,7 +164,6 @@ class IgcseCourseController extends Controller
                         $submittedIds[] = $existing->id;
                     }
                 }
-                // Create new subject
                 else {
                     $newData = [
                         'title' => $subject['title'],
@@ -165,7 +174,7 @@ class IgcseCourseController extends Controller
                         $subject['image']->storeAs('public/images/', $imageName);
                         $newData['image'] = $imageName;
                     } else {
-                        $newData['image'] = null; // No image for new subject if none uploaded
+                        $newData['image'] = null;
                     }
 
                     $newSubject = $course->subjects()->create($newData);
@@ -173,7 +182,6 @@ class IgcseCourseController extends Controller
                 }
             }
 
-            // Delete subjects not in the submitted request
             $course->subjects()
                 ->whereNotIn('id', $submittedIds)
                 ->each(function ($subject) {
