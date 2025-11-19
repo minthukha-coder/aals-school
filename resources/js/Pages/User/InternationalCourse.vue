@@ -3,14 +3,13 @@
     <Head title="International Course - Aung Academy Language School" />
 
     <Layout>
-        <!-- Hero Section -->
-        <section class="relative overflow-hidden" id="international-course">
-            <div class="hidden md:block w-full h-full">
-                <img src="../User/images/international-exam.jpg" alt="" class="w-full h-full object-cover" />
+        <section class="relative" id="international-course">
+            <div class="hidden md:block">
+                <img :src="internationalCourseImage?.name" alt="International Course" class="w-full h-[300px] object-cover" />
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>
-            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+            <div v-if="internationalCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:60px;">International Courses</h4>
             </div>
         </section>
@@ -55,6 +54,7 @@ import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     internationalCourses: Array,
+    internationalCourseImage: Object
 });
 
 const openEmail = () => {

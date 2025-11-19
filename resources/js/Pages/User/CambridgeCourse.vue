@@ -3,18 +3,14 @@
     <Head title="Cambridge Course - Aung Academy Language School" />
 
     <Layout>
-        <section class="relative overflow-hidden" id="foundation-course">
-            <!-- <div class="hidden md:block w-full h-full">
-                <img src="../User/images/cambridge.jpg" alt="" class="w-full h-full object-cover" />
-            </div> -->
-            <div class="hidden md:block w-full h-full">
-                <img :src="cambridgeCourseImage?.name || '../User/images/cambridge.jpg'" alt="Career Opportunities"
-                    class="w-full h-full object-cover object-center">
+        <section id="foundation-course" class="relative">
+            <div class="hidden md:block">
+                <img :src="cambridgeCourseImage?.name" alt="Career Opportunities"
+                    class="w-full h-[300px] object-cover object-center">
             </div>
             <div class="absolute inset-0 bg-black/50"></div>
 
-
-            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+            <div v-if="cambridgeCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:70px;">Cambridge Academic Courses</h4>
             </div>
 

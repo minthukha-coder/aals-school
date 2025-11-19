@@ -16,7 +16,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BpbkWQlF.css",
+    "file": "assets/app-BVTS_Nqt.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -24,33 +24,13 @@
     "file": "assets/logo-BPWYFurT.jpg",
     "src": "resources/js/Pages/Admin/images/logo.jpg"
   },
-  "resources/js/Pages/User/images/IGCSE.jpg": {
-    "file": "assets/IGCSE-CqkLbyT2.jpg",
-    "src": "resources/js/Pages/User/images/IGCSE.jpg"
-  },
-  "resources/js/Pages/User/images/additional.jpg": {
-    "file": "assets/additional-CR2EGU8e.jpg",
-    "src": "resources/js/Pages/User/images/additional.jpg"
-  },
   "resources/js/Pages/User/images/british-logo.png": {
     "file": "assets/british-logo-DB7Bttf2.png",
     "src": "resources/js/Pages/User/images/british-logo.png"
   },
-  "resources/js/Pages/User/images/cambridge-exam.jpg": {
-    "file": "assets/cambridge-exam-DZEH5QGk.jpg",
-    "src": "resources/js/Pages/User/images/cambridge-exam.jpg"
-  },
-  "resources/js/Pages/User/images/cambridge.jpg": {
-    "file": "assets/cambridge-CLU2Rfji.jpg",
-    "src": "resources/js/Pages/User/images/cambridge.jpg"
-  },
   "resources/js/Pages/User/images/cambridge.png": {
     "file": "assets/cambridge-BkVJg4mY.png",
     "src": "resources/js/Pages/User/images/cambridge.png"
-  },
-  "resources/js/Pages/User/images/career.jpg": {
-    "file": "assets/career-B9uX4C8p.jpg",
-    "src": "resources/js/Pages/User/images/career.jpg"
   },
   "resources/js/Pages/User/images/clock.png": {
     "file": "assets/clock-suE3wdPL.png",
@@ -59,18 +39,6 @@
   "resources/js/Pages/User/images/email.png": {
     "file": "assets/email-BPvo-aU-.png",
     "src": "resources/js/Pages/User/images/email.png"
-  },
-  "resources/js/Pages/User/images/foundation.jpg": {
-    "file": "assets/foundation-bW6565LR.jpg",
-    "src": "resources/js/Pages/User/images/foundation.jpg"
-  },
-  "resources/js/Pages/User/images/home-phone-size.jpg": {
-    "file": "assets/home-phone-size-CrNNu0jj.jpg",
-    "src": "resources/js/Pages/User/images/home-phone-size.jpg"
-  },
-  "resources/js/Pages/User/images/international-exam.jpg": {
-    "file": "assets/international-exam-Bwyz0lBE.jpg",
-    "src": "resources/js/Pages/User/images/international-exam.jpg"
   },
   "resources/js/Pages/User/images/learning-pathway.png": {
     "file": "assets/learning-pathway-BNUXXhVe.png",
@@ -97,12 +65,12 @@
     "src": "resources/js/Pages/User/images/telephone.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DVBJ-NjU.js",
+    "file": "assets/app-W9XIXDqs.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DFfUzm5a.css"
+      "assets/app-6B6uhnKx.css"
     ],
     "assets": [
       "assets/logo-BPWYFurT.jpg",
@@ -110,18 +78,10 @@
       "assets/logo-footer-BJ1spiYr.png",
       "assets/cambridge-BkVJg4mY.png",
       "assets/british-logo-DB7Bttf2.png",
-      "assets/additional-CR2EGU8e.jpg",
-      "assets/cambridge-CLU2Rfji.jpg",
-      "assets/cambridge-exam-DZEH5QGk.jpg",
-      "assets/career-B9uX4C8p.jpg",
       "assets/telephone-DsT9iFCQ.png",
       "assets/email-BPvo-aU-.png",
       "assets/clock-suE3wdPL.png",
-      "assets/foundation-bW6565LR.jpg",
-      "assets/home-phone-size-CrNNu0jj.jpg",
       "assets/learning-pathway-BNUXXhVe.png",
-      "assets/IGCSE-CqkLbyT2.jpg",
-      "assets/international-exam-Bwyz0lBE.jpg",
       "assets/learning-pathway1-BoP0KvR9.jpg",
       "assets/learning-pathway2-CpJTW3rP.jpg",
       "assets/materialdesignicons-webfont-CSr8KVlo.eot",

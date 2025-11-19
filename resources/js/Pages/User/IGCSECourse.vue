@@ -4,12 +4,12 @@
 
     <Layout>
         <section class="relative overflow-hidden">
-            <div class="hidden md:block w-full h-full">
-                <img src="../User/images/IGCSE.jpg" alt="IGCSE Banner" class="w-full h-full object-cover" />
+            <div class="hidden md:block">
+                <img :src="igcseCourseImage?.name" alt="IGCSE Course" class="w-full h-full object-cover" />
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>
-             <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+             <div v-if="igcseCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:60px;">IGCSE Courses</h4>
             </div>
         </section>
@@ -55,6 +55,7 @@ import Layout from "../User/Layouts/Layout.vue";
 import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
-    igcseCourses: Array
+    igcseCourses: Array,
+    igcseCourseImage : Object
 });
 </script>

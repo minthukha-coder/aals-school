@@ -12,8 +12,7 @@
   <meta name="description" content="Learn English, IELTS, and more at Aung Academy Language School.">
   <meta name="keywords" content="English courses, IELTS, Myanmar, language school">
   <meta name="author" content="Aung Academy">
-  <link rel="icon" type="image/jpeg" href="{{ asset('/images/logo.jpg') }}">
-
+<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
   <script type="application/ld+json">
     {

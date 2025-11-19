@@ -6,8 +6,8 @@
             <div class="main-page">
                 <section class="block md:hidden home-page position-relative">
                     <div>
-                        <img src="../User/images/home-phone-size.jpg" alt="" class="w-full object-cover"
-                            style="height: 500px" />
+                        <img :src="homeImage?.name" alt="" class="w-full object-cover"
+                            style="height: 70vh" />
                     </div>
                     <div class="absolute left-0 top-20 text-white p-2">
                         <h3 class=" font-bold" style="font-size:50px;">Welcome To </h3>

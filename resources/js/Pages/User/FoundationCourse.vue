@@ -3,17 +3,14 @@
     <Head title="Foundation Course - Aung Academy Language School" />
 
     <Layout>
-        <section class="relative overflow-hidden" id="foundation-course">
-            <!-- <div class="hidden md:block w-full h-full">
-                <img src="../User/images/foundation.jpg" alt="" class="w-full h-full object-cover" />
-            </div> -->
-             <div class="hidden md:block w-full h-[600px]">
-                <img :src="foundationCourseImage?.name || '../User/images/foundation.jpg'" alt="Career Opportunities"
-                    class="w-full h-full object-cover object-center">
+        <section class="relative" id="foundation-course">
+            <div class="hidden md:block">
+                <img :src="foundationCourseImage?.name" alt="Foundation Courses"
+                    class="w-full h-[300px] object-cover object-center">
             </div>
             <div class="absolute inset-0 bg-black/50 h-full"></div>
 
-            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+            <div v-if="foundationCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:60px;">Foundation Courses</h4>
             </div>
         </section>

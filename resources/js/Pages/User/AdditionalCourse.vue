@@ -3,13 +3,14 @@
     <Head title="Additional Course - Aung Academy Language School" />
 
     <Layout>
-        <section class="relative overflow-hidden" id="foundation-course">
-            <div class="hidden md:block w-full h-full">
-                <img src="../User/images/additional_course.jpg" alt="" class="w-full h-full object-cover" />
+        <section id="foundation-course" class="relative">
+            <div class=" hidden md:block">
+                <img :src="additionalCourseImage?.name" alt=""
+                    class="w-full h-[300px] object-cover" />
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>
-                    <div class="hidden md:block absolute left-30 top-40 text-white p-2">
+            <div class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:70px;">Additional Courses</h4>
             </div>
         </section>
@@ -43,7 +44,8 @@ import Layout from "../User/Layouts/Layout.vue";
 import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
-    additionalCourses: Array
+    additionalCourses: Array,
+    additionalCourseImage: Object
 })
 </script>
 

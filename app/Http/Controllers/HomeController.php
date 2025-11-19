@@ -10,18 +10,20 @@ use App\Models\Gallery;
 use App\Models\Position;
 use App\Models\HomeImage;
 use App\Models\IgcseCourse;
-use App\Models\IgsceCourse;
 use App\Models\Partnership;
 use Illuminate\Http\Request;
 use App\Models\PositionImage;
 use App\Models\CambridgeCourse;
 use App\Models\AdditionalCourse;
+use App\Models\AdditionalCourseImage;
 use App\Models\FoundationCourse;
 use App\Models\CambridgeExamCourse;
 use App\Models\InternationalCourse;
 use App\Models\CambridgeCourseImage;
+use App\Models\CambridgeExamCourseImage;
 use Illuminate\Support\Facades\Mail;
 use App\Models\FoundationCourseImage;
+use App\Models\IgcseCourseImage;
 use App\Models\InternationalCourseImage;
 
 class HomeController extends Controller
@@ -139,12 +141,16 @@ class HomeController extends Controller
                 $cambridgeCourse->image = asset('storage/images/' . $cambridgeCourse->image);
             }
         }
-        return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses','cambridgeCourseImage'));
+        return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses', 'cambridgeCourseImage'));
     }
 
     public function igcseCourse()
     {
         $igcseCourses = IgcseCourse::with('subjects')->get();
+        $igcseCourseImage = IgcseCourseImage::first();
+        if ($igcseCourseImage && $igcseCourseImage->name) {
+            $igcseCourseImage->name = asset('storage/images/' . $igcseCourseImage->name);
+        }
         if ($igcseCourses) {
             foreach ($igcseCourses as $igcseCourse) {
                 if ($igcseCourse->image) {
@@ -157,39 +163,44 @@ class HomeController extends Controller
                 }
             }
         }
-        return Inertia::render('User/IGCSECourse', compact('igcseCourses'));
+        return Inertia::render('User/IGCSECourse', compact('igcseCourses', 'igcseCourseImage'));
     }
 
     public function additionalCourse()
     {
         $additionalCourses = AdditionalCourse::all();
-        $cambridgeCourseImage = CambridgeCourseImage::first();
-        if ($cambridgeCourseImage && $cambridgeCourseImage->name) {
-            $cambridgeCourseImage->name = asset('storage/images/' . $cambridgeCourseImage->name);
+        $additionalCourseImage = AdditionalCourseImage::first();
+        if ($additionalCourseImage && $additionalCourseImage->name) {
+            $additionalCourseImage->name = asset('storage/images/' . $additionalCourseImage->name);
         }
         if ($additionalCourses) {
             foreach ($additionalCourses as $additionalCourse) {
                 $additionalCourse->image = asset('storage/images/' . $additionalCourse->image);
             }
         }
-        return Inertia::render('User/AdditionalCourse', compact('additionalCourses'));
+        return Inertia::render('User/AdditionalCourse', compact('additionalCourses', 'additionalCourseImage'));
     }
 
     public function cambridgeExamCourse()
     {
         $cambridgeExamCourses = CambridgeExamCourse::all();
+        $cambridgeExamCourseImage = CambridgeExamCourseImage::first();
+
+        if ($cambridgeExamCourseImage && $cambridgeExamCourseImage->name) {
+            $cambridgeExamCourseImage->name = asset('storage/images/' . $cambridgeExamCourseImage->name);
+        }
         if ($cambridgeExamCourses) {
             foreach ($cambridgeExamCourses as $cambridgeExamCourse) {
                 $cambridgeExamCourse->image = asset('storage/images/' . $cambridgeExamCourse->image);
             }
         }
-        return Inertia::render('User/CambridgeExamCourse', compact('cambridgeExamCourses'));
+        return Inertia::render('User/CambridgeExamCourse', compact('cambridgeExamCourses', 'cambridgeExamCourseImage'));
     }
 
     public function internationalCourse()
     {
         $internationalCourses = InternationalCourse::all();
-         $internationalCourseImage = InternationalCourseImage::first();
+        $internationalCourseImage = InternationalCourseImage::first();
         if ($internationalCourseImage && $internationalCourseImage->name) {
             $internationalCourseImage->name = asset('storage/images/' . $internationalCourseImage->name);
         }
@@ -215,7 +226,7 @@ class HomeController extends Controller
     public function gallery()
     {
         $galleries = Gallery::all();
-        foreach($galleries as $gallery) {
+        foreach ($galleries as $gallery) {
             $gallery->image = asset('storage/images/' . $gallery->image);
         }
         return Inertia::render('User/Gallery', compact('galleries'));
