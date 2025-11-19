@@ -12,22 +12,41 @@
 
                 <SideLink :href="route('admin.igcse-courses.index')" icon="fa-solid fa-book" :isOpen="showIGCSECourse"
                     text="IGCSE Courses" />
+                <SideLink :href="route('admin.igcse-course-images.index')" icon="fa-solid fa-book" :isOpen="showIGCSECourseCover"
+                    text="IGCSE Courses Cover" />
+
                 <SideLink :href="route('admin.additional-courses.index')" icon="fa-solid fa-book-bookmark"
                     :isOpen="showAdditionalCourse" text="Additional Courses" />
+                <SideLink :href="route('admin.additional-course-images.index')" icon="fa-solid fa-book-bookmark"
+                    :isOpen="showAdditionalCourseCover" text="Additional Courses Cover" />
+                    
                 <SideLink :href="route('admin.foundation-courses.index')" icon="fa-solid fa-book-journal-whills"
                     :isOpen="showFoundationCourse" text="Foundation Courses" />
+                <SideLink :href="route('admin.foundation-course-images.index')" icon="fa-solid fa-book-journal-whills"
+                    :isOpen="showFoundationCourseCover" text="Foundation Courses Cover" />
+
                 <SideLink :href="route('admin.cambridge-courses.index')" icon="fa-solid fa-newspaper"
                     :isOpen="showCambridgeCourse" text="Cam-Academic Courses" />
+                <SideLink :href="route('admin.cambridge-course-images.index')" icon="fa-solid fa-newspaper"
+                    :isOpen="showCambridgeCourseCover" text="Cam-Academic Courses Cover" />    
+
                 <SideLink :href="route('admin.cambridge-exam-courses.index')" icon="fa-solid fa-book-tanakh"
                     :isOpen="showCambridgeExamCourse" text="Cambridge Exam Courses" />
+                <SideLink :href="route('admin.cambridge-exam-course-images.index')" icon="fa-solid fa-book-tanakh"
+                    :isOpen="showCambridgeExamCourseCover" text="Cambridge Exam Courses Cover" />
+                
                 <SideLink :href="route('admin.international-courses.index')" icon="fa-solid fa-scroll"
                     :isOpen="showInternationalCourse" text="International Exam Services" />
+                <SideLink :href="route('admin.international-course-images.index')" icon="fa-solid fa-scroll"
+                    :isOpen="showInternationalCourseCover" text="International Exam Services Cover" />
 
                 <SideLink :href="route('admin.contents.index')" icon="a-solid fa-file-contract" :isOpen="showContent"
                     text="Content" />
 
                 <SideLink :href="route('admin.positions.index')" icon="fa-solid fa-users-gear" :isOpen="showPosition"
                     text="Position" />
+                <SideLink :href="route('admin.position-images.index')" icon="fa-solid fa-users-gear" :isOpen="showPositionCover"
+                    text="Position Cover" />
 
                 <SideLink :href="route('admin.gallery.index')" icon="fa-solid fa-users-gear" :isOpen="showGallery"
                     text="Gallery" />
@@ -72,10 +91,20 @@ const showIGCSECourse = ref(
     route().current("admin.igcse-courses.show")
 );
 
+const showIGCSECourseCover = ref(
+    route().current("admin.igcse-course-images.index") ||
+    route().current("admin.igcse-course-images.edit")
+);
+
 const showAdditionalCourse = ref(
     route().current("admin.additional-courses.index") ||
     route().current("admin.additional-courses.create") ||
     route().current("admin.additional-courses.edit")
+);
+
+const showAdditionalCourseCover = ref(
+    route().current("admin.additional-course-images.index") ||
+    route().current("admin.additional-course-images.edit")
 );
 
 const showFoundationCourse = ref(
@@ -84,10 +113,20 @@ const showFoundationCourse = ref(
     route().current("admin.foundation-courses.edit")
 );
 
+const showFoundationCourseCover = ref(
+    route().current("admin.foundation-course-images.index") ||
+    route().current("admin.foundation-course-images.edit")
+);
+
 const showCambridgeCourse = ref(
     route().current("admin.cambridge-courses.index") ||
     route().current("admin.cambridge-courses.create") ||
     route().current("admin.cambridge-courses.edit")
+);
+
+const showCambridgeCourseCover = ref(
+    route().current("admin.cambridge-course-images.index") ||
+    route().current("admin.cambridge-course-images.edit")
 );
 
 const showCambridgeExamCourse = ref(
@@ -96,12 +135,21 @@ const showCambridgeExamCourse = ref(
     route().current("admin.cambridge-exam-courses.edit")
 );
 
+const showCambridgeExamCourseCover = ref(
+    route().current("admin.cambridge-exam-course-images.index") ||
+    route().current("admin.cambridge-exam-course-images.edit")
+)
+ 
 const showInternationalCourse = ref(
     route().current("admin.international-courses.index") ||
     route().current("admin.international-courses.create") ||
     route().current("admin.international-courses.edit")
 );
 
+const showInternationalCourseCover = ref(
+    route().current("admin.international-course-images.index") ||
+    route().current("admin.international-course-images.edit")
+)
 // const showLocation = ref(
 //     route().current("admin.location.index") ||
 //     route().current("admin.location.create") ||
@@ -118,6 +166,11 @@ const showPosition = ref(
     route().current("admin.positions.index") ||
     route().current("admin.positions.create") ||
     route().current("admin.positions.edit")
+);
+
+const showPositionCover = ref(
+    route().current("admin.position-images.index") ||
+    route().current("admin.position-images.edit")
 );
 
 const showGallery = ref(
