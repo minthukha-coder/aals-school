@@ -4,11 +4,16 @@
 
     <Layout>
         <section id="career" class="relative overflow-hidden">
-            <div class="hidden md:block w-full h-full">
+            <!-- <div class="hidden md:block w-full h-full">
                 <img src="../User/images/career.jpg" alt="Career Opportunities"
                     class="w-full h-full object-cover object-center">
 
+            </div> -->
+            <div class="hidden md:block w-full h-full">
+                <img :src="positionImage?.name || '../User/images/career.jpg'" alt="Career Opportunities"
+                    class="w-full h-full object-cover object-center">
             </div>
+
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h4 class="font-bold mx-20" style="font-size:70px;">Career Opportunities</h4>
@@ -101,6 +106,7 @@ import { Head } from '@inertiajs/vue3'
 import ErrorMessage from "../Admin/Components/ErrorMessage.vue";
 const props = defineProps({
     positions: Array,
+    positionImage: Object,
 });
 
 const form = useForm({

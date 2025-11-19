@@ -4,8 +4,12 @@
 
     <Layout>
         <section class="relative overflow-hidden" id="foundation-course">
-            <div class="hidden md:block w-full h-full">
+            <!-- <div class="hidden md:block w-full h-full">
                 <img src="../User/images/foundation.jpg" alt="" class="w-full h-full object-cover" />
+            </div> -->
+             <div class="hidden md:block w-full h-[600px]">
+                <img :src="foundationCourseImage?.name || '../User/images/foundation.jpg'" alt="Career Opportunities"
+                    class="w-full h-full object-cover object-center">
             </div>
             <div class="absolute inset-0 bg-black/50 h-full"></div>
 
@@ -48,6 +52,7 @@ import { Head } from '@inertiajs/vue3'
 
 const props = defineProps({
     foundationCourses: Array,
+    foundationCourseImage: Object
 });
 </script>
 

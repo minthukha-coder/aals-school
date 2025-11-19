@@ -13,12 +13,19 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\IgcseCourseController;
 use App\Http\Controllers\Admin\PartnershipController;
+use App\Http\Controllers\Admin\PositionImageController;
 use App\Http\Controllers\Admin\CambridgeCourseController;
 use App\Http\Controllers\Admin\AdditionalCourseController;
 use App\Http\Controllers\Admin\FoundationCourseController;
+use App\Http\Controllers\Admin\IgcseCourseImageController;
 use App\Http\Controllers\Admin\CambridgeExamCourseController;
 use App\Http\Controllers\Admin\InternationalCourseController;
+use App\Http\Controllers\Admin\CambridgeCourseImageController;
 use App\Http\Controllers\HomeController as UserHomeController;
+use App\Http\Controllers\Admin\AdditionalCourseImageController;
+use App\Http\Controllers\Admin\FoundationCourseImageController;
+use App\Http\Controllers\Admin\CambridgeExamCourseImageController;
+use App\Http\Controllers\Admin\InternationalCourseImageController;
 
 Route::get('/', [UserHomeController::class, 'home'])->name('home');
 Route::get('/learning-pathway', [UserHomeController::class, 'learningPathway'])->name('learning-pathway');
@@ -76,6 +83,13 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::delete('/', 'destroy')->name('destroy');
     });
 
+    Route::group(['prefix' => 'igcse-course-images', 'controller' => IgcseCourseImageController::class, 'as' => 'igcse-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+    });
+    
+
     Route::group(['prefix' => 'additional-courses', 'controller' => AdditionalCourseController::class, 'as' => 'additional-courses.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
@@ -84,6 +98,13 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
     });
+    
+    Route::group(['prefix' => 'additional-course-images', 'controller' => AdditionalCourseImageController::class, 'as' => 'additional-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+    });
+    
 
     Route::group(['prefix' => 'partnerships', 'controller' => PartnershipController::class, 'as' => 'partnerships.'], function () {
         Route::get('/', 'index')->name('index');
@@ -103,6 +124,12 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::delete('/', 'destroy')->name('destroy');
     });
 
+    Route::group(['prefix' => 'foundation-course-images', 'controller' => FoundationCourseImageController::class, 'as' => 'foundation-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+    });
+
     Route::group(['prefix' => 'cambridge-courses', 'controller' => CambridgeCourseController::class, 'as' => 'cambridge-courses.'], function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
@@ -111,6 +138,13 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
     });
+    
+    Route::group(['prefix' => 'cambridge-course-images', 'controller' => CambridgeCourseImageController::class, 'as' => 'cambridge-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+    });
+
 
     Route::group(['prefix' => 'cambridge-exam-courses', 'controller' => CambridgeExamCourseController::class, 'as' => 'cambridge-exam-courses.'], function () {
         Route::get('/', 'index')->name('index');
@@ -120,6 +154,13 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
     });
+    
+    Route::group(['prefix' => 'cambridge-exam-course-images', 'controller' => CambridgeExamCourseImageController::class, 'as' => 'cambridge-exam-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
+    });
+
 
     Route::group(['prefix' => 'international-courses', 'controller' => InternationalCourseController::class, 'as' => 'international-courses.'], function () {
         Route::get('/', 'index')->name('index');
@@ -128,6 +169,12 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'international-course-images', 'controller' => InternationalCourseImageController::class, 'as' => 'international-course-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
     });
 
     Route::group(['prefix' => 'location', 'controller' => LocationController::class, 'as' => 'location.'], function () {
@@ -146,6 +193,12 @@ Route::group(['prefix' => 'admin', 'controller' => AdminController::class, 'as' 
         Route::get('/edit', 'edit')->name('edit');
         Route::post('/update', 'update')->name('update');
         Route::delete('/', 'destroy')->name('destroy');
+    });
+
+    Route::group(['prefix' => 'position-images', 'controller' => PositionImageController::class, 'as' => 'position-images.'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/edit', 'edit')->name('edit');
+        Route::post('/update', 'update')->name('update');
     });
 
     Route::group(['prefix' => 'contents', 'controller' => ContentController::class, 'as' => 'contents.'], function () {

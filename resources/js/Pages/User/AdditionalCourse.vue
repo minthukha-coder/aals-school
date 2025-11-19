@@ -5,7 +5,7 @@
     <Layout>
         <section class="relative overflow-hidden" id="foundation-course">
             <div class="hidden md:block w-full h-full">
-                <img src="../User/images/additional.jpg" alt="" class="w-full h-full object-cover" />
+                <img src="../User/images/additional_course.jpg" alt="" class="w-full h-full object-cover" />
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>

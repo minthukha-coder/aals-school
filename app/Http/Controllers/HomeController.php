@@ -6,19 +6,23 @@ use Inertia\Inertia;
 use App\Models\About;
 use App\Models\Course;
 use App\Models\Content;
+use App\Models\Gallery;
 use App\Models\Position;
 use App\Models\HomeImage;
 use App\Models\IgcseCourse;
 use App\Models\IgsceCourse;
 use App\Models\Partnership;
 use Illuminate\Http\Request;
+use App\Models\PositionImage;
 use App\Models\CambridgeCourse;
 use App\Models\AdditionalCourse;
 use App\Models\FoundationCourse;
 use App\Models\CambridgeExamCourse;
-use App\Models\Gallery;
 use App\Models\InternationalCourse;
+use App\Models\CambridgeCourseImage;
 use Illuminate\Support\Facades\Mail;
+use App\Models\FoundationCourseImage;
+use App\Models\InternationalCourseImage;
 
 class HomeController extends Controller
 {
@@ -76,19 +80,27 @@ class HomeController extends Controller
     public function foundationCourse()
     {
         $foundationCourses = FoundationCourse::get();
+        $foundationCourseImage = FoundationCourseImage::first();
+        if ($foundationCourseImage && $foundationCourseImage->name) {
+            $foundationCourseImage->name = asset('storage/images/' . $foundationCourseImage->name);
+        }
         if ($foundationCourses) {
             foreach ($foundationCourses as $foundationCourse) {
                 $foundationCourse->image = asset('storage/images/' . $foundationCourse->image);
             }
         }
-        return Inertia::render('User/FoundationCourse', compact('foundationCourses'));
+        return Inertia::render('User/FoundationCourse', compact('foundationCourses', 'foundationCourseImage'));
     }
 
     //positions
     public function career()
     {
         $positions = Position::with('benefits')->get();
-        return Inertia::render('User/Career', compact('positions'));
+        $positionImage = PositionImage::first();
+        if ($positionImage && $positionImage->name) {
+            $positionImage->name = asset('storage/images/' . $positionImage->name);
+        }
+        return Inertia::render('User/Career', compact('positions', 'positionImage'));
     }
 
     //apply for position
@@ -118,12 +130,16 @@ class HomeController extends Controller
     public function cambridgeCourse()
     {
         $cambridgeCourses = CambridgeCourse::get();
+        $cambridgeCourseImage = CambridgeCourseImage::first();
+        if ($cambridgeCourseImage && $cambridgeCourseImage->name) {
+            $cambridgeCourseImage->name = asset('storage/images/' . $cambridgeCourseImage->name);
+        }
         if ($cambridgeCourses) {
             foreach ($cambridgeCourses as $cambridgeCourse) {
                 $cambridgeCourse->image = asset('storage/images/' . $cambridgeCourse->image);
             }
         }
-        return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses'));
+        return Inertia::render('User/CambridgeCourse', compact('cambridgeCourses','cambridgeCourseImage'));
     }
 
     public function igcseCourse()
@@ -147,6 +163,10 @@ class HomeController extends Controller
     public function additionalCourse()
     {
         $additionalCourses = AdditionalCourse::all();
+        $cambridgeCourseImage = CambridgeCourseImage::first();
+        if ($cambridgeCourseImage && $cambridgeCourseImage->name) {
+            $cambridgeCourseImage->name = asset('storage/images/' . $cambridgeCourseImage->name);
+        }
         if ($additionalCourses) {
             foreach ($additionalCourses as $additionalCourse) {
                 $additionalCourse->image = asset('storage/images/' . $additionalCourse->image);
@@ -169,12 +189,16 @@ class HomeController extends Controller
     public function internationalCourse()
     {
         $internationalCourses = InternationalCourse::all();
+         $internationalCourseImage = InternationalCourseImage::first();
+        if ($internationalCourseImage && $internationalCourseImage->name) {
+            $internationalCourseImage->name = asset('storage/images/' . $internationalCourseImage->name);
+        }
         if ($internationalCourses) {
             foreach ($internationalCourses as $internationalCourse) {
                 $internationalCourse->image = asset('storage/images/' . $internationalCourse->image);
             }
         }
-        return Inertia::render('User/InternationalCourse', compact('internationalCourses'));
+        return Inertia::render('User/InternationalCourse', compact('internationalCourses', 'internationalCourseImage'));
     }
 
     //about
