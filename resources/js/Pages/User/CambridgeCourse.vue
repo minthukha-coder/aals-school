@@ -6,7 +6,7 @@
         <section id="foundation-course" class="relative">
             <div class="hidden md:block">
                 <img :src="cambridgeCourseImage?.name" alt="Career Opportunities"
-                    class="w-full h-[300px] object-cover object-center">
+                    class="w-full h-full object-cover object-center">
             </div>
             <div class="absolute inset-0 bg-black/50"></div>
 

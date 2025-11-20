@@ -24,7 +24,7 @@
 
                         <div class="w-[90%] sm:w-96 overflow-hidden rounded-2xl mx-auto sm:mb-0">
                             <img :src="course?.image" alt="" class="w-full h-full object-cover rounded-2xl"
-                                style="height:200px;" />
+                                 />
                         </div>
 
                         <div

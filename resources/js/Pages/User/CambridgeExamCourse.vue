@@ -5,11 +5,11 @@
     <Layout>
         <section id="foundation-course" class="relative">
             <div class="hidden md:block">
-                <img :src="cambridgeExamCourseImage?.name" alt="Cambridge Exam Course" class="w-full h-[300px] object-cover" />
+                <img :src="cambridgeExamCourseImage?.name" alt="Cambridge Exam Course" class="w-full h-full object-cover" />
             </div>
 
             <div class="absolute inset-0 bg-black/50"></div>
-            <div v-if="cambridgeCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
+            <div v-if="cambridgeExamCourseImage?.name" class="hidden md:block absolute left-30 top-40 text-white p-2">
                 <h3 class="font-bold mx-20" style="font-size:60px;">Exam Services</h3>
             </div>
         </section>

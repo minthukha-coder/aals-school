@@ -16,7 +16,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BVTS_Nqt.css",
+    "file": "assets/app-CVNlllsY.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -65,12 +65,12 @@
     "src": "resources/js/Pages/User/images/telephone.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-W9XIXDqs.js",
+    "file": "assets/app-f8MyAK6q.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-6B6uhnKx.css"
+      "assets/app-BTGBY5YT.css"
     ],
     "assets": [
       "assets/logo-BPWYFurT.jpg",
